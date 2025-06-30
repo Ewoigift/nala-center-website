@@ -30,11 +30,18 @@ export default function HomePage() {
           {/* Apply font-serif to the heading */}
           <h2 className="text-3xl font-semibold mb-6 text-center font-serif">Overview of NALA Center</h2> {/* Added font-serif */}
           <p className="text-lg leading-relaxed">
-            [Based on "NALA CENTER WEBSITE CONTENT.docx" and "NALA CENTER SITE CONTENT.docx"]:
+          
             The NALA Center is dedicated to fostering peace, prosperity, and resilience in the NALA (Northern Africa, Levant, and Arabia) region. We achieve this by generating evidence-based research, engaging in impactful policy dialogues, and building local capacities. Our work aims to address critical challenges such as climate resilience, migration, governance, and sustainable development, providing actionable insights for policymakers and communities.
           </p>
         </div>
       </section>
+
+       <div className="w-32 h-32 bg-nala-blue flex items-center justify-center text-white">
+        Should Be Blue
+      </div>
+
+
+     
 
       {/* ... (rest of your page.tsx content) ... */}
     </main>

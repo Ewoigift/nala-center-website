@@ -6,19 +6,25 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this line covers your src directory
   ],
   theme: {
     extend: {
       colors: {
-        'quick-silver': '#A7A7A5', // Hex code for Quick Silver
-        'chinese-white': '#EDEDDE', // Hex code for CHINESE WHITE
-        'baby-powder': '#FCFEFD',   // Hex code for BABY POWDER
-        'black-olive': '#3C3C3A',   // Hex code for BLACK OLIVE
+        'nala-blue': '#B3D9E0', // Your custom color
+        // You might have other custom colors or definitions here, ensure they are correct
+        'background': 'var(--background)',
+        'foreground': 'var(--foreground)',
+        'primary': 'var(--primary)', 
+        'primary-foreground': 'var(--primary-foreground)',
+        // ... all your other custom colors using CSS variables
       },
-      fontFamily: { // Add this new section
-        'serif': ['var(--font-cormorant-garamond)', 'serif'],
-        'sans': ['var(--font-source-sans-pro)', 'sans-serif'],
+      fontFamily: {
+        // Ensure these match your layout.tsx variable names
+        sans: ['var(--font-source-sans-pro)'], // If Source Sans 3 is your sans font
+        serif: ['var(--font-cormorant-garamond)'], // If Cormorant Garamond is your serif font
       },
+      // ... any other theme extensions
     },
   },
   plugins: [],

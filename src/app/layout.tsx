@@ -1,10 +1,25 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "../components/Navbar"; // Import your Navbar component
+// Import the specific fonts you want to use for your custom CSS variables
+import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import Navbar from "../components/Navbar";
+
+// Define your fonts and configure them to export as CSS variables
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cormorant-garamond",
+  weight: ["400", "700"], // <-- CORRECTED: Changed to 'weight' (singular)
+});
+
+const sourceSansPro = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source-sans-pro",
+  weight: ["400", "700"], // <-- CORRECTED: Changed to 'weight' (singular)
+});
 
 export const metadata: Metadata = {
   title: "NALA Center Website",
@@ -17,9 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar /> {/* Your Navbar component goes here */}
+    <html
+      lang="en"
+      className={`${cormorantGaramond.variable} ${sourceSansPro.variable}`}
+    >
+      <body>
+        <Navbar />
         {children}
       </body>
     </html>

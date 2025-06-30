@@ -1,10 +1,14 @@
-@import "tailwindcss/preflight"; /* Replaces @tailwind base */
-@tailwind utilities;
+/* src/app/globals.css */
 
+/* Only this line is needed for core Tailwind CSS v4 imports */
 @import "tailwindcss";
 
+/* If 'tw-animate-css' is a crucial library, we'll add it back later,
+   but for now, let's ensure Tailwind's core functionality works.
 @import "tw-animate-css";
+*/
 
+/* Your custom variant and theme definitions */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,7 +47,7 @@
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-lg: var( --radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
