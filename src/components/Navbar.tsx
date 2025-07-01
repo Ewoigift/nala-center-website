@@ -8,25 +8,25 @@ import { useState, useEffect, useRef } from 'react';
 
 // Data for Who We Are dropdown
 const whoWeAreLinks = [
-  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Our Partners', href: '/who-we-are/our-partners', imgSrc: '/images/who-we-are/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Join Us', href: '/who-we-are/join-us', imgSrc: '/images/who-we-are/demo_image.jpg' }, // Reverted to demo_image.jpg
+  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/demo_image.jpg' },
+  { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/demo_image.jpg' },
+  { name: 'Our Partners', href: '/who-we-are/our-partners', imgSrc: '/images/who-we-are/demo_image.jpg' },
+  { name: 'Join Us', href: '/who-we-are/join-us', imgSrc: '/images/who-we-are/demo_image.jpg' },
 ];
 
 // Data for What We Do dropdown
 const whatWeDoLinks = [
-  { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Capacity Building & Training', href: '/what-we-do/capacity-building', imgSrc: '/images/what-we-do/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/demo_image.jpg' }, // Reverted to demo_image.jpg
+  { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/demo_image.jpg' },
+  { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/demo_image.jpg' },
+  { name: 'Capacity Building & Training', href: '/what-we-do/capacity-building', imgSrc: '/images/what-we-do/demo_image.jpg' },
+  { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/demo_image.jpg' },
 ];
 
 // Data for Get Involved dropdown
 const getInvolvedLinks = [
-  { name: 'Support Our Work', href: '/get-involved/support-us', imgSrc: '/images/get-involved/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Collaborations', href: '/get-involved/collaborations', imgSrc: '/images/get-involved/demo_image.jpg' }, // Reverted to demo_image.jpg
-  { name: 'Volunteer & Intern', href: '/get-involved/volunteer', imgSrc: '/images/get-involved/demo_image.jpg' }, // Reverted to demo_image.jpg
+  { name: 'Support Our Work', href: '/get-involved/support-us', imgSrc: '/images/get-involved/demo_image.jpg' },
+  { name: 'Collaborations', href: '/get-involved/collaborations', imgSrc: '/images/get-involved/demo_image.jpg' },
+  { name: 'Volunteer & Intern', href: '/get-involved/volunteer', imgSrc: '/images/get-involved/demo_image.jpg' },
 ];
 
 export default function Navbar() {
@@ -93,7 +93,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav ref={navRef} className="relative bg-[#FFFFFF] text-[#050505] p-4 shadow-md font-sans z-30"> {/* White background, Almost Black text */}
+    // Added fixed, top-0, w-full, and increased z-index for fixed navbar
+    <nav ref={navRef} className="fixed top-0 w-full bg-[#FFFFFF] text-[#050505] p-4 shadow-md font-sans z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Site Title - NALA Center */}
         <Link href="/" className="flex items-center space-x-2 z-50">
@@ -109,7 +110,7 @@ export default function Navbar() {
 
         {/* Hamburger Icon (visible on small screens) */}
         <button
-          className="md:hidden text-[#050505] text-2xl focus:outline-none z-50" // Almost Black
+          className="md:hidden text-[#050505] text-2xl focus:outline-none z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -132,8 +133,8 @@ export default function Navbar() {
                 <div
                   className={`
                     py-2 px-4 rounded-md transition-colors duration-200
-                    hover:bg-[#EBEBEB] hover:text-[#050505] {/* Light Gray background, Almost Black text */}
-                    ${isActive(item.href) ? 'border-b-2 border-[#050505]' : ''} {/* Almost Black */}
+                    hover:bg-[#EBEBEB] hover:text-[#050505]
+                    ${isActive(item.href) ? 'border-b-2 border-[#050505]' : ''}
                     cursor-pointer flex items-center
                   `}
                   onClick={() => toggleDesktopDropdown(item.name)}
@@ -145,8 +146,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`
                     py-2 px-4 rounded-md transition-colors duration-200
-                    hover:bg-[#EBEBEB] hover:text-[#050505] {/* Light Gray background, Almost Black text */}
-                    ${isActive(item.href) ? 'border-b-2 border-[#050505]' : ''} {/* Almost Black */}
+                    hover:bg-[#EBEBEB] hover:text-[#050505]
+                    ${isActive(item.href) ? 'border-b-2 border-[#050505]' : ''}
                     flex items-center
                   `}
                 >
@@ -165,7 +166,7 @@ export default function Navbar() {
             key={`dropdown-${item.name}`}
             className={`
               hidden md:block absolute top-full left-1/2 -translate-x-1/2 mt-0 p-8
-              bg-[#2F2F2F] shadow-lg rounded-b-md {/* Dark Gray */}
+              bg-[#2F2F2F] shadow-lg rounded-b-md
               transition-all duration-300 transform origin-top z-40 w-full max-w-screen-xl
               ${openDesktopDropdown === item.name ? 'opacity-100 visible scale-y-100' : 'opacity-0 invisible scale-y-95'}
             `}
@@ -176,8 +177,8 @@ export default function Navbar() {
                   <Link
                     key={subItem.name}
                     href={subItem.href}
-                    className="group flex flex-col items-center p-3 rounded-md hover:bg-[#1F1F1F] transition-colors duration-200 text-center flex-grow flex-shrink-0 basis-0" // Very Dark Gray
-                    style={{ minWidth: '160px' }} // This specific inline style for minWidth can be kept if no Tailwind equivalent is desired or available.
+                    className="group flex flex-col items-center p-3 rounded-md hover:bg-[#1F1F1F] transition-colors duration-200 text-center flex-grow flex-shrink-0 basis-0"
+                    style={{ minWidth: '160px' }}
                     onClick={() => setOpenDesktopDropdown(null)}
                   >
                     <Image
@@ -187,7 +188,7 @@ export default function Navbar() {
                       height={100}
                       className="rounded-md object-cover mb-2"
                     />
-                    <span className="text-[#FFFFFF] font-medium group-hover:text-[#FFFFFF] text-base">{subItem.name}</span> {/* White, White */}
+                    <span className="text-[#FFFFFF] font-medium group-hover:text-[#FFFFFF] text-base">{subItem.name}</span>
                   </Link>
                 ))}
               </div>
@@ -199,7 +200,7 @@ export default function Navbar() {
       {/* Mobile Menu Container (slides in/out) */}
       <div
         className={`
-          fixed inset-0 bg-[#2F2F2F] z-40 transform transition-transform duration-300 ease-in-out {/* Dark Gray */}
+          fixed inset-0 bg-[#2F2F2F] z-40 transform transition-transform duration-300 ease-in-out
           md:hidden flex flex-col p-8 space-y-4 pt-20
           ${isMobileMenuOpen ? 'translate-x-0 opacity-100 visible' : 'translate-x-full opacity-0 invisible'}
         `}
@@ -211,8 +212,8 @@ export default function Navbar() {
               <div
                 className={`
                   py-3 px-4 rounded-md transition-colors duration-200
-                  hover:bg-[#1F1F1F] flex justify-between items-center cursor-pointer text-[#FFFFFF] font-semibold text-lg {/* Very Dark Gray, White */}
-                  ${isActive(item.href) ? 'border-l-4 border-[#FFFFFF]' : ''} {/* White */}
+                  hover:bg-[#1F1F1F] flex justify-between items-center cursor-pointer text-[#FFFFFF] font-semibold text-lg
+                  ${isActive(item.href) ? 'border-l-4 border-[#FFFFFF]' : ''}
                 `}
                 onClick={() => toggleMobileAccordion(item.name)}
               >
@@ -225,8 +226,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`
                   block py-3 px-4 rounded-md transition-colors duration-200
-                  hover:bg-[#1F1F1F] text-[#FFFFFF] font-semibold text-lg {/* Very Dark Gray, White */}
-                  ${isActive(item.href) ? 'border-l-4 border-[#FFFFFF]' : ''} {/* White */}
+                  hover:bg-[#1F1F1F] text-[#FFFFFF] font-semibold text-lg
+                  ${isActive(item.href) ? 'border-l-4 border-[#FFFFFF]' : ''}
                 `}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -241,12 +242,12 @@ export default function Navbar() {
                   ${openMobileAccordion === item.name ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}
                 `}
               >
-                <div className="flex flex-col pl-6 py-2 space-y-2 bg-[#1F1F1F] rounded-b-md mt-1"> {/* Very Dark Gray */}
+                <div className="flex flex-col pl-6 py-2 space-y-2 bg-[#1F1F1F] rounded-b-md mt-1">
                   {item.links.map((subItem) => (
                     <Link
                       key={subItem.name}
                       href={subItem.href}
-                      className="block py-2 px-3 rounded-md hover:bg-[#2F2F2F] text-[#FFFFFF] text-base" // Dark Gray, White
+                      className="block py-2 px-3 rounded-md hover:bg-[#2F2F2F] text-[#FFFFFF] text-base"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {subItem.name}

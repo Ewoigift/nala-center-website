@@ -8,7 +8,7 @@ import { useRef, useState, useEffect } from 'react';
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faXTwitter, // For 'fa-x-twitter'
+  faXTwitter,
   faLinkedin,
   faFacebook,
   faInstagram,
@@ -19,6 +19,23 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isLeftDisabled, setIsLeftDisabled] = useState(true);
   const [isRightDisabled, setIsRightDisabled] = useState(false);
+
+  // For Hero Section Rotating Backgrounds
+  const backgroundImages = [
+    '/images/hero-background.jpg',
+    '/images/hero-background3.jpg', // Updated to hero-background3.jpg
+    '/images/hero-background2.jpg', // Updated to hero-background2.jpg
+  ];
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
 
   const handleScroll = () => {
     if (scrollContainerRef.current) {
@@ -37,10 +54,11 @@ export default function Home() {
       handleScroll(); // Set initial state
       scrollContainer.addEventListener('scroll', handleScroll);
       return () => {
-        scrollContainer.removeEventListener('scroll', handleScroll);
+        scrollContainer.removeEventListener('scroll', handleScroll); // Ensure correct cleanup
       };
     }
   }, []);
+
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -94,19 +112,25 @@ export default function Home() {
   ];
 
   return (
-    <main>
+    // Added pt-[80px] to the main tag to push content below the fixed navbar
+    <main className="pt-[75px]">
       {/* Hero Section */}
+      {/* Removed pt-20 from here as padding is now on the main tag */}
       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center bg-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        {/* Rotating Backgrounds */}
+        {backgroundImages.map((image, index) => (
           <Image
-            src="/images/hero-background.jpg"
-            alt="NALA Center Hero Background"
+            key={index}
+            src={image}
+            alt={`NALA Center Hero Background ${index + 1}`}
             layout="fill"
             objectFit="cover"
             quality={100}
-            className="opacity-70"
+            className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
+              index === currentBgIndex ? 'opacity-70' : 'opacity-0'
+            }`}
           />
-        </div>
+        ))}
 
         <div className="relative z-10 text-[#050505] p-4 md:p-8 max-w-4xl mx-auto rounded-lg">
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-4 leading-tight">
