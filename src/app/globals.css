@@ -2,11 +2,7 @@
 
 /* Only this line is needed for core Tailwind CSS v4 imports */
 @import "tailwindcss";
-
-/* If 'tw-animate-css' is a crucial library, we'll add it back later,
-   but for now, let's ensure Tailwind's core functionality works.
-@import "tw-animate-css";
-*/
+@import "@fortawesome/fontawesome-svg-core/styles.css";
 
 /* Your custom variant and theme definitions */
 @custom-variant dark (&:is(.dark *));
@@ -127,4 +123,14 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom CSS to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;  /* For Firefox */
 }

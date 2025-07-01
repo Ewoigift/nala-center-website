@@ -19,7 +19,7 @@ const config: Config = {
         'primary-foreground': 'var(--primary-foreground)',
         // ... all your other custom colors using CSS variables
       },
-      fontFamily: {
+      font: {
         // Ensure these match your layout.tsx variable names
         sans: ['var(--font-source-sans-pro)'], // If Source Sans 3 is your sans font
         serif: ['var(--font-cormorant-garamond)'], // If Cormorant Garamond is your serif font
