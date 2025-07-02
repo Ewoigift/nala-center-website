@@ -115,8 +115,8 @@ export default function Home() {
     // Added pt-[80px] to the main tag to push content below the fixed navbar
     <main className="pt-[75px]">
       {/* Hero Section */}
-      {/* Removed pt-20 from here as padding is now on the main tag */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center bg-white overflow-hidden">
+      {/* Changed height to min-h-screen to take up full viewport height */}
+      <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
         {/* Rotating Backgrounds */}
         {backgroundImages.map((image, index) => (
           <Image
@@ -239,89 +239,89 @@ export default function Home() {
                       <p className="text-gray-700 text-base mb-4 line-clamp-2">
                         {event.description}
                       </p>
+                      </div>
+                      <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                        Register &rarr;
+                      </Link>
                     </div>
-                    <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                      Register &rarr;
-                    </Link>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Navigation Arrows */}
+              <div className="flex justify-center mt-8 space-x-8">
+                <button
+                  onClick={scrollLeft}
+                  disabled={isLeftDisabled}
+                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                    isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                  }`}
+                  aria-label="Scroll left"
+                >
+                  &larr;
+                </button>
+                <button
+                  onClick={scrollRight}
+                  disabled={isRightDisabled}
+                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                    isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                  }`}
+                  aria-label="Scroll right"
+                >
+                  &rarr;
+                </button>
+              </div>
             </div>
 
-            {/* Navigation Arrows */}
-            <div className="flex justify-center mt-8 space-x-8">
-              <button
-                onClick={scrollLeft}
-                disabled={isLeftDisabled}
-                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                  isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                }`}
-                aria-label="Scroll left"
-              >
-                &larr;
-              </button>
-              <button
-                onClick={scrollRight}
-                disabled={isRightDisabled}
-                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                  isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                }`}
-                aria-label="Scroll right"
-              >
-                &rarr;
-              </button>
+            <div className="text-center mt-12">
+              <Link href="#" className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg">
+                View All Events
+              </Link>
             </div>
           </div>
+        </section>
 
-          <div className="text-center mt-12">
-            <Link href="#" className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg">
-              View All Events
-            </Link>
+        {/* Subscribe / Stay Connected Section */}
+        <section className="bg-white py-16 px-4">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              Subscribe to our newsletter for the latest research, insights, and event updates from NALA Center.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
+              />
+              <button className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto">
+                Subscribe
+              </button>
+            </div>
+            <div className="flex justify-center space-x-6">
+              {/* Twitter Icon */}
+              <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">
+                <FontAwesomeIcon icon={faXTwitter} />
+              </a>
+              {/* LinkedIn Icon */}
+              <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="LinkedIn">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              {/* Facebook Icon */}
+              <a href="https://facebook.com/nala-center" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Facebook">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              {/* Instagram Icon */}
+              <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Instagram">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              {/* WhatsApp Icon */}
+              <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="WhatsApp">
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Subscribe / Stay Connected Section */}
-      <section className="bg-white py-16 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest research, insights, and event updates from NALA Center.
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
-            />
-            <button className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto">
-              Subscribe
-            </button>
-          </div>
-          <div className="flex justify-center space-x-6">
-            {/* Twitter Icon */}
-            <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">
-              <FontAwesomeIcon icon={faXTwitter} />
-            </a>
-            {/* LinkedIn Icon */}
-            <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            {/* Facebook Icon */}
-            <a href="https://facebook.com/nala-center" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            {/* Instagram Icon */}
-            <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            {/* WhatsApp Icon */}
-            <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="WhatsApp">
-              <FontAwesomeIcon icon={faWhatsapp} />
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
   );
 }

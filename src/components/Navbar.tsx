@@ -18,7 +18,7 @@ const whoWeAreLinks = [
 const whatWeDoLinks = [
   { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/demo_image.jpg' },
   { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/demo_image.jpg' },
-  { name: 'Capacity Building & Training', href: '/what-we-do/capacity-building', imgSrc: '/images/what-we-do/demo_image.jpg' },
+  { name: 'Capacity Building & Training', href: '/images/what-we-do/capacity-building', imgSrc: '/images/what-we-do/demo_image.jpg' },
   { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/demo_image.jpg' },
 ];
 
@@ -29,13 +29,39 @@ const getInvolvedLinks = [
   { name: 'Volunteer & Intern', href: '/get-involved/volunteer', imgSrc: '/images/get-involved/demo_image.jpg' },
 ];
 
-export default function Navbar() {
+// Define props for Navbar to accept a callback for height
+interface NavbarProps {
+  onHeightChange?: (height: number) => void;
+}
+
+export default function Navbar({ onHeightChange }: NavbarProps) {
   const pathname = usePathname();
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
 
   const navRef = useRef<HTMLElement>(null);
+
+  // Measure navbar height and report it to parent
+  useEffect(() => {
+    const measureHeight = () => {
+      if (navRef.current && onHeightChange) {
+        onHeightChange(navRef.current.offsetHeight);
+      }
+    };
+
+    // Measure on mount
+    measureHeight();
+
+    // Measure on window resize
+    window.addEventListener('resize', measureHeight);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('resize', measureHeight);
+    };
+  }, [onHeightChange]); // Re-run if onHeightChange callback itself changes (unlikely but good practice)
+
 
   const isActive = (path: string) => {
     if (path === '/') return pathname === '/';
@@ -97,7 +123,14 @@ export default function Navbar() {
     <nav ref={navRef} className="fixed top-0 w-full bg-[#FFFFFF] text-[#050505] p-4 shadow-md font-sans z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Site Title - NALA Center */}
-        <Link href="/" className="flex items-center space-x-2 z-50">
+        <Link
+          href="/"
+          // Dynamically set text color for the logo/site title
+          className={`
+            flex items-center space-x-2 z-50
+            ${isMobileMenuOpen ? 'text-[#FFFFFF]' : 'text-[#050505]'}
+          `}
+        >
           <Image
             src="/images/Nala_No_Bg.png"
             alt="NALA Center Logo"
@@ -110,7 +143,11 @@ export default function Navbar() {
 
         {/* Hamburger Icon (visible on small screens) */}
         <button
-          className="md:hidden text-[#050505] text-2xl focus:outline-none z-50"
+          // Dynamically set text color based on mobile menu state for icon visibility
+          className={`
+            md:hidden text-2xl focus:outline-none z-50
+            ${isMobileMenuOpen ? 'text-[#FFFFFF]' : 'text-[#050505]'}
+          `}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -124,7 +161,6 @@ export default function Navbar() {
             </svg>
           )}
         </button>
-
         {/* Desktop Main Navigation Links (hidden on small screens) */}
         <div className="hidden md:flex space-x-2 items-center">
           {navItems.map((item) => (
