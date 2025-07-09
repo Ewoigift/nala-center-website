@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link'; // Removed: Link is not used in this component
 import { useRef, useState, useEffect } from 'react';
 
 export default function AboutUsPage() {
@@ -108,6 +108,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
   const [ourStoryIsVisible, setOurStoryIsVisible] = useState(false);
 
   useEffect(() => {
+    const currentOurStoryRef = ourStoryRef.current; // Capture ref value
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !ourStoryIsVisible) {
@@ -121,13 +122,13 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
       }
     );
 
-    if (ourStoryRef.current) {
-      observer.observe(ourStoryRef.current);
+    if (currentOurStoryRef) {
+      observer.observe(currentOurStoryRef);
     }
 
     return () => {
-      if (ourStoryRef.current) {
-        observer.unobserve(ourStoryRef.current);
+      if (currentOurStoryRef) { // Use captured ref value in cleanup
+        observer.unobserve(currentOurStoryRef);
       };
     }
   }, [ourStoryIsVisible]);
@@ -259,7 +260,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
         <section className="bg-[#F8F8F8] py-16 px-4">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Objectives</h2>
-            {/* Removed justify-items-center and added lg:justify-center to center the grid columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-center">
               {objectives.map((objective, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between border-t-4 border-[#050505]">
