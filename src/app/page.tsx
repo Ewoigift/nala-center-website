@@ -20,6 +20,11 @@ export default function Home() {
   const [isLeftDisabled, setIsLeftDisabled] = useState(true);
   const [isRightDisabled, setIsRightDisabled] = useState(false);
 
+  // Newsletter state
+  const [email, setEmail] = useState('');
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
   // For Hero Section Rotating Backgrounds
   const backgroundImages = [
     '/images/hero-background.jpg',
@@ -78,6 +83,56 @@ export default function Home() {
     }
   };
 
+  // Newsletter submission handler - now uses fetch to a backend API
+  const handleSubscribe = async () => {
+    // Basic client-side email validation (server will do a more thorough check)
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      setSubmissionStatus('error');
+      setMessage('Please enter a valid email address.');
+      // Clear message after some time
+      setTimeout(() => {
+        setSubmissionStatus('idle');
+        setMessage('');
+      }, 3000);
+      return;
+    }
+
+    setSubmissionStatus('loading');
+    setMessage('Subscribing...');
+
+    try {
+      // Make a POST request to your Next.js API route
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmissionStatus('success');
+        setMessage(data.message || 'Successfully subscribed! Check your inbox.');
+        setEmail(''); // Clear email field on success
+      } else {
+        setSubmissionStatus('error');
+        setMessage(data.message || 'Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      setSubmissionStatus('error');
+      setMessage('An unexpected error occurred. Please try again later.');
+    } finally {
+      // Clear message after some time
+      setTimeout(() => {
+        setSubmissionStatus('idle');
+        setMessage('');
+      }, 5000);
+    }
+  };
+
   const eventCards = [
     {
       date: 'July 15, 2025 | Online Webinar',
@@ -126,13 +181,16 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             quality={100}
+            // Adjusted opacity to ensure only the non-current image is fully transparent
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
               index === currentBgIndex ? 'opacity-70' : 'opacity-0'
             }`}
           />
         ))}
 
-        <div className="relative z-10 text-[#050505] p-4 md:p-8 max-w-4xl mx-auto rounded-lg">
+        <div className="absolute inset-0 bg-black opacity-40 z-0"></div> {/* Dark overlay */}
+
+        <div className="relative z-10 text-[#FFFFFF] p-4 md:p-8 max-w-4xl mx-auto rounded-lg"> {/* Changed text color to white */}
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-4 leading-tight">
             Driving Meaningful and Lasting Change
           </h1>
@@ -162,7 +220,7 @@ export default function Home() {
               <span className="text-sm text-gray-500">Category | June 24, 2025</span>
               <h3 className="font-semibold text-xl text-[#050505] my-2">The Role of Community-Led Solutions in Climate Resilience</h3>
               <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                Exploring how grassroots initiatives are building climate resilience in vulnerable communities across the NALA region, with case studies from local projects.
+                Exploring how grassroots initiatives are building climate resilience in vulnerable communities across the Nala region, with case studies from local projects.
               </p>
               <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
                 Read more &rarr;
@@ -286,18 +344,32 @@ export default function Home() {
           <div className="container mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest research, insights, and event updates from NALA Center.
+              Subscribe to our newsletter for the latest research, insights, and event updates from Nala Center.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
               <input
                 type="email"
                 placeholder="Enter your email address"
                 className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
+                value={email} // Controlled component
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={submissionStatus === 'loading'} // Disable during loading
               />
-              <button className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto">
-                Subscribe
+              <button
+                className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto"
+                onClick={handleSubscribe}
+                disabled={submissionStatus === 'loading'} // Disable during loading
+              >
+                {submissionStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
               </button>
             </div>
+            {message && (
+              <p className={`mt-4 text-center ${
+                submissionStatus === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {message}
+              </p>
+            )}
             <div className="flex justify-center space-x-6">
               {/* Twitter Icon */}
               <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">

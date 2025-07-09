@@ -122,7 +122,7 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
     // Added fixed, top-0, w-full, and increased z-index for fixed navbar
     <nav ref={navRef} className="fixed top-0 w-full bg-[#FFFFFF] text-[#050505] p-4 shadow-md font-sans z-50">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo/Site Title - NALA Center */}
+        {/* Logo/Site Title - NALA CENTER */}
         <Link
           href="/"
           // Dynamically set text color for the logo/site title
@@ -132,13 +132,15 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
           `}
         >
           <Image
-            src="/images/Nala_No_Bg.png"
+            // Conditionally load white logo when mobile menu is open
+            src={isMobileMenuOpen ? '/images/Nala_No_Bg_White.png' : '/images/Nala_No_Bg.png'}
             alt="NALA Center Logo"
             width={40}
             height={40}
             priority
           />
-          <span className="text-2xl font-bold font-serif">NALA Center</span>
+          {/* Changed text to NALA CENTER */}
+          <span className="text-2xl font-bold font-serif">NALA CENTER</span>
         </Link>
 
         {/* Hamburger Icon (visible on small screens) */}
