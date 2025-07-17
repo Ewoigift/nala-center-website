@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
       'placehold.co', 
     ],
   },
-  /* other config options here if any */
+  /* other config options */
+  optimizeFonts: false,
 };
 
 export default nextConfig;

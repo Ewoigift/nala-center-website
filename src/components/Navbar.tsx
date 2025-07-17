@@ -14,6 +14,16 @@ const whoWeAreLinks = [
   { name: 'Join Us', href: '/who-we-are/join-us', imgSrc: '/images/who-we-are/demo_image.jpg' },
 ];
 
+
+// Data for Focus Areas dropdown
+const focusAreasLinks = [
+  { name: "Peace & Security", href: "/focus-areas/peace-security", imgSrc: '/images/focus-areas/demo_image.jpg' },
+  { name: "Democracy, Governance & Civic Innovation", href: "/focus-areas/democracy-governance", imgSrc: '/images/focus-areas/demo_image.jpg' },
+  { name: "Economic Systems, Equity & Inclusive Development", href: "/focus-areas/economic-systems", imgSrc: '/images/focus-areas/demo_image.jpg' },
+  { name: "Sustainable Energy & Climate Resilience", href: "/focus-areas/sustainable-energy", imgSrc: '/images/focus-areas/demo_image.jpg' },
+  { name: "Migration, Mobility & Human Rights", href: "/focus-areas/migration-human-rights", imgSrc: '/images/focus-areas/demo_image.jpg' },
+];
+
 // Data for What We Do dropdown
 const whatWeDoLinks = [
   { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/demo_image.jpg' },
@@ -39,8 +49,28 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
+  const [isSticky, setIsSticky] = useState(false); // State for sticky navbar
 
   const navRef = useRef<HTMLElement>(null);
+
+  // Effect for handling scroll to make navbar sticky
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 100; // Pixels scrolled before navbar becomes sticky
+      if (window.scrollY > scrollThreshold) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call on mount to set initial state
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Measure navbar height and report it to parent
   useEffect(() => {
@@ -114,13 +144,18 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Who We Are', href: '/who-we-are', links: whoWeAreLinks },
+    { name: 'Focus Areas', href: '/focus-areas', links: focusAreasLinks }, // New Focus Areas link
     { name: 'What We Do', href: '/what-we-do', links: whatWeDoLinks },
     { name: 'Get Involved', href: '/get-involved', links: getInvolvedLinks },
   ];
 
   return (
     // Added fixed, top-0, w-full, and increased z-index for fixed navbar
-    <nav ref={navRef} className="fixed top-0 w-full bg-[#FFFFFF] text-[#050505] p-4 shadow-md font-sans z-50">
+    <nav ref={navRef}  className={`
+        bg-[#FFFFFF] text-[#050505] shadow-md font-sans
+        transition-all duration-300 ease-in-out
+        ${isSticky ? 'fixed top-0 w-full z-[100] py-6' : 'relative p-4'}
+      `}>
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Site Title - NALA CENTER */}
         <Link

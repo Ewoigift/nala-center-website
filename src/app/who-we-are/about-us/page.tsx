@@ -2,27 +2,25 @@
 'use client';
 
 import Image from 'next/image';
-// import Link from 'next/link'; // Removed: Link is not used in this component
 import { useRef, useState, useEffect } from 'react';
 
 export default function AboutUsPage() {
   const mission = "To drive impactful change through rigorous research, strategic insights, and inclusive dialogue for a just, peaceful, and sustainable future.";
   const vision = "A premier hub for transformative research, shaping global discourse, and pioneering solutions for a peaceful, sustainable, and inclusive world.";
 
-  // Summarized content for Our Story (reduced to two paragraphs)
-  const ourStoryContent = `NALA Center is a youth-led hub pioneering curiosity-driven basic research and advancing epistemological inquiry across disciplines. We believe genuine innovation and transformative insight arise from unfettered intellectual curiosity, empowering emerging scholars with autonomy, resources, and mentorship to pursue deep investigations.
+  const ourStoryContent = `Nala Center is an independent, nonpartisan international policy and research think tank committed to advancing inclusive, sustainable, and evidence-based solutions to today's most complex challenges. We work at the intersection of research, policy, and practice—bridging academic rigor with real-world impact. Rooted in African perspectives and driven by a commitment to justice, peace, and climate resilience, Nala Center supports emerging scholars and policy thinkers across the continent. We provide the resources, autonomy, and mentorship necessary to conduct high-quality research that informs policymaking and drives meaningful change.
 
-Beyond foundational research, NALA Center focuses on developing inclusive, actionable, and sustainable solutions. Through engaging diverse perspectives, fostering collaboration, and translating knowledge into real-world dialogue, we aim to empower decision-makers and influence global discourse on critical issues, equipping tomorrow’s leaders with visionary insights for an evolving world.`;
+As a think tank, we generate original, policy-relevant research, convene dialogue across sectors, and foster interdisciplinary collaboration. Our work focuses on critical global issues including peace and security, governance, climate change, and human rights—with a strong emphasis on amplifying youth-led and community-grounded solutions. Through publications, collaborative projects, and strategic partnerships, Nala Center contributes to shaping public discourse, empowering decision-makers, and co-creating futures that are just, equitable, and informed by lived realities.`;
 
-  const objectives = [
-    {
-      title: "Produce Rigorous, Impactful Research",
-      points: [
-        "Transparent protocols and peer-review for methodological excellence.",
-        "Prioritize open-access publications for broad reach and uptake.",
-        "Ongoing quality assurance through internal and external advisory committees."
-      ]
-    },
+const objectives = [
+  {
+    title: "Produce Rigorous, Impactful Research",
+    points: [
+      "Transparent protocols and peer-review for methodological excellence.",
+      "Prioritize open-access publications for broad reach and uptake.",
+      "Ongoing quality assurance through internal and external advisory committees."
+    ]
+  },
     {
       title: "Cultivate Emerging Youth Leadership & Innovation",
       points: [
@@ -57,15 +55,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
     }
   ];
 
-  const focusAreas = [
-    "Peace & Security",
-    "Democracy, Governance & Civic Innovation",
-    "Economic Systems, Equity & Inclusive Development",
-    "Sustainable Energy & Climate Resilience",
-    "Migration, Mobility & Human Rights"
-  ];
-
-  const coreValues = [
+const coreValues = [
     {
       name: "Integrity & Transparency",
       description: "Maintaining rigorous, evidence-based research with open communication to build trust.",
@@ -103,37 +93,47 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
     },
   ];
 
-  // State and Ref for Our Story section animation
+  // Animation refs and states
+  const imageRef = useRef(null);
   const ourStoryRef = useRef(null);
+  const [imageIsVisible, setImageIsVisible] = useState(false);
   const [ourStoryIsVisible, setOurStoryIsVisible] = useState(false);
 
+  // Set up observers for both elements
   useEffect(() => {
-    const currentOurStoryRef = ourStoryRef.current; // Capture ref value
-    const observer = new IntersectionObserver(
+    const observers = [];
+    
+    // Image observer
+    const imageObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !imageIsVisible) {
+          setImageIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    // Story observer
+    const storyObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !ourStoryIsVisible) {
           setOurStoryIsVisible(true);
         }
       },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3,
-      }
+      { threshold: 0.3 }
     );
 
-    if (currentOurStoryRef) {
-      observer.observe(currentOurStoryRef);
-    }
+    if (imageRef.current) imageObserver.observe(imageRef.current);
+    if (ourStoryRef.current) storyObserver.observe(ourStoryRef.current);
 
     return () => {
-      if (currentOurStoryRef) { // Use captured ref value in cleanup
-        observer.unobserve(currentOurStoryRef);
-      };
-    }
-  }, [ourStoryIsVisible]);
+      [imageObserver, storyObserver].forEach(observer => {
+        if (observer) observer.disconnect();
+      });
+    };
+  }, [imageIsVisible, ourStoryIsVisible]);
 
-  // State and Ref for Core Values slider
+    // State and Ref for Core Values slider
   const coreValuesSliderRef = useRef<HTMLDivElement>(null);
   const [isCoreValuesLeftDisabled, setIsCoreValuesLeftDisabled] = useState(true);
   const [isCoreValuesRightDisabled, setIsCoreValuesRightDisabled] = useState(false);
@@ -172,122 +172,118 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
       sliderContainer.addEventListener('scroll', handleCoreValuesScroll);
       return () => {
         sliderContainer.removeEventListener('scroll', handleCoreValuesScroll);
-      };
+    };
     }
   }, []);
 
   return (
-    <>
-      <main className="pt-[75px] bg-white text-[#050505]">
-        {/* Hero Section */}
-        <section className="relative bg-[#050505] text-white py-20 md:py-32 overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left md:w-1/2 mb-10 md:mb-0">
-              <h1 className="text-5xl md:text-6xl font-bold font-serif mb-4 leading-tight">About Us</h1>
-              <p className="text-lg md:text-xl max-w-xl">
-                Advancing Knowledge for a Sustainable Future.
-              </p>
-            </div>
-            <div className="md:w-1/2 flex justify-center md:justify-end relative">
-              <Image
-                src="/images/Nala_No_Bg_White.png"
-                alt="NALA Center Logo"
-                width={200}
-                height={200}
-                className="object-contain hidden md:block"
-                priority
-              />
-            </div>
+    <main className="bg-white text-[#050505]">
+      {/* Hero Section */}
+      <section className="relative bg-[#050505] text-white py-20 md:py-32 overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between">
+          <div className="text-center md:text-left md:w-1/2 mb-10 md:mb-0">
+            <h1 className="text-5xl md:text-6xl font-bold font-serif mb-4 leading-tight">About Us</h1>
+            <p className="text-lg md:text-xl max-w-xl">
+              Advancing Knowledge for a Sustainable Future.
+            </p>
           </div>
-        </section>
+          <div className="md:w-1/2 flex justify-center md:justify-end relative">
+            <Image
+              src="/images/Nala_No_Bg_White.png"
+              alt="NALA Center Logo"
+              width={200}
+              height={200}
+              className="object-contain hidden md:block"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
-        {/* Our Story Section */}
+      {/* Our Story Section */}
+      <div className="container mx-auto px-4">
+        {/* Animated Image */}
+        <div 
+          ref={imageRef}
+          className={`relative w-full mb-6 -mt-8 z-30
+            transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+            ${imageIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <div className="w-full md:w-4/5 lg:w-2/3 mx-auto rounded-xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/our_story.jpg"
+              alt="Our Story Illustration showing team collaboration in a modern office setting"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              style={{
+                maxHeight: '500px',
+                borderRadius: '12px'
+              }}
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Animated Text Section */}
         <section
           ref={ourStoryRef}
-          className={`
-            relative container mx-auto px-4 -mt-8 md:-mt-12 z-20 bg-[#f2eae4] rounded-lg shadow-lg overflow-hidden
-            transition-all duration-1000 ease-out
-            ${ourStoryIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-          `}
+          className={`relative mx-auto z-20 bg-[#f2eae4] rounded-lg shadow-lg overflow-hidden
+            transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100
+            ${ourStoryIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-lg overflow-hidden">
-            {/* Our Story Text Section */}
-            <div className="p-8 md:p-12 text-[#050505] order-2 lg:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">Our Story</h2>
-              <div className="text-lg leading-relaxed">
-                {ourStoryContent.split('\n').map((paragraph, index) => (
-                  <p key={index} className="mb-4 last:mb-0">{paragraph}</p>
-                ))}
-              </div>
-            </div>
-            {/* Our Story Image Section */}
-            <div className="order-1 lg:order-2 p-4 md:p-8 flex items-center justify-center relative rounded-lg overflow-hidden">
-              <Image
-                src="/images/our_story.jpg"
-                alt="Our Story Illustration"
-                width={600}
-                height={400}
-                className="w-full h-full object-cover rounded-lg shadow-md"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Mission & Vision Section */}
-        <section className="container mx-auto py-16 px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Mission & Vision</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Mission */}
-            <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md flex flex-col justify-between">
-              <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Mission</h3>
-              <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
-                &ldquo;{mission}&rdquo;
-              </blockquote>
-            </div>
-
-            {/* Vision */}
-            <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md flex flex-col justify-between">
-              <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Vision</h3>
-              <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
-                &ldquo;{vision}&rdquo;
-              </blockquote>
-            </div>
-          </div>
-        </section>
-
-        {/* Objectives Section */}
-        <section className="bg-[#F8F8F8] py-16 px-4">
-          <div className="container mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Objectives</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-center">
-              {objectives.map((objective, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between border-t-4 border-[#050505]">
-                  <h3 className="text-xl font-semibold mb-3">{objective.title}</h3>
-                  <ul className="list-disc list-inside text-gray-700 text-base space-y-2">
-                    {objective.points.map((point, pIndex) => (
-                      <li key={pIndex}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="p-8 md:p-12">
+            <div className="text-lg leading-relaxed">
+              {ourStoryContent.split('\n').map((paragraph, index) => (
+                <p key={index} className="mb-4 last:mb-0">{paragraph}</p>
               ))}
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Focus Areas Section */}
-        <section className="container mx-auto py-16 px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Focus Areas</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {focusAreas.map((area, index) => (
-              <span key={index} className="bg-[#050505] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md">
-                {area}
-              </span>
+      {/* Mission & Vision Section */}
+      <section className="container mx-auto py-16 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Mission & Vision</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Mission Card */}
+          <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Mission</h3>
+            <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
+              &ldquo;{mission}&rdquo;
+            </blockquote>
+          </div>
+          
+          {/* Vision Card */}
+          <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Vision</h3>
+            <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
+              &ldquo;{vision}&rdquo;
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Objectives Section */}
+      <section className="bg-[#f8f8f8] py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Objectives</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {objectives.map((objective, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#050505]">
+                <h3 className="text-xl font-semibold mb-3">{objective.title}</h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  {objective.points.map((point, pIndex) => (
+                    <li key={pIndex}>{point}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Our Core Values Section (now a slider) */}
+      {/* Core Values Section */}
         <section className="bg-[#F8F8F8] py-16 px-4">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Core Values</h2>
@@ -340,7 +336,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

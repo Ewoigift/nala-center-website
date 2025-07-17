@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react'; // Removed useCallback
 
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,6 +24,8 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+
+  // Removed triggerNavbarDropdown state and handleNavbarDropdownTriggered callback
 
   // For Hero Section Rotating Backgrounds
   const backgroundImages = [
@@ -167,37 +169,42 @@ export default function Home() {
   ];
 
   return (
-    // Added pt-[80px] to the main tag to push content below the fixed navbar
-    <main className="pt-[75px]">
+    // Removed pt-[75px] from main tag. The Navbar's height will be handled by layout.tsx
+    <main>
       {/* Hero Section */}
-      {/* Changed height to min-h-screen to take up full viewport height */}
       <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
-        {/* Rotating Backgrounds */}
+        {/* Rotating Backgrounds - positioned below the overlay */}
         {backgroundImages.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt={`NALA Center Hero Background ${index + 1}`}
             layout="fill"
-            objectFit="cover"
+            objectFit="cover" // Ensures image covers the area
+            objectPosition="center" // Centers the image content
             quality={100}
-            // Adjusted opacity to ensure only the non-current image is fully transparent
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
-              index === currentBgIndex ? 'opacity-70' : 'opacity-0'
+              index === currentBgIndex ? 'opacity-100' : 'opacity-0' // Full opacity for current, none for others
             }`}
           />
         ))}
 
-        <div className="absolute inset-0 bg-black opacity-40 z-0"></div> {/* Dark overlay */}
+        {/* Dark overlay - positioned above the rotating backgrounds but below the text */}
+        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
 
-        <div className="relative z-10 text-[#FFFFFF] p-4 md:p-8 max-w-4xl mx-auto rounded-lg"> {/* Changed text color to white */}
+        {/* Text content - positioned above the overlay */}
+        <div className="relative z-20 text-[#FFFFFF] p-4 md:p-8 max-w-4xl mx-auto rounded-lg">
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-4 leading-tight">
             Driving Meaningful and Lasting Change
           </h1>
           <p className="text-lg md:text-xl mb-6">
             Nala Center is dedicated to transformative research, strategic insights, and inclusive dialogue for a sustainable future.
           </p>
-          <Link href="/what-we-do" className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg">
+          {/* Changed back to Link and href to /who-we-are/about-us */}
+          <Link
+            href="/who-we-are/about-us"
+            className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg"
+          >
             Explore Our Work
           </Link>
         </div>
@@ -270,11 +277,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-12">
-          <Link href="/what-we-do/research-publications" className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg">
-            View All Insights
-          </Link>
-        </div>
+        {/* Removed "View All Insights" button as requested */}
       </section>
 
       {/* Upcoming Events & Workshops Section - Now a Carousel */}
@@ -331,11 +334,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center mt-12">
-              <Link href="#" className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg">
-                View All Events
-              </Link>
-            </div>
+            {/* Removed "View All Events" button as requested */}
           </div>
         </section>
 
