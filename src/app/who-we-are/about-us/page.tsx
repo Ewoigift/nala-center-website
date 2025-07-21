@@ -2,7 +2,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link'; // Keep Link if it's used elsewhere in the component, otherwise it can be removed
 import { useRef, useState, useEffect } from 'react';
 
 export default function AboutUsPage() {
@@ -95,7 +94,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
 
   // Set up observers for both elements
   useEffect(() => {
-    // Image observer
     const imageObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !imageIsVisible) {
