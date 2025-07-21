@@ -2,25 +2,27 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link'; // Keep Link if it's used elsewhere in the component, otherwise it can be removed
 import { useRef, useState, useEffect } from 'react';
 
 export default function AboutUsPage() {
   const mission = "To drive impactful change through rigorous research, strategic insights, and inclusive dialogue for a just, peaceful, and sustainable future.";
   const vision = "A premier hub for transformative research, shaping global discourse, and pioneering solutions for a peaceful, sustainable, and inclusive world.";
 
-  const ourStoryContent = `Nala Center is an independent, nonpartisan international policy and research think tank committed to advancing inclusive, sustainable, and evidence-based solutions to today's most complex challenges. We work at the intersection of research, policy, and practice—bridging academic rigor with real-world impact. Rooted in African perspectives and driven by a commitment to justice, peace, and climate resilience, Nala Center supports emerging scholars and policy thinkers across the continent. We provide the resources, autonomy, and mentorship necessary to conduct high-quality research that informs policymaking and drives meaningful change.
+  // Summarized content for Our Story (reduced to two paragraphs)
+  const ourStoryContent = `NALA Center is a youth-led hub pioneering curiosity-driven basic research and advancing epistemological inquiry across disciplines. We believe genuine innovation and transformative insight arise from unfettered intellectual curiosity, empowering emerging scholars with autonomy, resources, and mentorship to pursue deep investigations.
 
-As a think tank, we generate original, policy-relevant research, convene dialogue across sectors, and foster interdisciplinary collaboration. Our work focuses on critical global issues including peace and security, governance, climate change, and human rights—with a strong emphasis on amplifying youth-led and community-grounded solutions. Through publications, collaborative projects, and strategic partnerships, Nala Center contributes to shaping public discourse, empowering decision-makers, and co-creating futures that are just, equitable, and informed by lived realities.`;
+Beyond foundational research, NALA Center focuses on developing inclusive, actionable, and sustainable solutions. Through engaging diverse perspectives, fostering collaboration, and translating knowledge into real-world dialogue, we aim to empower decision-makers and influence global discourse on critical issues, equipping tomorrow’s leaders with visionary insights for an evolving world.`;
 
-const objectives = [
-  {
-    title: "Produce Rigorous, Impactful Research",
-    points: [
-      "Transparent protocols and peer-review for methodological excellence.",
-      "Prioritize open-access publications for broad reach and uptake.",
-      "Ongoing quality assurance through internal and external advisory committees."
-    ]
-  },
+  const objectives = [
+    {
+      title: "Produce Rigorous, Impactful Research",
+      points: [
+        "Transparent protocols and peer-review for methodological excellence.",
+        "Prioritize open-access publications for broad reach and uptake.",
+        "Ongoing quality assurance through internal and external advisory committees."
+      ]
+    },
     {
       title: "Cultivate Emerging Youth Leadership & Innovation",
       points: [
@@ -55,7 +57,7 @@ const objectives = [
     }
   ];
 
-const coreValues = [
+  const coreValues = [
     {
       name: "Integrity & Transparency",
       description: "Maintaining rigorous, evidence-based research with open communication to build trust.",
@@ -101,7 +103,7 @@ const coreValues = [
 
   // Set up observers for both elements
   useEffect(() => {
-    const observers = [];
+    // Removed 'const observers = [];' as it was unused.
     
     // Image observer
     const imageObserver = new IntersectionObserver(
@@ -127,9 +129,15 @@ const coreValues = [
     if (ourStoryRef.current) storyObserver.observe(ourStoryRef.current);
 
     return () => {
-      [imageObserver, storyObserver].forEach(observer => {
-        if (observer) observer.disconnect();
-      });
+      // Ensure observer instances are correctly captured for cleanup
+      const currentImageRef = imageRef.current;
+      const currentOurStoryRef = ourStoryRef.current;
+
+      if (currentImageRef) imageObserver.unobserve(currentImageRef);
+      if (currentOurStoryRef) storyObserver.unobserve(currentOurStoryRef);
+
+      imageObserver.disconnect();
+      storyObserver.disconnect();
     };
   }, [imageIsVisible, ourStoryIsVisible]);
 
