@@ -46,7 +46,7 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         {/* Removed text-center for left alignment */}
-        <div className="text-left">
+        <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Quick Links</h3>
           <ul className="space-y-2">
             <li>
@@ -80,7 +80,7 @@ export default function Footer() {
 
         {/* Column 3: Contact Information */}
         {/* Removed text-center for left alignment */}
-        <div className="text-left">
+        <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Contact</h3>
           <p className="text-sm mb-2">
             P.O. Box 12345-00100, Nairobi, Kenya
@@ -116,7 +116,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400">
-        &copy; {currentYear} NALA Center. All rights reserved.
+        &copy; {currentYear} Nala Center. All rights reserved.
       </div>
     </footer>
   );
