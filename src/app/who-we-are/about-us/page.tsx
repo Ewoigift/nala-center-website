@@ -2,7 +2,22 @@
 'use client';
 
 import Image from 'next/image';
+// Removed: import Link from 'next/link'; // Link is not used in this component
+
 import { useRef, useState, useEffect } from 'react';
+
+// Import Font Awesome components and icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBalanceScale, // For Integrity & Transparency
+  faUsers,        // For Inclusivity & Diversity
+  faLightbulb,    // For Innovation & Analytical Rigor
+  faHandshake,    // For Collaboration & Partnership
+  faShieldHalved, // For Equity & Social Justice
+  faLeaf,         // For Sustainability & Resilience
+  faChartLine     // For Non-Partisanship & Independence
+} from '@fortawesome/free-solid-svg-icons';
+
 
 export default function AboutUsPage() {
   const mission = "To drive impactful change through rigorous research, strategic insights, and inclusive dialogue for a just, peaceful, and sustainable future.";
@@ -39,7 +54,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
       ]
     },
     {
-      name: "Lead & Shape Global Discourse",
+      title: "Lead & Shape Global Discourse", // Corrected 'name' to 'title'
       points: [
         "Quarterly Thought Leadership series (op-eds, blogs, podcasts).",
         "Social media campaigns and webinars to engage global youth audiences.",
@@ -52,37 +67,37 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
     {
       name: "Integrity & Transparency",
       description: "Maintaining rigorous, evidence-based research with open communication to build trust.",
-      // icon: faBalanceScale // Example icon
+      icon: faBalanceScale // Example icon
     },
     {
       name: "Inclusivity & Diversity",
       description: "Embracing and empowering diverse voices across cultures, disciplines, and communities.",
-      // icon: faUsers // Example icon
+      icon: faUsers // Example icon
     },
     {
       name: "Innovation & Analytical Rigor",
       description: "Applying interdisciplinary methods and creative problem-solving.",
-      // icon: faLightbulb // Example icon
+      icon: faLightbulb // Example icon
     },
     {
       name: "Collaboration & Partnership",
       description: "Building strategic alliances across academia, policy, and practice.",
-      // icon: faHandshake // Example icon
+      icon: faHandshake // Example icon
     },
     {
       name: "Equity & Social Justice",
       description: "Advocating for fairness, human rights, and ethical practices.",
-      // icon: faShieldHalved // Example icon
+      icon: faShieldHalved // Example icon
     },
     {
       name: "Sustainability & Resilience",
       description: "Promoting long-term environmental, economic, and social sustainability.",
-      // icon: faLeaf // Example icon
+      icon: faLeaf // Example icon
     },
     {
       name: "Non-Partisanship & Independence",
       description: "Ensuring objectivity free from political or special interest influences.",
-      // icon: faChartLine // Example icon
+      icon: faChartLine // Example icon
     },
   ];
 
@@ -94,6 +109,11 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
 
   // Set up observers for both elements
   useEffect(() => {
+    // Capture current ref values inside the effect for cleanup
+    const currentImageRef = imageRef.current;
+    const currentOurStoryRef = ourStoryRef.current;
+
+    // Image observer
     const imageObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !imageIsVisible) {
@@ -113,21 +133,18 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
       { threshold: 0.3 }
     );
 
-    if (imageRef.current) imageObserver.observe(imageRef.current);
-    if (ourStoryRef.current) storyObserver.observe(ourStoryRef.current);
+    if (currentImageRef) imageObserver.observe(currentImageRef);
+    if (currentOurStoryRef) storyObserver.observe(currentOurStoryRef);
 
     return () => {
-      // Ensure observer instances are correctly captured for cleanup
-      const currentImageRef = imageRef.current;
-      const currentOurStoryRef = ourStoryRef.current;
-
       if (currentImageRef) imageObserver.unobserve(currentImageRef);
       if (currentOurStoryRef) storyObserver.unobserve(currentOurStoryRef);
 
       imageObserver.disconnect();
       storyObserver.disconnect();
     };
-  }, [imageIsVisible, ourStoryIsVisible]);
+  }, [imageIsVisible, ourStoryIsVisible]); // Added imageIsVisible and ourStoryIsVisible to dependencies
+
 
     // State and Ref for Core Values slider
   const coreValuesSliderRef = useRef<HTMLDivElement>(null);
@@ -292,13 +309,14 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
               >
                 {coreValues.map((value, index) => (
                   <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
-                    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center min-h-[200px] justify-center">
-                      {/* Optional: Add Font Awesome Icon here if you uncomment the imports */}
-                      {/* {value.icon && (
+                    {/* Added hover effects and ensured consistent height */}
+                    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center h-[250px] justify-center
+                                transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
+                      {value.icon && ( // Render icon only if it exists
                         <div className="text-[#050505] text-4xl mb-4">
                           <FontAwesomeIcon icon={value.icon} />
                         </div>
-                      )} */}
+                      )}
                       <h3 className="text-xl font-semibold mb-2">{value.name}</h3>
                       <p className="text-gray-700 text-base leading-relaxed">{value.description}</p>
                     </div>

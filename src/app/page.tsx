@@ -198,7 +198,7 @@ export default function Home() {
             Driving Meaningful and Lasting Change
           </h1>
           <p className="text-lg md:text-xl mb-6">
-            Nala Center is dedicated to transformative research, strategic insights, and inclusive dialogue for a sustainable future.
+            Nala center is dedicated to transformative research, strategic insights, and inclusive dialogue for a sustainable future.
           </p>
           {/* Changed back to Link and href to /who-we-are/about-us */}
           <Link
@@ -343,7 +343,7 @@ export default function Home() {
           <div className="container mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest research, insights, and event updates from Nala Center.
+              Subscribe to our newsletter for the latest research, insights, and event updates from Nala center.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
               <input

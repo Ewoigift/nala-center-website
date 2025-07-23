@@ -17,11 +17,11 @@ const whoWeAreLinks = [
 
 // Data for Focus Areas dropdown
 const focusAreasLinks = [
-  { name: "Peace & Security", href: "/focus-areas/peace-security", imgSrc: '/images/focus-areas/demo_image.jpg' },
-  { name: "Democracy, Governance & Civic Innovation", href: "/focus-areas/democracy-governance", imgSrc: '/images/focus-areas/demo_image.jpg' },
-  { name: "Economic Systems, Equity & Inclusive Development", href: "/focus-areas/economic-systems", imgSrc: '/images/focus-areas/demo_image.jpg' },
-  { name: "Sustainable Energy & Climate Resilience", href: "/focus-areas/sustainable-energy", imgSrc: '/images/focus-areas/demo_image.jpg' },
-  { name: "Migration, Mobility & Human Rights", href: "/focus-areas/migration-human-rights", imgSrc: '/images/focus-areas/demo_image.jpg' },
+  { name: "Peace & Security", href: "/focus-areas/peace-security", imgSrc: '/images/focus-areas/peace-security.jpg' },
+  { name: "Democracy, Governance & Civic Innovation", href: "/focus-areas/democracy-governance", imgSrc: '/images/focus-areas/democracy-governance.jpg' },
+  { name: "Economic Systems, Equity & Inclusive Development", href: "/focus-areas/economic-systems", imgSrc: '/images/focus-areas/economic-systems.jpg' },
+  { name: "Sustainable Energy & Climate Resilience", href: "/focus-areas/sustainable-energy", imgSrc: '/images/focus-areas/sustainable-energy.jpg' },
+  { name: "Migration, Mobility & Human Rights", href: "/focus-areas/migration-human-rights", imgSrc: '/images/focus-areas/migration-human-rights.jpg' },
 ];
 
 // Data for What We Do dropdown
@@ -245,22 +245,24 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
             `}
           >
             <div className="container mx-auto relative z-10">
-              <div className="flex justify-between items-start gap-8">
+              <div className="grid grid-cols-4 gap-8"> {/* Changed to grid and grid-cols-4 */}
                 {item.links.map((subItem) => (
                   <Link
                     key={subItem.name}
                     href={subItem.href}
-                    className="group flex flex-col items-center p-3 rounded-md hover:bg-[#1F1F1F] transition-colors duration-200 text-center flex-grow flex-shrink-0 basis-0"
-                    style={{ minWidth: '160px' }}
+                    className="group flex flex-col items-center p-3 rounded-md hover:bg-[#1F1F1F] transition-colors duration-200 text-center"
                     onClick={() => setOpenDesktopDropdown(null)}
                   >
-                    <Image
-                      src={subItem.imgSrc}
-                      alt={subItem.name}
-                      width={160}
-                      height={100}
-                      className="rounded-md object-cover mb-2"
-                    />
+                    {/* Standardized image dimensions using a wrapper div and layout="fill" */}
+                    <div className="relative w-[160px] h-[90px] overflow-hidden rounded-md mb-2">
+                      <Image
+                        src={subItem.imgSrc}
+                        alt={subItem.name}
+                        layout="fill" // Ensures the image fills the parent div
+                        objectFit="cover" // Crops the image to cover the area
+                        className="" // No additional classes needed here as rounded-md is on parent div
+                      />
+                    </div>
                     <span className="text-[#FFFFFF] font-medium group-hover:text-[#FFFFFF] text-base">{subItem.name}</span>
                   </Link>
                 ))}
