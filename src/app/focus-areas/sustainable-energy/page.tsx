@@ -102,12 +102,14 @@ export default function SustainableEnergyPage() {
     {
       type: 'spotlight',
       title: 'Renewable Energy in Africa',
+      description: 'Highlighting advancements and potential of renewable energy sources across the African continent.', // Added description
       linkText: 'Read more',
       linkHref: '#',
     },
     {
       type: 'spotlight',
       title: 'The Climate Crisis and Food Insecurity in Africa',
+      description: 'Examining the profound impact of climate change on food systems and security in various African regions.', // Added description
       linkText: 'Read more',
       linkHref: '#',
     },
