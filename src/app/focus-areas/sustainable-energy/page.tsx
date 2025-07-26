@@ -171,7 +171,8 @@ export default function SustainableEnergyPage() {
       </section>
 
       {/* Overlapping Content Box */}
-      <div className="absolute top-[30vh] left-1/2 -translate-x-1/2 w-full max-w-4xl z-20"> {/* Positioned absolutely to overlap */}
+      {/* Adjusted top position for mobile and desktop, added mx-4 for mobile side padding */}
+      <div className="absolute top-[40vh] md:top-[30vh] left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-4xl z-20"> {/* Adjusted top for mobile, added w-[calc(100%-2rem)] for side padding */}
         <div className="text-white p-4 md:p-8 mx-auto rounded-lg bg-[#7BB661] bg-opacity-90 shadow-lg"> {/* Added shadow-lg, ensured rounded-lg */}
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-4 leading-tight">{pageTitle}</h1>
           <p className="text-lg md:text-xl">{heroDescription}</p>
@@ -179,7 +180,8 @@ export default function SustainableEnergyPage() {
       </div>
 
       {/* Overview Section - needs top padding to avoid content being hidden by the overlapping box */}
-      <section className="container mx-auto pt-[150px] pb-16 px-4"> {/* Added substantial pt to clear the overlapping box */}
+      {/* Adjusted pt for mobile */}
+      <section className="container mx-auto pt-[100px] md:pt-[150px] pb-16 px-4"> {/* Adjusted pt for mobile to accommodate overlapping box */}
         <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-700">
           <p>{overviewContent}</p>
         </div>
