@@ -9,6 +9,7 @@ import {
   faInstagram,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import React, { use } from 'react'; // Import 'use' from 'react'
 
 // Dummy data for a single member (in a real app, this would come from an API or CMS)
 const allTeamMembers = [
@@ -123,14 +124,15 @@ Antony&apos;s career is marked by a strong commitment to interdisciplinary colla
 ];
 
 interface TeamMemberPageProps {
-  params: {
+  params: Promise<{
     slug: string; // The slug from the URL, e.g., 'bravin-onditi'
-  };
+  }>;
 }
 
 export default function TeamMemberPage({ params }: TeamMemberPageProps) {
   const router = useRouter();
-  const { slug } = params;
+  // Unwrap the params Promise using React.use()
+  const { slug } = use(params);
 
   // Find the member based on the slug
   const member = allTeamMembers.find((m) => m.slug === slug);
