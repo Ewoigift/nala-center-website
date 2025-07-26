@@ -24,9 +24,9 @@ Bravin holds a degree in International Relations and Diplomacy from Zetech Unive
 
 Bravin has authored a number of articles and policy papers on climate change, peace, and security in the Horn of Africa. His work reflects a deep commitment to advancing inclusive and sustainable solutions to the region&apos;s most pressing challenges.`,
     socials: {
-      linkedin: '#', // Changed to placeholder
-      x: '#', // Changed to placeholder
-      instagram: '#', // Changed to placeholder
+      linkedin: 'https://www.linkedin.com/in/bravin-onditi-2141981b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ', 
+      x: 'https://www.instagram.com/bravinveer?igsh=eTAzeXoydDhycHl4', 
+      instagram: 'https://x.com/BravinOnditi?t=GihWABFNCIL5keXen_4Zew&s=08', 
     },
   },
   {

@@ -26,10 +26,10 @@ const focusAreasLinks = [
 
 // Data for What We Do dropdown
 const whatWeDoLinks = [
-  { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/demo_image.jpg' },
-  { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/demo_image.jpg' },
-  { name: 'Capacity Building & Training', href: '/images/what-we-do/capacity-building', imgSrc: '/images/what-we-do/demo_image.jpg' },
-  { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/demo_image.jpg' },
+  { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/research-publication.jpg' },
+  { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/policy-engagement.jpg' },
+  { name: 'Capacity Building & Training', href: '/images/what-we-do/capacity-building', imgSrc: '/images/what-we-do/capacity-building.jpg' },
+  { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/multimedia-hub.jpg' },
 ];
 
 // Data for Get Involved dropdown

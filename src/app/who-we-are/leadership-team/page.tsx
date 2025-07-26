@@ -39,7 +39,7 @@ export default function LeadershipTeamPage() {
     {
       name: 'Edwin Mwangi', // Corrected name to Mwangi
       designation: 'Head of Operations',
-      imageSrc: '/images/team/edwin-maina.jpg', // Placeholder image path
+      imageSrc: '/images/team/edwin-maina.png', // Placeholder image path
       slug: 'edwin-mwangi', // Corrected slug to Mwangi
     },
     {
