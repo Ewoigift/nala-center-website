@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function DemocracyGovernancePage() {
-  const heroImageSrc = '/images/focus-areas/democracy-governance.jpg'; // Still defined but not used in Hero Section
+  // const heroImageSrc = '/images/focus-areas/democracy-governance.jpg'; // Commented out as it's not used
   const pageTitle = 'Democracy, Governance & Civic Innovation';
   const heroDescription = 'Pioneering solutions for accountable governance and enhanced civic engagement.';
   const themeColor = '#6CAED9'; // Specific color for Democracy, Governance & Civic Innovation
