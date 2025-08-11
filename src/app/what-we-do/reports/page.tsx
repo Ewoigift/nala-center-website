@@ -4,7 +4,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen, FileText, Download, CalendarDays, Tag } from 'lucide-react';
+import { BookOpen, Download, CalendarDays, Tag } from 'lucide-react';
 
 const primaryColor = "#6CAED9";
 const textColor = "#2F2F2F";
@@ -118,7 +118,7 @@ export default function ReportsPage() {
           Looking for a Specific Report?
         </h2>
         <p className="text-lg max-w-2xl mx-auto mb-6">
-          If you can't find what you're looking for, please get in touch with our team.
+          If you can&apos;t find what you&apos;re looking for, please get in touch with our team.
         </p>
         <Link href="#" className={`bg-white text-[${primaryColor}] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105`}>
           Contact Us

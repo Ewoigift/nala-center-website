@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Handshake, Briefcase,Landmark, Rocket, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Handshake, Briefcase,Landmark, Rocket, GraduationCap,} from 'lucide-react';
 
 const primaryColor = "#6CAED9";
 const textColor = "#2F2F2F";
@@ -63,31 +63,20 @@ export default function TrainingPage() {
   const [isLeftDisabled, setIsLeftDisabled] = useState(true);
   const [isRightDisabled, setIsRightDisabled] = useState(false);
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      const { current } = scrollContainerRef;
-      const cardWidth = current.children[0].clientWidth + 24; // Card width + gap
-      const currentScroll = current.scrollLeft;
-      const scrollWidth = current.scrollWidth;
-      const clientWidth = current.clientWidth;
-
-      if (direction === 'right') {
-        const newScrollPosition = currentScroll + cardWidth;
-        // If at the end, jump to the start to create a loop
-        if (newScrollPosition >= scrollWidth - clientWidth) {
-          current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          current.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-      } else {
-        const newScrollPosition = currentScroll - cardWidth;
-        // If at the beginning, jump to the end to create a loop
-        if (newScrollPosition <= 0) {
-          current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
-        } else {
-          current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-        }
-      }
+      scrollContainerRef.current.scrollBy({
+        left: -(scrollContainerRef.current.offsetWidth / 3),
+        behavior: 'smooth',
+      });
+    }
+  };
+   const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: scrollContainerRef.current.offsetWidth / 3,
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -198,18 +187,28 @@ export default function TrainingPage() {
           </div>
 
           {/* Slider navigation buttons */}
-          <button
-            onClick={() => scroll('left')}
-            className={`absolute top-1/2 -left-4 transform -translate-y-1/2 p-3 rounded-full bg-white shadow-lg transition-all duration-300`}
-          >
-            <ChevronLeft className={`w-6 h-6 text-[${primaryColor}]`} />
-          </button>
-          <button
-            onClick={() => scroll('right')}
-            className={`absolute top-1/2 -right-4 transform -translate-y-1/2 p-3 rounded-full bg-white shadow-lg transition-all duration-300`}
-          >
-            <ChevronRight className={`w-6 h-6 text-[${primaryColor}]`} />
-          </button>
+        <div className="flex justify-center mt-8 space-x-8">
+                <button
+                  onClick={scrollLeft}
+                  disabled={isLeftDisabled}
+                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                    isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                  }`}
+                  aria-label="Scroll left"
+                >
+                  &larr;
+                </button>
+                <button
+                  onClick={scrollRight}
+                  disabled={isRightDisabled}
+                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                    isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                  }`}
+                  aria-label="Scroll right"
+                >
+                  &rarr;
+                </button>
+              </div>
         </div>
       </section>
 
@@ -219,7 +218,7 @@ export default function TrainingPage() {
           Need a Custom Training Program?
         </h2>
         <p className="text-lg max-w-2xl mx-auto mb-6">
-          We can design bespoke workshops and training sessions tailored to your organization's specific needs. Get in touch to discuss your requirements.
+          We can design bespoke workshops and training sessions tailored to your organization&apos;s specific needs. Get in touch to discuss your requirements.
         </p>
         <Link href="#" className={`bg-white text-[${primaryColor}] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105`}>
           Contact Us
