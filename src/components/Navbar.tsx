@@ -8,10 +8,8 @@ import { useState, useEffect, useRef } from 'react';
 
 // Data for Who We Are dropdown
 const whoWeAreLinks = [
-  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/demo_image.jpg' },
+  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/about-us.png' },
   { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/demo_image.jpg' },
-  { name: 'Our Partners', href: '/who-we-are/our-partners', imgSrc: '/images/who-we-are/demo_image.jpg' },
-  { name: 'Join Us', href: '/who-we-are/join-us', imgSrc: '/images/who-we-are/demo_image.jpg' },
 ];
 
 
@@ -28,15 +26,13 @@ const focusAreasLinks = [
 const whatWeDoLinks = [
   { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/research-publication.jpg' },
   { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/policy-engagement.jpg' },
-  { name: 'Capacity Building & Training', href: '/images/what-we-do/capacity-building', imgSrc: '/images/what-we-do/capacity-building.jpg' },
-  { name: 'Multimedia Hub', href: '/what-we-do/multimedia-hub', imgSrc: '/images/what-we-do/multimedia-hub.jpg' },
+  { name: 'Training', href: '/what-we-do/training', imgSrc: '/images/what-we-do/capacity-building.jpg' },
+  { name: 'Reports', href: '/what-we-do/reports', imgSrc: '/images/what-we-do/multimedia-hub.jpg' },
 ];
 
 // Data for Get Involved dropdown
 const getInvolvedLinks = [
-  { name: 'Support Our Work', href: '/get-involved/support-us', imgSrc: '/images/get-involved/demo_image.jpg' },
-  { name: 'Collaborations', href: '/get-involved/collaborations', imgSrc: '/images/get-involved/demo_image.jpg' },
-  { name: 'Volunteer & Intern', href: '/get-involved/volunteer', imgSrc: '/images/get-involved/demo_image.jpg' },
+  { name: 'Careers', href: '/get-involved/careers', imgSrc: '/images/get-involved/demo_image.jpg' },
 ];
 
 // Define props for Navbar to accept a callback for height
