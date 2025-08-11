@@ -65,7 +65,7 @@ export default function PolicyPapersPage() {
           Policy Papers
         </h1>
         <p className="text-lg max-w-2xl mx-auto">
-          Our policy papers provide data-driven insights and strategic recommendations to inform policymakers and stakeholders on key issues affecting Africa's development and stability.
+          Our policy papers provide data-driven insights and strategic recommendations to inform policymakers and stakeholders on key issues affecting Africa&apos;s development and stability.
         </p>
       </header>
 
