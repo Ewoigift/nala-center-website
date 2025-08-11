@@ -129,7 +129,7 @@ Antony's career is marked by a strong commitment to interdisciplinary collaborat
   // New Associate Fellow
   {
     name: 'Isaac Mureithi',
-    designation: 'Oppenheimer Impact Scholar',
+    designation: 'Climate Policy Expert',
     imageSrc:'/images/team/isaac-mureithi.jpg',
     slug: 'isaac-mureithi',
     bio: `Isaac is an Oppenheimer Impact Scholar at the University of Exeter and a Research Fellow at the African Wildlife Foundation, driving research on conservation governance and pastoralism’s sedentarisation in Eastern Africa. As an emerging leader in sustainable development, he leverages his background in BSc Actuarial Science and MSc Conservation & Biodiversity to design resilient solutions by modelling complex socio-ecological systems. His hands-on experience in asset management, climate policy and disaster risk financing is amplified by his roles within the LDYC, CYMG, GYBN & KDMECC, championing inclusive, youth-led policy development.`,
