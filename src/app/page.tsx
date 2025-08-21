@@ -375,19 +375,15 @@ export default function Home() {
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
               {/* LinkedIn Icon */}
-              <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#0077B5] text-3xl transition-colors duration-300" aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              {/* Facebook Icon */}
-              <a href="https://facebook.com/nala-center" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Facebook">
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
               {/* Instagram Icon */}
-              <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Instagram">
+              <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#E4405F] text-3xl transition-colors duration-300" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="WhatsApp">
+              <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#25D366] text-3xl transition-colors duration-300" aria-label="WhatsApp">
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
             </div>

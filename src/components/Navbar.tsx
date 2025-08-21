@@ -9,14 +9,17 @@ import { useState, useEffect, useRef } from 'react';
 // Data for Who We Are dropdown
 const whoWeAreLinks = [
   { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/about-us.png' },
-  { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/demo_image.jpg' },
+  { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/leadership-team.jpg' },
+  { name: 'Associate-fellows', href: '/who-we-are/associate-fellows', imgSrc: '/images/who-we-are/about-us.png' },
+  { name: 'Advisory Board', href: '/who-we-are/advisory-board', imgSrc: '/images/who-we-are/advisory-board.jpg' },
+  {name:'Board of Directors', href:'/who-we-are/board-of-directors', imgSrc:'/images/who-we-are/board-directors.jpg'}
 ];
 
 
 // Data for Focus Areas dropdown
 const focusAreasLinks = [
-  { name: "Peace & Security", href: "/focus-areas/peace-security", imgSrc: '/images/focus-areas/peace-security.jpg' },
-  { name: "Democracy, Governance & Civic Innovation", href: "/focus-areas/democracy-governance", imgSrc: '/images/focus-areas/democracy-governance.jpg' },
+  { name: "Peace & Security", href: "/focus-areas/peace-security", imgSrc: '/images/focus-areas/peace_security.jpg' },
+  { name: "Democracy, Governance & Civic Innovation", href: "/focus-areas/democracy-governance", imgSrc: '/images/focus-areas/democracy_governance.jpg' },
   { name: "Economic Systems, Equity & Inclusive Development", href: "/focus-areas/economic-systems", imgSrc: '/images/focus-areas/economic-systems.jpg' },
   { name: "Sustainable Energy & Climate Resilience", href: "/focus-areas/sustainable-energy", imgSrc: '/images/focus-areas/sustainable-energy.jpg' },
   { name: "Migration, Mobility & Human Rights", href: "/focus-areas/migration-human-rights", imgSrc: '/images/focus-areas/migration-human-rights.jpg' },
