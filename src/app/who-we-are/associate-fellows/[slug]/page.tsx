@@ -36,9 +36,20 @@ const allAssociateFellows = [
       email: '#',
       linkedin: 'https://www.linkedin.com/in/denis-muniu-7721b318a/',
       x: '#',
- 
     },
-}
+},
+{
+name:'Rahma Oda',
+designation:'Health Policy and Systems Expert',
+imageSrc:'/images/team/Rahma-Oda.png',
+slug:'rahma-oda',
+bio:'Rahma Oda is a health researcher with interest in narrative medicine. She has experience working in governance, peacebuilding, climate change, education, and emergency response programming across Africa. Much of her work has focused on women and vulnerable populations in the coastal and northern regions of Kenya. Rahma is also a content writer at The New Global Order, where her writings help counter misinformation about the African landscape. Currently, she is conducting research on women’s stories and their experiences in accessing the right to healthcare, leveraging her background in English Literatue(B.A. from Pwani University).',
+socials: {
+      email: '#',
+      linkedin: 'https://www.linkedin.com/in/rahma-oda-04583b233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
+      x: 'https://x.com/RahmaOda?t=dImGk3Su5rraGHL8QVEVgQ&s=09',
+    },
+},
 ];
 
 

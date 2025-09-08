@@ -18,6 +18,12 @@ designation:'Foreign Policy, Security, and Defence Expert',
 imageSrc: '/images/team/denis-muniu.png',
 slug:'denis-muniu',
     },
+    {
+      name:'Rahma Oda',
+      designation:'Health Policy and Systems Expert',
+imageSrc:'/images/team/Rahma-Oda.png',
+      slug:'rahma-oda',
+    },
   ];
 
   return (
