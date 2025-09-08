@@ -26,6 +26,19 @@ const allAssociateFellows = [
       bluesky: 'https://bsky.app/profile/ismurn.bsky.social',
     },
   },
+{
+  name:'Denis Muniu',
+  designation:'Foreign Policy, Security, and Defence Expert',
+  imageSrc:'/images/team/denis-muniu.png',
+  slug:'denis-muniu',
+   bio: `Mr. Denis Muniu is a Research Fellow at the Global Centre for Policy and Strategy, where he focuses on foreign policy, security, and defense. He previously served at the Ministry of Foreign and Diaspora Affairs, and at the Ministry of East African Community, Arid and Semi-Arid Lands (ASALs), and Regional Development. His research interests center on peace, security, and foreign policy. Denis holds a BA in International Relations and Diplomacy from the Technical University of Kenya and is currently pursuing a Master of Arts in International Relations at Kenyatta University.`,
+    socials: {
+      email: '#',
+      linkedin: 'https://www.linkedin.com/in/denis-muniu-7721b318a/',
+      x: '#',
+ 
+    },
+}
 ];
 
 

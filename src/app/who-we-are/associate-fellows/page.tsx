@@ -12,6 +12,12 @@ export default function AssociateFellowsPage() {
       imageSrc: '/images/team/isaac-mureithi.jpg',
       slug: 'isaac-mureithi',
     },
+    {
+      name:'Denis Muniu',
+designation:'Foreign Policy, Security, and Defence Expert',
+imageSrc: '/images/team/denis-muniu.png',
+slug:'denis-muniu',
+    },
   ];
 
   return (

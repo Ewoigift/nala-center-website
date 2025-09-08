@@ -77,12 +77,12 @@ In addition to his operational responsibilities, Edwin is a strong advocate for 
       },
   },
   {
-name: 'Brian Serem',
+      name: 'Brian Serem',
       designation: 'Board Member',
       imageSrc: '/images/team/brian_serem.png', 
       slug: 'brian-serem',
       bio: '',
-     socials: {
+      socials: {
         linkedin: '#',
         x: '#',
         instagram: '#',
