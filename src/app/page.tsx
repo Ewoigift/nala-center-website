@@ -276,7 +276,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Removed "View All Insights" button as requested */}
       </section>
 
       {/* Upcoming Events & Workshops Section - Now a Carousel */}

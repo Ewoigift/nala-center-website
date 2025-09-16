@@ -35,7 +35,7 @@ const whatWeDoLinks = [
 
 // Data for Get Involved dropdown
 const getInvolvedLinks = [
-  { name: 'Careers', href: '/get-involved/careers', imgSrc: '/images/get-involved/demo_image.jpg' },
+  { name: 'Careers', href: '/get-involved/careers', imgSrc: '/images/get-involved/careers-hero.jpg' },
 ];
 
 // Define props for Navbar to accept a callback for height
