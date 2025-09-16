@@ -1,21 +1,15 @@
 'use client';
 
 // components/CareersPage.tsx
-
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Briefcase, UserRound } from 'lucide-react';
 
 export default function CareersPage() {
-  // Specify the type for the state that holds the selected file
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  
-  // Specify the type for the ref to the file input element
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const heroImageSrc = '/images/get-involved/careers-hero.jpg'; // Replace with the actual image URL
 
-  // Type the event from the file input element
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     setSelectedFile(file || null);
@@ -24,13 +18,12 @@ export default function CareersPage() {
   const handleSendEmail = () => {
     const subject = 'Expression of Interest for Nala Center';
     const body = 'Dear Nala Center, \n\nI am writing to express my interest in future career opportunities at your organization. Please find my CV attached.\n\nSincerely,\n[Your Name]';
-    const mailtoLink = `mailto:nalacenter254@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:careers@nalacenter.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
   return (
     <main className="bg-white text-[#050505] relative">
-      {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden" aria-label="Hero section with careers at Nala Center">
         <Image
           src={heroImageSrc}
@@ -54,7 +47,6 @@ export default function CareersPage() {
       </div>
       
       <div className="container mx-auto px-4 py-16">
-        {/* About Section */}
         <div className="bg-[#EBEBEB] rounded-xl p-8 md:p-12 mb-16 shadow-lg">
           <p className="text-lg leading-relaxed text-[#2F2F2F]">
             As a research and policy think tank, our strength lies in the dedication and expertise of our people. We bring together researchers, analysts, and practitioners who are passionate about addressing the most pressing issues of our time, from peace and security to governance, climate change, and human mobility.
@@ -63,9 +55,7 @@ export default function CareersPage() {
             While we may not always have active vacancies, we are continually building a community of talented and committed individuals who share our vision. Joining Nala Center means becoming part of a dynamic environment where:
           </p>
           
-          {/* Cards Section */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
             <div className="bg-[#FFFFFF] rounded-xl p-8 shadow-md border border-[#EBEBEB] transition-transform duration-300 hover:scale-105">
               <div className="flex items-center mb-4">
                 <h3 className="text-xl font-semibold text-[#050505] font-serif">Research meets impact</h3>
@@ -75,7 +65,6 @@ export default function CareersPage() {
               </p>
             </div>
             
-            {/* Card 2 */}
             <div className="bg-[#FFFFFF] rounded-xl p-8 shadow-md border border-[#EBEBEB] transition-transform duration-300 hover:scale-105">
               <div className="flex items-center mb-4">
                 <h3 className="text-xl font-semibold text-[#050505] font-serif">Collaboration is key</h3>
@@ -85,7 +74,6 @@ export default function CareersPage() {
               </p>
             </div>
 
-            {/* Card 3 */}
             <div className="bg-[#FFFFFF] rounded-xl p-8 shadow-md border border-[#EBEBEB] transition-transform duration-300 hover:scale-105">
               <div className="flex items-center mb-4">
                 <h3 className="text-xl font-semibold text-[#050505] font-serif">Growth is encouraged</h3>
@@ -97,9 +85,6 @@ export default function CareersPage() {
           </div>
         </div>
 
-        ---
-
-        {/* Future Opportunities Section */}
         <div className="bg-[#EBEBEB] rounded-xl p-8 md:p-12 mb-16 shadow-lg">
           <div className="flex items-center mb-6">
             <Briefcase size={40} className="text-[#050505] mr-4" />
@@ -110,7 +95,6 @@ export default function CareersPage() {
           </p>
         </div>
 
-        {/* Expressions of Interest Section with CTA */}
         <div className="bg-[#2F2F2F] rounded-xl p-8 md:p-12 shadow-xl text-[#F9F9F9]">
           <div className="flex items-center mb-6 text-white">
             <UserRound size={40} className="mr-4" />
@@ -132,8 +116,13 @@ export default function CareersPage() {
                    file:bg-white file:text-[#050505] hover:file:bg-[#EBEBEB]
                    transition-colors duration-300 cursor-pointer"
               />
+              {selectedFile && (
+                <p className="mt-2 text-sm text-[#F9F9F9] italic">
+                  Selected file: {selectedFile.name}
+                </p>
+              )}
               <p className="mt-4 text-sm italic">
-                Note: Clicking "Send Your CV" will open your email client. Please manually attach the file before sending.
+                Note: Clicking 'Send Your CV' will open your email client. Please manually attach the file before sending.
               </p>
             </div>
             <button
