@@ -18,7 +18,7 @@ export default function CareersPage() {
   const handleSendEmail = () => {
     const subject = 'Expression of Interest for Nala Center';
     const body = 'Dear Nala Center, \n\nI am writing to express my interest in future career opportunities at your organization. Please find my CV attached.\n\nSincerely,\n[Your Name]';
-    const mailtoLink = `mailto:careers@nalacenter.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:nalacenter@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
@@ -122,7 +122,7 @@ export default function CareersPage() {
                 </p>
               )}
               <p className="mt-4 text-sm italic">
-                Note: Clicking 'Send Your CV' will open your email client. Please manually attach the file before sending.
+                Note: Clicking &apos;Send Your CV&apos; will open your email client. Please manually attach the file before sending.
               </p>
             </div>
             <button

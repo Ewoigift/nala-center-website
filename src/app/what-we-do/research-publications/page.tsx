@@ -15,7 +15,8 @@ const imagePaths = [
   '/images/what-we-do/multimedia-hub.jpg',
   '/images/focus-areas/democracy-governance.jpg',
   '/images/focus-areas/peace-security.jpg',
-  '/images/focus-areas/economic-systems.jpg'
+  '/images/focus-areas/economic-systems.jpg',
+  '/images/articles/AfricasClimateCrossroads.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -60,47 +61,13 @@ const researchPapers = [
 
 const articles = [
   {
-    title: "The Role of Civil Society in Democratic Transition",
-    author: "Nala Center Team",
-    date: "2025-08-03",
-    summary: "An opinion piece on the vital role of civil society organizations in advocating for human rights and supporting democratic processes during periods of transition.",
-    thumbnail: imagePaths[6 % imagePaths.length]
-  },
-  {
-    title: "A Glimpse into Africa's Urbanization Challenge",
-    author: "Akinyi Ochieng",
-    date: "2025-07-30",
-    summary: "This article discusses the rapid pace of urbanization in Africa and the need for inclusive, sustainable urban planning to address infrastructure and social needs.",
-    thumbnail: imagePaths[7 % imagePaths.length]
-  },
-  {
-    title: "Rethinking National Security in the Age of Cybersecurity",
-    author: "Nala Center Fellow",
-    date: "2025-07-26",
-    summary: "An analysis of the evolving nature of security threats, from traditional conflicts to the rise of cyber warfare and digital espionage.",
-    thumbnail: imagePaths[8 % imagePaths.length]
-  },
-  {
-    title: "Fostering Regional Economic Integration for Shared Prosperity",
-    author: "Mwangi Kamau",
-    date: "2025-07-22",
-    summary: "A look at the barriers and opportunities for regional economic integration, emphasizing the potential for shared growth and poverty reduction.",
-    thumbnail: imagePaths[9 % imagePaths.length]
-  },
-  {
-    title: "Building Resilience: A Community-Led Approach",
-    author: "Nala Center Team",
-    date: "2025-07-18",
-    summary: "This piece highlights the importance of community-led initiatives in building resilience against external shocks, such as natural disasters and economic downturns.",
-    thumbnail: imagePaths[10 % imagePaths.length]
-  },
-  {
-    title: "Policy Advocacy for Gender-Inclusive Peace Processes",
-    author: "Nala Center Researcher",
-    date: "2025-07-14",
-    summary: "Discussing the crucial role of including women and gender perspectives in peace negotiations to ensure more sustainable and equitable outcomes.",
-    thumbnail: imagePaths[11 % imagePaths.length]
-  },
+    title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
+    author: "Bravin Onditi",
+    date: "2025-09-22",
+    summary: "The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes.",
+    thumbnail: imagePaths[8 % imagePaths.length],
+    link: '/research-publications/africas-climate-crossroads'
+  }, 
 ];
 
 export default function ResearchAndPublicationsPage() {
@@ -171,8 +138,6 @@ export default function ResearchAndPublicationsPage() {
               <Image
                 src={article.thumbnail}
                 alt={`Thumbnail for ${article.title}`}
-                width={600}
-                height={400}
                 className="w-full h-40 object-cover rounded-t-lg"
               />
               <div className="p-6 flex-grow flex flex-col justify-between">
@@ -187,10 +152,10 @@ export default function ResearchAndPublicationsPage() {
                     {article.summary}
                   </p>
                 </div>
-                <Link href="#" className="text-[#3A9D23] font-medium inline-flex items-center mt-4 hover:underline">
+                <a href={article.link} className="text-[#3A9D23] font-medium inline-flex items-center mt-4 hover:underline">
                   <FileText className="w-4 h-4 mr-2" />
                   Read Article
-                </Link>
+                </a>
               </div>
             </div>
           ))}

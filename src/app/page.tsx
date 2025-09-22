@@ -216,19 +216,19 @@ export default function Home() {
           {/* Insight Card 1 */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <Image
-              src="/images/demo1_image.jpeg"
+              src='/images/articles/AfricasClimateCrossroads.jpg'
               alt="Insight 1 Thumbnail"
               width={500}
               height={300}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <span className="text-sm text-gray-500">Category | June 24, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">The Role of Community-Led Solutions in Climate Resilience</h3>
+              <span className="text-sm text-gray-500">Article | September 12, 2025</span>
+              <h3 className="font-semibold text-xl text-[#050505] my-2">Africa&apos;s Climate Crossroads: From Nairobi&apos;s Promises to Addis Ababa&apos;s Demands</h3>
               <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                Exploring how grassroots initiatives are building climate resilience in vulnerable communities across the Nala region, with case studies from local projects.
+                The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. 
               </p>
-              <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+              <Link href="/what-we-do/research-publications/africas-climate-crossroads" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
                 Read more &rarr;
               </Link>
             </div>
