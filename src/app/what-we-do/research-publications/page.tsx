@@ -63,10 +63,10 @@ const articles = [
   {
     title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
     author: "Bravin Onditi",
-    date: "2025-09-22",
+    date: "2025-09-12",
     summary: "The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes.",
     thumbnail: imagePaths[8 % imagePaths.length],
-    link: '/research-publications/africas-climate-crossroads'
+    link: '/what-we-do/research-publications/africas-climate-crossroads'
   }, 
 ];
 
@@ -138,6 +138,8 @@ export default function ResearchAndPublicationsPage() {
               <Image
                 src={article.thumbnail}
                 alt={`Thumbnail for ${article.title}`}
+                width={500}
+              height={300}
                 className="w-full h-40 object-cover rounded-t-lg"
               />
               <div className="p-6 flex-grow flex flex-col justify-between">
