@@ -2,11 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { ReactNode } from "react";
 
 // --- Define Block Types ---
 type ParagraphBlock = {
-  type: 'paragraph';
-  text: string;
+  type: 'paragraph' | 'heading' | 'list';
+  text: string | ReactNode;
 };
 
 type HeadingBlock = {
@@ -38,9 +39,24 @@ const articleData: ArticleData = {
   heroImage: '/images/articles/AfricasClimateCrossroads.jpg',
   body: [
     {
-      type: 'paragraph',
-      text: 'The Second Africa Climate Summit (ACS2), convened in Addis Ababa, marks a critical inflection point for the continent. It builds on the foundational consensus of the 2023 Nairobi Declaration and pushes into the far more complex terrain of implementation and accountability. The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes. Ultimately, the summit’s success will not be judged by the eloquence of its final communiqué, but by its ability to forge a pragmatic and unified African position that compels concrete commitments on reforming the global financial architecture, financing adaptation, and structuring truly just energy transition partnerships.'
-    },
+  type: 'paragraph',
+  text: (
+    <>
+      The Second Africa Climate Summit (ACS2), convened in Addis Ababa, marks a critical inflection point for the continent. 
+      It builds on the foundational consensus of the{" "}
+      <a 
+        href="https://au.int/sites/default/files/documents/43682-doc-AU_Nairobi_Declaration_Action_1.pdf" 
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        2023 Nairobi Declaration
+      </a>{" "}
+      and pushes into the far more complex terrain of implementation and accountability. 
+      The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes. 
+      Ultimately, the summit’s success will not be judged by the eloquence of its final communiqué, but by its ability to forge a pragmatic and unified African position that compels concrete commitments on reforming the global financial architecture, financing adaptation, and structuring truly just energy transition partnerships.
+    </>
+  )
+}
+,
     {
       type: 'paragraph',
       text: 'The Nairobi Declaration correctly identified the imperative to reconcile climate action with development, a challenge that remains deeply unresolved across the continent. Africa contributes a negligible share of global emissions yet suffers disproportionately from climate impacts, making the pursuit of equity and climate justice unavoidable. This climate-development paradox frames Africa\'s entire negotiating posture. ACS2 is therefore less a negotiation about emissions reduction and more a demand for the tools to facilitate resilient development in a climate-constrained world.'
@@ -58,29 +74,97 @@ const articleData: ArticleData = {
       text: 'Pillar I: The Just Energy Transition'
     },
     {
-      type: 'paragraph',
-      text: 'The ambition to install 300 GW of renewable energy capacity by 2030 was a cornerstone of the Nairobi Declaration. However, current data reveals a significant credibility gap between this target and the investment reality. With installed capacity reaching only 72 GW in 2023 and forecasts projecting a mere 169 GW by 2030, the vision is receding. This shortfall is a direct consequence of a global market failure: Africa attracts only 2 percent of the world\'s total clean energy investment. This is not due to a lack of potential, the continent\'s solar, wind, and green hydrogen resources are unparalleled but to structural barriers, including perceived risk, high costs of capital, and insufficient preparatory funding for bankable projects. While initiatives like the Sustainable Energy Fund for Africa (SEFA) are valuable, they operate at a scale insufficient to address the systemic investment drought. The continued reality of 623 million people without electricity makes closing this investment gap the primary precondition for any "just transition."'
-    },
+  type: 'paragraph',
+  text: (
+    <>
+      The ambition to install{" "}
+      <a
+        href="https://assets.bbhub.io/professional/sites/24/Africa-Power-Transition-Factbook-2024.pdf"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        300 GW of renewable energy
+      </a>{" "}
+      capacity by 2030 was a cornerstone of the Nairobi Declaration. However, current data reveals a significant credibility gap between this target and the investment reality. With installed capacity reaching only 72 GW in 2023 and forecasts projecting a mere 169 GW by 2030, the vision is receding. This shortfall is a direct consequence of a global market failure: Africa attracts only{" "}
+      <a
+        href="https://futureofenergy.co.ke/why-is-africa-capturing-only-2-of-global-clean-energy-investment-in-2025/"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        2 percent
+      </a>{" "}
+      of the world&apos;s total clean energy investment. This is not due to a lack of potential, the continent&apos;s solar, wind, and green hydrogen resources are unparalleled but to structural barriers, including perceived risk, high costs of capital, and insufficient preparatory funding for bankable projects. While initiatives like the Sustainable Energy Fund for Africa (SEFA) are valuable, they operate at a scale insufficient to address the systemic investment drought. The continued reality of 623 million people without electricity makes closing this investment gap the primary precondition for any &quot;just transition.&quot;
+    </>
+  ),
+}
+,
     {
       type: 'heading',
       text: 'Pillar II: The Primacy of Adaptation'
     },
     {
-      type: 'paragraph',
-      text: 'Given Africa\'s high vulnerability and low emissions profile, adaptation is not merely a priority; it is the central pillar of the continent\'s climate strategy. The financial scale of this need is immense, with costed Nationally Determined Contributions (NDCs) already standing at USD 1.6–1.9 trillion—a figure that does not even capture many uncosted local adaptation requirements.'
-    },
+  type: 'paragraph',
+  text: (
+    <>
+      Given Africa&apos;s high vulnerability and low emissions profile, adaptation is not merely a priority; it is the central pillar of the continent&apos;s climate strategy. The financial scale of this need is immense, with costed Nationally Determined Contributions (NDCs) already standing at{" "}
+      <a
+        href="https://www.swp-berlin.org/10.18449/2024C33/"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        USD 1.6–1.9 trillion
+      </a> a figure that does not even capture many uncosted local adaptation requirements.
+    </>
+  ),
+}
+,
     {
-      type: 'paragraph',
-      text: 'Progress at the global level has been wholly inadequate. The formal process to define measurable indicators for a Global Goal on Adaptation (GGA) has stalled, with no outcome expected before COP30. This procedural delay has real-world consequences, as it hampers the mobilization of predictable, at-scale adaptation finance. Pledges made to combat critical threats like drought, such as those at COP16, fall demonstrably short of the USD 191 billion needed annually for land restoration in Africa alone. While African cities and institutions are advancing resilience projects and early warning systems, these bottom-up efforts cannot substitute for a functional and well-resourced global adaptation framework.'
-    },
+  type: 'paragraph',
+  text: (
+    <>
+      Progress at the global level has been wholly inadequate. The formal process to define measurable indicators for a Global Goal on Adaptation (GGA) has stalled, with no outcome expected before{" "}
+      <a
+        href="https://cop30.br/en"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        COP30
+      </a>
+      . This procedural delay has real-world consequences, as it hampers the mobilization of predictable, at-scale adaptation finance. Pledges made to combat critical threats like drought, such as those at COP16, fall demonstrably short of the{" "}
+      <a
+        href="https://www.unccd.int/sites/default/files/2024-12/FNA%20press%20release%20EN.pdf"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        USD 191 billion
+      </a>
+      {" "}needed annually for land restoration in Africa alone. While African cities and institutions are advancing resilience projects and early warning systems, these bottom-up efforts cannot substitute for a functional and well-resourced global adaptation framework.
+    </>
+  ),
+}
+,
     {
       type: 'heading',
       text: 'Pillar III: Leveraging Africa’s Green Potential'
     },
-    {
-      type: 'paragraph',
-      text: 'Africa\'s vast natural capital represents a significant point of leverage. Its forests, which absorb 600 Mt of CO2 annually, position the continent as the world\'s largest carbon sink. The operationalization of international carbon markets under Article 6 of the Paris Agreement is a major development, providing a mechanism to monetize these services. Africa\'s current 16 percent market share indicates a promising start, but scaling this opportunity requires robust governance to ensure environmental integrity and equitable benefit sharing.'
-    },
+   {
+  type: 'paragraph',
+  text: (
+    <>
+      Africa&apos;s vast natural capital represents a significant point of leverage. Its forests, which absorb{" "}
+      <a
+        href="https://iea.blob.core.windows.net/assets/c3086240-732b-4f6a-89d7-db01be018f5e/GlobalEnergyReviewCO2Emissionsin2021.pdf"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        600 Mt of CO2 annually
+      </a>
+      , position the continent as the world&apos;s largest carbon sink. The operationalization of international carbon markets under{" "}
+      <a
+        href="https://unfccc.int/process-and-meetings/the-paris-agreement/article6"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        Article 6 of the Paris Agreement
+      </a>{" "}
+      is a major development, providing a mechanism to monetize these services. Africa&apos;s current 16 percent market share indicates a promising start, but scaling this opportunity requires robust governance to ensure environmental integrity and equitable benefit sharing.
+    </>
+  ),
+}
+,
     {
       type: 'paragraph',
       text: 'However, this pillar also presents strategic risks. An over-reliance on carbon markets without addressing underlying drivers of deforestation could be counterproductive. Furthermore, balancing the expansion of vital industries like agriculture and the blue economy with biodiversity protection will require sophisticated land-use planning and policy frameworks. The objective must be to leverage these green assets not merely as offsets for distant polluters, but as foundational elements of a diversified, sustainable domestic economy.'
@@ -103,9 +187,28 @@ const articleData: ArticleData = {
       ]
     },
     {
-      type: 'paragraph',
-      text: 'In response, African-led initiatives signal a strategic pivot towards creating parallel or alternative structures. The push for a UN Tax Convention to combat illicit financial flows and the observation of precedents like the International Maritime Organization\'s shipping emissions tax indicate a search for new, more reliable sources of finance that are not dependent on the political whims of donor countries. MDB reform remains central, but patience with the pace of change is wearing thin.'
-    },
+  type: 'paragraph',
+  text: (
+    <>
+      In response, African-led initiatives signal a strategic pivot towards creating parallel or alternative structures. The push for a{" "}
+      <a
+        href="https://globaltaxjustice.org/news/how-to-produce-an-ambitious-un-tax-convention/"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        UN Tax Convention
+      </a>{" "}
+      to combat illicit financial flows and the observation of precedents like the International Maritime Organization's shipping{" "}
+      <a
+        href="https://www.imo.org/en/mediacentre/pressbriefings/pages/imo-approves-netzero-regulations.aspx"
+        className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
+      >
+        emissions tax
+      </a>{" "}
+      indicate a search for new, more reliable sources of finance that are not dependent on the political whims of donor countries. MDB reform remains central, but patience with the pace of change is wearing thin.
+    </>
+  ),
+}
+,
     {
       type: 'heading',
       text: 'Conclusion and Policy Recommendations'
