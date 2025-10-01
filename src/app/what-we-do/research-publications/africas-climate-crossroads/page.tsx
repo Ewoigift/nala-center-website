@@ -8,6 +8,7 @@ import { ReactNode } from "react";
 type ParagraphBlock = {
   type: 'paragraph' | 'heading' | 'list';
   text: string | ReactNode;
+  
 };
 
 type HeadingBlock = {
@@ -197,7 +198,7 @@ const articleData: ArticleData = {
       >
         UN Tax Convention
       </a>{" "}
-      to combat illicit financial flows and the observation of precedents like the International Maritime Organization's shipping{" "}
+      to combat illicit financial flows and the observation of precedents like the International Maritime Organization&apos;s shipping{" "}
       <a
         href="https://www.imo.org/en/mediacentre/pressbriefings/pages/imo-approves-netzero-regulations.aspx"
         className="relative font-medium text-[#3A9D23] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-[#3A9D23] after:transition-all after:duration-300 hover:after:w-full"
