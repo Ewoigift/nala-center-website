@@ -7,35 +7,12 @@ import Link from 'next/link';
 export default function AdvisoryBoardPage() {
   const boardMembers = [
     {
-      name: 'Dr. Kennedy Kiguru',
-      designation: 'Advisor, Peace and Security',
-      imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Kennedy+Kiguru', // Placeholder image
-      slug: 'kennedy-kiguru',
+      name: 'Andrew J. Franklin',
+      designation: 'Peace and Security',
+      imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
+      slug: 'andrew-franklin',
     },
-    {
-      name: 'Dr. Faith Mwangi',
-      designation: 'Advisor, Climate & Sustainability',
-      imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Faith+Mwangi', // Placeholder image
-      slug: 'faith-mwangi',
-    },
-    {
-      name: 'Dr. Josephine Ojiambo',
-      designation: 'Advisor, Global Health',
-      imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Josephine+Ojiambo', // Placeholder image
-      slug: 'josephine-ojiambo',
-    },
-    {
-      name: 'Wairimu Gathimba',
-      designation: 'Advisor, Gender & Youth',
-      imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Wairimu+Gathimba', // Placeholder image
-      slug: 'wairimu-gathimba',
-    },
-    {
-      name: 'Ahmed Gure',
-      designation: 'Advisor, Research',
-      imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Ahmed+Gure', // Placeholder image
-      slug: 'ahmed-gure',
-    },
+  
   ];
 
   return (

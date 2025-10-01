@@ -81,7 +81,11 @@ In addition to his operational responsibilities, Edwin is a strong advocate for 
       designation: 'Board Member',
       imageSrc: '/images/team/brian_serem.png', 
       slug: 'brian-serem',
-      bio: '',
+      bio: `Brian Serem is a committed professional with a degree in International Relations and Diplomacy from Zetech University. He has worked with the Kenya Red Cross on outreach programs addressing humanitarian needs and completed specialized training in Disaster Management and First Aid, strengthening his capacity to respond to complex challenges.
+
+      Currently serving as a Computer Operator Prosecutor at the Kenya National Highways Authority (KeNHA), Brian combines operational experience with civic responsibility. As a member of the Nala Group Board of Directors, Brian plays a vital role in providing strategic guidance, oversight, and leadership to advance the organization’s mission. His background in diplomacy, humanitarian engagement, and operational management equips him to contribute to shaping policy discussions, strengthening governance, and ensuring that Nala’s research and advocacy generate sustainable and meaningful impact.`,
+
+
       socials: {
         linkedin: '#',
         x: '#',

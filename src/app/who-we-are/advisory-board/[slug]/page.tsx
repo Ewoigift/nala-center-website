@@ -13,60 +13,18 @@ import React, { use } from 'react';
 
 const allAdvisoryBoardMembers = [
   {
-    name: 'Dr. Kennedy Kiguru',
-    designation: 'Advisor, Peace and Security',
-    imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Kennedy+Kiguru', // Placeholder
-    slug: 'kennedy-kiguru',
-    bio: `Dr. Kennedy Kiguru is a Peace and Security Advisor with extensive experience in conflict analysis, peacebuilding, and security sector reform. He provides strategic counsel to Nala Center on its programs related to governance, human security, and regional stability.`,
+     name: 'Andrew J. Franklin',
+      designation: 'Peace and Security',
+      imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
+      slug: 'andrew-franklin',
+    bio: `Andrew J. Franklin is a seasoned security and risk management professional with over four decades of extensive experience in Sub-Saharan Africa. His career spans logistics, political, legal, economic, military, and paramilitary issues, with specialized expertise in counterinsurgency and crisis management.
+
+A former U.S. Marine Corps Commissioned Officer, Andrew served actively and in reserve for 22 years, retiring at the rank of Major. He holds a Juris Doctor (J.D.) in International Law and Legal Studies from New York Law School and has built a strong track record as a Managing Director in the security and investigations industry.Beyond his operational and advisory roles, Andrew is widely recognized as a writer, security consultant, political analyst, and media commentator on foreign and security policy. His ability to navigate complex security landscapes and provide nuanced analysis continues to shape dialogue on governance, stability, and security in Africa.`,
     socials: {
       linkedin: '#',
       x: '#',
       instagram: '#',
 
-    },
-  },
-  {
-    name: 'Dr. Faith Mwangi',
-    designation: 'Advisor, Climate & Sustainability',
-    imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Faith+Mwangi', // Placeholder
-    slug: 'faith-mwangi',
-    bio: `Dr. Faith Mwangi is a leading expert in climate change, environmental policy, and sustainable development. As an advisor, she guides Nala Center’s work on climate resilience, green financing, and the intersection of climate action with peace and security.`,
-    socials: {
-      linkedin: '#',
-      x: '#',
-    },
-  },
-  {
-    name: 'Dr. Josephine Ojiambo',
-    designation: 'Advisor, Global Health',
-    imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Dr.+Josephine+Ojiambo', // Placeholder
-    slug: 'josephine-ojiambo',
-    bio: `Dr. Josephine Ojiambo is a global health expert with a distinguished career in public health, policy, and advocacy. She advises the Nala Center on health policy, youth wellbeing, and the critical linkages between health, human security, and development in Africa.`,
-    socials: {
-      linkedin: '#',
-      x: '#',
-    },
-  },
-  {
-    name: 'Wairimu Gathimba',
-    designation: 'Advisor, Gender & Youth',
-    imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Wairimu+Gathimba', // Placeholder
-    slug: 'wairimu-gathimba',
-    bio: `Wairimu Gathimba is a passionate advocate for gender equality and youth empowerment. She provides key insights on how to integrate gender-responsive and youth-led approaches into all of Nala Center’s programs, ensuring inclusivity and sustainability.`,
-    socials: {
-      linkedin: '#',
-      x: '#',
-    },
-  },
-  {
-    name: 'Ahmed Gure',
-    designation: 'Advisor, Research',
-    imageSrc: 'https://placehold.co/600x400/D0F0C0/050505?text=Ahmed+Gure', // Placeholder
-    slug: 'ahmed-gure',
-    bio: `Ahmed Gure is a seasoned researcher and analyst specializing in governance, regional integration, and policy evaluation. He advises the Center on its research methodologies, data-driven strategies, and evidence-based policy publications.`,
-    socials: {
-      linkedin: '#',
-      x: '#',
     },
   },
 ];
