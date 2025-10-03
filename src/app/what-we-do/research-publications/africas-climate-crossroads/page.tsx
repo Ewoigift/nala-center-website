@@ -4,35 +4,51 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; 
 import { ReactNode } from "react";
-
 // --- Configuration for Social Sharing ---
 const BASE_DOMAIN = 'https://nalacenter.org';
 // This is the complete, final URL for the article, used for canonical and sharing purposes.
 const FULL_ARTICLE_URL = `${BASE_DOMAIN}/what-we-do/research-publications/africas-climate-crossroads`; 
 
+// --- Define Block Types ---
+// ... (omitted for brevity, no changes here)
+
+// --- Define Article Data Type ---
+interface ArticleData {
+  title: string;
+  author: string;
+  date: string;
+  heroImage: string;
+  body: Block[];
+}
+
 // --- Component for SEO and Social Media Meta Tags ---
-// These tags ensure the correct title, domain (nalacenter.org), and image are displayed 
-// when the link is shared on platforms like X/Twitter.
-const MetaTags = () => (
-  <>
-    {/* Standard Open Graph Tags (used by Facebook, LinkedIn, etc.) */}
-    <meta property="og:title" content={articleData.title} />
-    {/* Description intentionally removed as requested to allow for manual tweet description */}
-    {/* <meta property="og:description" content="" /> */} 
-    <meta property="og:image" content={articleData.heroImage} />
-    <meta property="og:url" content={FULL_ARTICLE_URL} />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="nalacenter.org" /> {/* Ensures nalacenter.org displays as the source link */}
-    
-    {/* Twitter Card Tags (for displaying the preview on X/Twitter) */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@NalaCenter" />
-    <meta name="twitter:title" content={articleData.title} />
-    {/* Description intentionally removed as requested */}
-    {/* <meta name="twitter:description" content="" /> */}
-    <meta name="twitter:image" content={articleData.heroImage} />
-  </>
-);
+// IMPORTANT: Image and URL fields MUST be absolute for external crawlers.
+const MetaTags = () => {
+  // 1. Construct the absolute URL for the image
+  const ABSOLUTE_IMAGE_URL = `${BASE_DOMAIN}${articleData.heroImage}`;
+  
+  return (
+    <>
+      {/* Canonical Link: Essential for SEO */}
+      <link rel="canonical" href={FULL_ARTICLE_URL} />
+      
+      {/* Standard Open Graph Tags */}
+      <meta property="og:title" content={articleData.title} />
+      {/* Use the ABSOLUTE_IMAGE_URL here */}
+      <meta property="og:image" content={ABSOLUTE_IMAGE_URL} /> 
+      <meta property="og:url" content={FULL_ARTICLE_URL} />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="nalacenter.org" />
+      
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@NalaCenter" />
+      <meta name="twitter:title" content={articleData.title} />
+      {/* Use the ABSOLUTE_IMAGE_URL here */}
+      <meta name="twitter:image" content={ABSOLUTE_IMAGE_URL} /> 
+    </>
+  );
+};
 
 
 // --- Define Block Types ---

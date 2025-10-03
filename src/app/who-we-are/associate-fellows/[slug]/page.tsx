@@ -64,7 +64,7 @@ socials: {
 },
 {
   name:'Keith Sangolo',
-designation:'Peace, Security and Governance Expert',
+designation:'Foreign Policy Expert',
 imageSrc:'/images/team/keith-sangolo.png',
 slug:'keith-sangolo',
 bio:`Keith Sangolo is an intern, currently completing his Bachelor of Arts in International Relations and Diplomacy at Zetech University. He has built a strong foundation in foreign policy, international law, and governance, with a keen interest in applying this knowledge to practical challenges. During a recent attachment at the State Department of Tourism, he contributed to policy-related tasks and stakeholder engagement, gaining firsthand experience in using tourism as a tool for national development and economic diplomacy.

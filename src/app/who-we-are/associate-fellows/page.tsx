@@ -32,7 +32,7 @@ slug:'rayner-sakari'
     },
   {
     name:'Keith Sangolo',
-designation:'Peace, Security and Governance',
+designation:'Foreign Policy Expert',
 imageSrc:'/images/team/keith-sangolo.png',
 slug:'keith-sangolo'
   },
