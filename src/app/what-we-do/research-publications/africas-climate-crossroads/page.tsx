@@ -6,9 +6,8 @@ import { ReactNode } from "react";
 
 // --- Define Block Types ---
 type ParagraphBlock = {
-  type: 'paragraph' | 'heading' | 'list';
+  type: 'paragraph';
   text: string | ReactNode;
-  
 };
 
 type HeadingBlock = {
@@ -22,6 +21,7 @@ type ListBlock = {
 };
 
 type Block = ParagraphBlock | HeadingBlock | ListBlock;
+
 
 // --- Define Article Data Type ---
 interface ArticleData {
