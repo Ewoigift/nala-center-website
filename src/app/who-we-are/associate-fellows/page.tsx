@@ -24,6 +24,19 @@ slug:'denis-muniu',
 imageSrc:'/images/team/Rahma-Oda.png',
       slug:'rahma-oda',
     },
+    {
+      name:'Rayner Sakari',
+designation:'Peace, Security and Governance',
+imageSrc:'/images/team/rayner-sakari.jpg',
+slug:'rayner-sakari'
+    },
+  {
+    name:'Keith Sangolo',
+designation:'Peace, Security and Governance',
+imageSrc:'/images/team/keith-sangolo.png',
+slug:'keith-sangolo'
+  },
+
   ];
 
   return (

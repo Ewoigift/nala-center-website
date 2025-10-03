@@ -2,7 +2,38 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; 
 import { ReactNode } from "react";
+
+// --- Configuration for Social Sharing ---
+const BASE_DOMAIN = 'https://nalacenter.org';
+// This is the complete, final URL for the article, used for canonical and sharing purposes.
+const FULL_ARTICLE_URL = `${BASE_DOMAIN}/what-we-do/research-publications/africas-climate-crossroads`; 
+
+// --- Component for SEO and Social Media Meta Tags ---
+// These tags ensure the correct title, domain (nalacenter.org), and image are displayed 
+// when the link is shared on platforms like X/Twitter.
+const MetaTags = () => (
+  <>
+    {/* Standard Open Graph Tags (used by Facebook, LinkedIn, etc.) */}
+    <meta property="og:title" content={articleData.title} />
+    {/* Description intentionally removed as requested to allow for manual tweet description */}
+    {/* <meta property="og:description" content="" /> */} 
+    <meta property="og:image" content={articleData.heroImage} />
+    <meta property="og:url" content={FULL_ARTICLE_URL} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="nalacenter.org" /> {/* Ensures nalacenter.org displays as the source link */}
+    
+    {/* Twitter Card Tags (for displaying the preview on X/Twitter) */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@NalaCenter" />
+    <meta name="twitter:title" content={articleData.title} />
+    {/* Description intentionally removed as requested */}
+    {/* <meta name="twitter:description" content="" /> */}
+    <meta name="twitter:image" content={articleData.heroImage} />
+  </>
+);
+
 
 // --- Define Block Types ---
 type ParagraphBlock = {
@@ -23,7 +54,7 @@ type ListBlock = {
 type Block = ParagraphBlock | HeadingBlock | ListBlock;
 
 
-// --- Define Article Data Type ---
+// --- Define Article Data Type ---\
 interface ArticleData {
   title: string;
   author: string;
@@ -32,13 +63,13 @@ interface ArticleData {
   body: Block[];
 }
 
-// --- Your Article Data ---
+// --- Your Original Article Data ---
 const articleData: ArticleData = {
   title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
   author: "Bravin Onditi",
   date: "2025-09-12",
   heroImage: '/images/articles/AfricasClimateCrossroads.jpg',
-  body: [
+   body: [
     {
   type: 'paragraph',
   text: (
@@ -232,25 +263,42 @@ const articleData: ArticleData = {
   ],
 };
 
-// --- Component ---
-export default function AfricasClimateCrossroads() {
+
+
+// --- Main Component ---
+export default function ArticlePage() {
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <main className="container mx-auto p-4 md:p-8 lg:p-12">
-        <header className="mb-8 md:mb-12">
-          <div className="relative w-full h-[250px] md:h-[400px] overflow-hidden rounded-xl shadow-lg mb-6">
-            <Image
-              src={articleData.heroImage}
-              alt={articleData.title}
-              layout="fill"
-              objectFit="cover"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-          <p className="text-right text-gray-500 text-xs mt-2">
-            Photo Credits: African Union
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-2">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8 font-sans">
+      
+      {/* Include Meta Tags (simulated <head> content) */}
+      <MetaTags />
+
+      {/* Container for the article content */}
+      <article className="max-w-4xl w-full">
+        <Link href="/what-we-do/research-publications" className="inline-flex items-center text-sm font-semibold text-gray-600 hover:text-gray-800 transition-colors duration-300 mb-8">
+          &larr; Back to Research & Publications
+        </Link>
+        
+        {/* Hero Image */}
+        <div className="relative w-full h-80 rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src={articleData.heroImage}
+            alt={articleData.title}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
+
+        {/* Photo Credit added here as requested */}
+        <p className="text-xs text-gray-500 mt-2 mb-6 text-right">
+          Photo Credits: African Union
+        </p>
+
+
+        {/* Article Header */}
+        <header className="mb-8 p-6 bg-white rounded-xl shadow-md">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#050505] mb-2">
             {articleData.title}
           </h1>
           <div className="text-gray-600 text-sm md:text-base">
@@ -264,6 +312,7 @@ export default function AfricasClimateCrossroads() {
             {articleData.body.map((block, index) => {
               switch (block.type) {
                 case 'paragraph':
+                  // This allows us to embed JSX (like Link/a tags) directly into the paragraph text.
                   return (
                     <p key={index} className="text-lg leading-relaxed mb-6">
                       {block.text}
@@ -276,6 +325,7 @@ export default function AfricasClimateCrossroads() {
                     </h2>
                   );
                 case 'list':
+                  // Using dangerouslySetInnerHTML to allow HTML (like strong/a tags) within list items
                   return (
                     <ul key={index} className="list-disc list-inside space-y-2 mb-6">
                       {block.items.map((item, i) => (
@@ -289,7 +339,7 @@ export default function AfricasClimateCrossroads() {
             })}
           </div>
         </section>
-      </main>
+      </article>
     </div>
   );
 }
