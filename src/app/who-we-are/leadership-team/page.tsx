@@ -48,6 +48,20 @@ export default function LeadershipTeamPage() {
       imageSrc: '/images/team/antony-nyabuto.jpg',
       slug: 'antony-nyabuto',
     },
+
+    {
+    name:'Keith Sangolo',
+designation:'Intern',
+imageSrc:'/images/team/keith-sangolo.png',
+slug:'keith-sangolo'
+  },
+
+  {
+    name:'Abdulmalik Ibrahim Salim',
+designation:'Intern',
+imageSrc:'/images/who-we-are/ibrahim-salim.png',
+slug:'ibrahi-salim'
+  },
   ];
 
   return (

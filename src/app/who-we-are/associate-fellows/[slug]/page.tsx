@@ -62,20 +62,7 @@ socials: {
       x: '#',
     },
 },
-{
-  name:'Keith Sangolo',
-designation:'Foreign Policy Expert',
-imageSrc:'/images/team/keith-sangolo.png',
-slug:'keith-sangolo',
-bio:`Keith Sangolo is an intern, currently completing his Bachelor of Arts in International Relations and Diplomacy at Zetech University. He has built a strong foundation in foreign policy, international law, and governance, with a keen interest in applying this knowledge to practical challenges. During a recent attachment at the State Department of Tourism, he contributed to policy-related tasks and stakeholder engagement, gaining firsthand experience in using tourism as a tool for national development and economic diplomacy.
 
-Beyond his academic and professional work, Keith has honed his leadership and advocacy skills through active participation in the Kenya Model United Nations and Amnesty International. His primary research interests lie in Kenya’s foreign policy, particularly its foreign direct investment (FDI) strategy, the impact of electoral disputes on human rights, and the dynamics of African regional integration. He is passionate about contributing to data-driven solutions that strengthen international cooperation and sustainable development across the continent.`,
-socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
-    },
-}
 
 ];
 
