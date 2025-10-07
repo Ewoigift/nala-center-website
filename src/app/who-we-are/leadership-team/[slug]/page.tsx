@@ -148,12 +148,12 @@ imageSrc:'/images/who-we-are/ibrahim-salim.png',
 slug:'ibrahi-salim',
 bio:`Abdulmalik Ibrahim Salim is an intern and an International Studies student at Strathmore University with a primary focus on governance, peace, and security. His research is centered on the critical nexus between climate change and security, examining how environmental challenges impact stability and peace on the continent. 
 
-He is passionate about diplomacy, democratic practices, and the essential role of youth in leading social and political change. His academic background is complemented by experience in projects focused on policy analysis, climate action, and civic education. At the Nala Center, Salim applies his skills to research and policy innovation, aiming to advance advocacy for a more equitable, resilient, and sustainable Africa.
+He is passionate about diplomacy, democratic practices, and the essential role of youth in leading social and political change. His academic background is complemented by experience in projects focused on policy analysis, climate action, and civic education. At the Nala Center, Salim applies his skills to research and policy innovation, aiming to advance advocacy for a more equitable, resilient, and sustainable Africa.`,
 socials: {
       email: '#',
       linkedin: '#',
       x: '#',
-    },
+  },
 }
 
 ];
