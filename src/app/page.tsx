@@ -237,19 +237,19 @@ export default function Home() {
           {/* Insight Card 2 */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <Image
-              src="/images/demo2_image.jpeg"
+              src="/images/articles/gerd-beyond-conflict.jpg"
               alt="Insight 2 Thumbnail"
               width={500}
               height={300}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <span className="text-sm text-gray-500">Policy Brief | June 18, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">Policy Pathways for Inclusive Economic Development</h3>
+              <span className="text-sm text-gray-500">Article | October 13, 2025</span>
+              <h3 className="font-semibold text-xl text-[#050505] my-2">GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa</h3>
               <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                A new policy brief outlining strategies for governments and stakeholders to foster equitable economic growth and reduce disparities in the region.
+               An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia&apos;s national grid.
               </p>
-              <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+              <Link href="/what-we-do/research-publications/gerd-beyond-conflict" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
                 Read more &rarr;
               </Link>
             </div>
