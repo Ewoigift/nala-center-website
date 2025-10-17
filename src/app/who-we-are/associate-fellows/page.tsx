@@ -31,6 +31,12 @@ imageSrc:'/images/team/rayner-sakari.jpg',
 slug:'rayner-sakari'
     },
   
+     {
+      name:'Kennedy Karanja',
+designation:'International Political Economy and Multilateral Diplomacy',
+imageSrc:'/images/team/Kennedy_Wangari.png',
+slug:'kennedy-karanja'
+    },
 
   ];
 

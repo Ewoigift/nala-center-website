@@ -62,6 +62,20 @@ socials: {
       x: '#',
     },
 },
+{
+ name:'Kennedy Karanja',
+designation:'International Political Economy and Multilateral Diplomacy',
+imageSrc:'/images/team/Kennedy_Wangari.png',
+slug:'kennedy-karanja',
+bio:`Kennedy Wangari is an Associate Fellow at the Nala Center, specializing in the intersection of international political economy, public policy, and multilateral diplomacy, with a strong focus on African regional integration and policy innovation. Currently pursuing a Bachelor of Arts in International Studies at Strathmore University, Kennedy simultaneously works with the United Nations Environment Program (UNEP) in the Civil Society Unit of the Governance Affairs Office. 
+
+His extensive experience in international governance includes active participation and contribution to high-level forums like the UN Environment Assembly (2024) and the UN-Habitat Assembly (2023), where he assisted in drafting resolutions and organizing strategic policy events like the UN Science-Policy Business Forum. A proven leader, he served as the 15th Secretary General of the Strathmore University Student Council (2023-2024), demonstrating strong administrative and governance capabilities. Kennedy’s dedication to deconstructing complex global affairs and championing policies that enhance economic development and youth empowerment positions him as a forward-thinking policy analyst poised to make a significant impact on the policy landscape.`,
+socials: {
+      email: '#',
+      linkedin: '#',
+      x: '#',
+    },
+},
 
 
 ];

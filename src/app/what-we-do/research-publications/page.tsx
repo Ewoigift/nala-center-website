@@ -16,7 +16,8 @@ const imagePaths = [
   '/images/focus-areas/democracy-governance.jpg',
   '/images/focus-areas/peace-security.jpg',
   '/images/focus-areas/economic-systems.jpg',
-  '/images/articles/AfricasClimateCrossroads.jpg'
+  '/images/articles/AfricasClimateCrossroads.jpg',
+  '/images/articles/gerd-beyond-conflict.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -68,6 +69,16 @@ const articles = [
     thumbnail: imagePaths[8 % imagePaths.length],
     link: '/what-we-do/research-publications/africas-climate-crossroads'
   }, 
+
+  {
+    title: "GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa",
+  author: "Rahma Oda",
+  date: "2025-10-13",
+    summary: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
+    thumbnail: imagePaths[9 % imagePaths.length],
+    link: '/what-we-do/research-publications/gerd-beyond-conflict'
+  }, 
+
 ];
 
 export default function ResearchAndPublicationsPage() {
