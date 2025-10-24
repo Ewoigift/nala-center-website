@@ -2,7 +2,7 @@
 'use client'; // This must be a client component to use usePathname
 
 import { usePathname } from 'next/navigation'; // Import usePathname
-import './globals.css'; // Your global styles
+ // Your global styles
 import Navbar from '../components/Navbar'; // Assuming Navbar is here
 import Footer from '../components/Footer'; // Import the new Footer component
 

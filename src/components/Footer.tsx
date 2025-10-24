@@ -55,7 +55,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/what-we-do" className="hover:text-[#FFFFFF] transition-colors duration-200">
+              <Link href="/what-we-do/research-publications" className="hover:text-[#FFFFFF] transition-colors duration-200">
                 What We Do
               </Link>
             </li>
@@ -65,7 +65,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/get-involved" className="hover:text-[#FFFFFF] transition-colors duration-200">
+              <Link href="/get-involved/careers" className="hover:text-[#FFFFFF] transition-colors duration-200">
                 Get Involved
               </Link>
             </li>
@@ -89,7 +89,7 @@ export default function Footer() {
             Email: <a href="mailto:info@nalacenter.org" className="hover:text-[#FFFFFF] transition-colors duration-200">info@nalacenter.org</a>
           </p>
           <p className="text-sm mb-4">
-            Phone: <a href="tel:+254712345678" className="hover:text-[#FFFFFF] transition-colors duration-200">+254 712 345 678</a>
+            Phone: <a href="tel:+254718302179" className="hover:text-[#FFFFFF] transition-colors duration-200">+254 718 302 179</a>
           </p>
 
           {/* Social Media Icons */}
