@@ -230,7 +230,6 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
           ))}
         </div>
       </div>
-
       {/* RENDER DESKTOP DROPDOWNS OUTSIDE THE MAIN LOOP, BUT WITHIN THE NAV */}
       {navItems.map((item) => (
         item.links && (
@@ -270,7 +269,6 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
           </div>
         )
       ))}
-
       {/* Mobile Menu Container (slides in/out) */}
       <div
         className={`
@@ -283,7 +281,7 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
           <div key={item.name} className="w-full">
             {item.links ? (
               // Mobile Accordion Header
-              <div
+              (<div
                 className={`
                   py-3 px-4 rounded-md transition-colors duration-200
                   hover:bg-[#1F1F1F] flex justify-between items-center cursor-pointer text-[#FFFFFF] font-semibold text-lg
@@ -293,10 +291,10 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
               >
                 <span>{item.name}</span>
                 <span>{openMobileAccordion === item.name ? '-' : '+'}</span>
-              </div>
+              </div>)
             ) : (
               // Mobile Link (e.g., Home)
-              <Link
+              (<Link
                 href={item.href}
                 className={`
                   block py-3 px-4 rounded-md transition-colors duration-200
@@ -306,11 +304,11 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
-              </Link>
+              </Link>)
             )}
             {item.links && (
               // Mobile Accordion Content (Dropdown without images)
-              <div
+              (<div
                 className={`
                   overflow-hidden transition-all duration-300 ease-in-out
                   ${openMobileAccordion === item.name ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}
@@ -328,7 +326,7 @@ export default function Navbar({ onHeightChange }: NavbarProps) {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div>)
             )}
           </div>
         ))}

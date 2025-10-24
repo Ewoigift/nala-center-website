@@ -1,13 +1,18 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
-    domains: [
-      'placehold.co', 
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.example.com',
+      },
     ],
   },
-  /* other config options */
-  optimizeFonts: false,
 };
 
 export default nextConfig;

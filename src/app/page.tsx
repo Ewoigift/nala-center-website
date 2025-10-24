@@ -208,7 +208,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* Latest Insights Section */}
       <section className="container mx-auto py-16 px-4 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Latest Insights</h2>
@@ -277,7 +276,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Upcoming Events & Workshops Section - Now a Carousel */}
       <section className="bg-[#EBEBEB] py-16 px-4">
         <div className="container mx-auto">
@@ -335,58 +333,57 @@ export default function Home() {
             {/* Removed "View All Events" button as requested */}
           </div>
         </section>
-
-        {/* Subscribe / Stay Connected Section */}
-        <section className="bg-white py-16 px-4">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest research, insights, and event updates from Nala center.
-            </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
-                value={email} // Controlled component
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={submissionStatus === 'loading'} // Disable during loading
-              />
-              <button
-                className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto"
-                onClick={handleSubscribe}
-                disabled={submissionStatus === 'loading'} // Disable during loading
-              >
-                {submissionStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </div>
-            {message && (
-              <p className={`mt-4 text-center ${
-                submissionStatus === 'success' ? 'text-green-600' : 'text-red-600'
-              }`}>
-                {message}
-              </p>
-            )}
-            <div className="flex justify-center space-x-6">
-              {/* Twitter Icon */}
-              <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">
-                <FontAwesomeIcon icon={faXTwitter} />
-              </a>
-              {/* LinkedIn Icon */}
-              <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#0077B5] text-3xl transition-colors duration-300" aria-label="LinkedIn">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              {/* Instagram Icon */}
-              <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#E4405F] text-3xl transition-colors duration-300" aria-label="Instagram">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              {/* WhatsApp Icon */}
-              <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#25D366] text-3xl transition-colors duration-300" aria-label="WhatsApp">
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </a>
-            </div>
+      {/* Subscribe / Stay Connected Section */}
+      <section className="bg-white py-16 px-4">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">Stay Connected</h2>
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            Subscribe to our newsletter for the latest research, insights, and event updates from Nala center.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
+              value={email} // Controlled component
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={submissionStatus === 'loading'} // Disable during loading
+            />
+            <button
+              className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto"
+              onClick={handleSubscribe}
+              disabled={submissionStatus === 'loading'} // Disable during loading
+            >
+              {submissionStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
+            </button>
           </div>
-        </section>
-      </main>
+          {message && (
+            <p className={`mt-4 text-center ${
+              submissionStatus === 'success' ? 'text-green-600' : 'text-red-600'
+            }`}>
+              {message}
+            </p>
+          )}
+          <div className="flex justify-center space-x-6">
+            {/* Twitter Icon */}
+            <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">
+              <FontAwesomeIcon icon={faXTwitter} />
+            </a>
+            {/* LinkedIn Icon */}
+            <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#0077B5] text-3xl transition-colors duration-300" aria-label="LinkedIn">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+            {/* Instagram Icon */}
+            <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#E4405F] text-3xl transition-colors duration-300" aria-label="Instagram">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            {/* WhatsApp Icon */}
+            <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#25D366] text-3xl transition-colors duration-300" aria-label="WhatsApp">
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -212,7 +212,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           </div>
         </div>
       </section>
-
       {/* Our Story Section */}
       <div className="container mx-auto px-4">
         {/* Animated Image */}
@@ -254,7 +253,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           </div>
         </section>
       </div>
-
       {/* Mission & Vision Section */}
       <section className="container mx-auto py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Mission & Vision</h2>
@@ -276,7 +274,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           </div>
         </div>
       </section>
-
       {/* Objectives Section */}
       <section className="bg-[#f8f8f8] py-16 px-4">
         <div className="container mx-auto">
@@ -295,61 +292,60 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           </div>
         </div>
       </section>
-
       {/* Core Values Section */}
-        <section className="bg-[#F8F8F8] py-16 px-4">
-          <div className="container mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Core Values</h2>
+      <section className="bg-[#F8F8F8] py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Core Values</h2>
 
-            <div className="relative">
-              {/* Scrollable container for core values cards */}
-              <div
-                ref={coreValuesSliderRef}
-                className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
-              >
-                {coreValues.map((value, index) => (
-                  <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
-                    {/* Added hover effects and ensured consistent height */}
-                    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center h-[250px] justify-center
-                                transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
-                      {value.icon && ( // Render icon only if it exists
-                        <div className="text-[#050505] text-4xl mb-4">
-                          <FontAwesomeIcon icon={value.icon} />
-                        </div>
-                      )}
-                      <h3 className="text-xl font-semibold mb-2">{value.name}</h3>
-                      <p className="text-gray-700 text-base leading-relaxed">{value.description}</p>
-                    </div>
+          <div className="relative">
+            {/* Scrollable container for core values cards */}
+            <div
+              ref={coreValuesSliderRef}
+              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
+            >
+              {coreValues.map((value, index) => (
+                <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
+                  {/* Added hover effects and ensured consistent height */}
+                  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center h-[250px] justify-center
+                              transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
+                    {value.icon && ( // Render icon only if it exists
+                      (<div className="text-[#050505] text-4xl mb-4">
+                        <FontAwesomeIcon icon={value.icon} />
+                      </div>)
+                    )}
+                    <h3 className="text-xl font-semibold mb-2">{value.name}</h3>
+                    <p className="text-gray-700 text-base leading-relaxed">{value.description}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
 
-              {/* Navigation Arrows for Core Values Slider */}
-              <div className="flex justify-center mt-8 space-x-8">
-                <button
-                  onClick={scrollCoreValuesLeft}
-                  disabled={isCoreValuesLeftDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isCoreValuesLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll left"
-                >
-                  &larr;
-                </button>
-                <button
-                  onClick={scrollCoreValuesRight}
-                  disabled={isCoreValuesRightDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isCoreValuesRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll right"
-                >
-                  &rarr;
-                </button>
-              </div>
+            {/* Navigation Arrows for Core Values Slider */}
+            <div className="flex justify-center mt-8 space-x-8">
+              <button
+                onClick={scrollCoreValuesLeft}
+                disabled={isCoreValuesLeftDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isCoreValuesLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll left"
+              >
+                &larr;
+              </button>
+              <button
+                onClick={scrollCoreValuesRight}
+                disabled={isCoreValuesRightDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isCoreValuesRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll right"
+              >
+                &rarr;
+              </button>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
     </main>
   );
 }
