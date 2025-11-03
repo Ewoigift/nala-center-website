@@ -1,7 +1,7 @@
 // src/app/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react'; // Removed useCallback
 
@@ -257,19 +257,18 @@ export default function Home() {
           {/* Insight Card 3 */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <Image
-              src="/images/demo1_image.jpeg"
+              src="/images/articles/africas-democracy-life-support.png"
               alt="Insight 3 Thumbnail"
               width={500}
               height={300}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <span className="text-sm text-gray-500">Research | June 10, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">Understanding Migration Patterns in East Africa</h3>
+              <span className="text-sm text-gray-500">Article | November 03, 2025</span>
+              <h3 className="font-semibold text-xl text-[#050505] my-2">Africa&apos;s Democracy on Life Support</h3>
               <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                An in-depth analysis of demographic shifts and their implications for regional stability, development, and human rights, based on recent field research.
-              </p>
-              <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                Africa&apos;s democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.              </p>
+              <Link href="/what-we-do/research-publications/africas-democracy-on-life-support" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
                 Read more &rarr;
               </Link>
             </div>

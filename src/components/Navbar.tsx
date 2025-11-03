@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
@@ -36,6 +36,7 @@ const whatWeDoLinks = [
 // Data for Get Involved dropdown
 const getInvolvedLinks = [
   { name: 'Careers', href: '/get-involved/careers', imgSrc: '/images/get-involved/careers-hero.jpg' },
+  { name: 'Membership', href: '/get-involved/membership', imgSrc: '/images/get-involved/membership-hero.jpg' },
 ];
 
 // Define props for Navbar to accept a callback for height

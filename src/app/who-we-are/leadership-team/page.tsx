@@ -1,7 +1,7 @@
 // src/app/who-we-are/leadership-team/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 
 export default function LeadershipTeamPage() {
@@ -48,6 +48,13 @@ export default function LeadershipTeamPage() {
       imageSrc: '/images/team/antony-nyabuto.jpg',
       slug: 'antony-nyabuto',
     },
+
+       {
+    name:'Dahabo Dagane',
+designation:'Communications Assistant',
+imageSrc:'/images/team/dahabo-dagane.png',
+slug:'dahabo-dagane'
+  },
 
     {
     name:'Keith Sangolo',

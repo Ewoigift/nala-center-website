@@ -1,7 +1,7 @@
 // src/app/who-we-are/board-of-directors/[slug]/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

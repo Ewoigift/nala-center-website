@@ -1,7 +1,7 @@
 // src/app/who-we-are/leadership-team/[slug]/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -121,6 +121,25 @@ Currently, Antony also serves as a Research Fellow at the International Council 
 Antony's career is marked by a strong commitment to interdisciplinary collaboration and civic engagement. He has been involved in several volunteer research and fellowship programs across sectors, demonstrating a consistent ability to foster innovative, cross-sectoral partnerships that drive tangible, lasting change. At Nala Center, he is instrumental in cultivating meaningful alliances with local and international actors ensuring that the Center's mission is both amplified and supported through strategic cooperation.`,
       socials: {
         linkedin: 'https://www.linkedin.com/in/antony-kengere-nyabuto-b75478285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
+        x: '#',
+        instagram: '#',
+      },
+    },
+
+     {
+       name:'Dahabo Dagane',
+designation:'Communications Assistant',
+imageSrc:'/images/team/dahabo-dagane.png',
+slug:'dahabo-dagane',
+      bio:` Dahabo Dagane is a Communications Assistant at the Nala Center, where she supports strategic communication, public engagement, and the dissemination of the Center’s research and policy outputs. In her role, she contributes to crafting narratives that advance the Center’s mission of promoting governance, inclusion, and regional cooperation across Africa.
+
+      She is currently pursuing a degree in International Relations and Diplomacy at the University of Nairobi, where she continues to deepen her understanding of global affairs, communication, and development. Her professional interests include strategic communication, youth empowerment, governance, and the role of media in shaping public policy and social transformation.
+
+      Dahabo is passionate about using communication as a bridge between research and impact, ensuring that ideas translate into meaningful action. Outside her professional work, she is actively involved in community and volunteer initiatives that promote empowerment and civic engagement.
+She is guided by the mantra: “Rise with purpose, lead with heart, and leave every space better than you found it.”
+      `,
+      socials: {
+        linkedin: '#',
         x: '#',
         instagram: '#',
       },

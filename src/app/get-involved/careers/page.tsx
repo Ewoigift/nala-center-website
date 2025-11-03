@@ -2,7 +2,7 @@
 
 // components/CareersPage.tsx
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { Briefcase, UserRound } from 'lucide-react';
 
 export default function CareersPage() {
@@ -28,7 +28,7 @@ export default function CareersPage() {
         <Image
           src={heroImageSrc}
           alt="Careers at Nala Center"
-          fill
+          layout="fill"
           objectFit="cover"
           priority
           className="absolute inset-0 z-0 opacity-70"

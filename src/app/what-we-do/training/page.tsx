@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import { Handshake, Briefcase,Landmark, Rocket, GraduationCap,} from 'lucide-react';
 

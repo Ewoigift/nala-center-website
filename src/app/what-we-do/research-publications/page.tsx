@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import { Download, FileText, BookOpen, Layers } from 'lucide-react';
 
@@ -17,7 +17,8 @@ const imagePaths = [
   '/images/focus-areas/peace-security.jpg',
   '/images/focus-areas/economic-systems.jpg',
   '/images/articles/AfricasClimateCrossroads.jpg',
-  '/images/articles/gerd-beyond-conflict.jpg'
+  '/images/articles/gerd-beyond-conflict.jpg',
+  '/images/articles/africas-democracy-life-support.png'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -77,6 +78,15 @@ const articles = [
     summary: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
     thumbnail: imagePaths[9 % imagePaths.length],
     link: '/what-we-do/research-publications/gerd-beyond-conflict'
+  }, 
+
+   {
+    title: "Africa's Democracy on Life Support",
+  author: "Bravin Onditi",
+  date: "2025-11-03",
+    summary: "Africa's democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.",
+    thumbnail: imagePaths[10 % imagePaths.length],
+    link: '/what-we-do/research-publications/africas-democracy-on-life-support'
   }, 
 
 ];

@@ -1,7 +1,7 @@
 // src/app/who-we-are/advisory-board/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 
 export default function AdvisoryBoardPage() {

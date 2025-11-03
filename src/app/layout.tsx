@@ -1,27 +1,25 @@
 // src/app/layout.tsx
-'use client'; // This must be a client component to use usePathname
+'use client';
 
-import { usePathname } from 'next/navigation'; // Import usePathname
- // Your global styles
-import Navbar from '../components/Navbar'; // Assuming Navbar is here
-import Footer from '../components/Footer'; // Import the new Footer component
+import { usePathname } from 'next/navigation';
+import './globals.css'; // ADD THIS LINE
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname(); // Get the current path
-
-  // Determine if the footer should be shown
-  const showFooter = pathname !== '/'; // Show footer on all pages EXCEPT the home page ('/')
+  const pathname = usePathname();
+  const showFooter = pathname !== '/';
 
   return (
     <html lang="en">
       <body>
-        <Navbar /> {/* Navbar is always present */}
-        {children} {/* This renders your page content (e.g., page.tsx, or other pages) */}
-        {showFooter && <Footer />} {/* Conditionally render the Footer */}
+        <Navbar />
+        {children}
+        {showFooter && <Footer />}
       </body>
     </html>
   );

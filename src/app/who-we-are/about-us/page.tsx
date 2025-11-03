@@ -1,7 +1,7 @@
 // src/app/who-we-are/about-us/page.tsx
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 // Removed: import Link from 'next/link'; // Link is not used in this component
 
 import { useRef, useState, useEffect } from 'react';
