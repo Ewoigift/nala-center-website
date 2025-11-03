@@ -261,6 +261,7 @@ export default function ArticlePage() {
             alt={articleData.title}
             layout="fill"
             objectFit="cover"
+            objectPosition="left center"
             priority
           />
         </div>
