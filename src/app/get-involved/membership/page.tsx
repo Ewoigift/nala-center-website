@@ -10,9 +10,11 @@ export default function MembershipPage() {
   const [formStatus, setFormStatus] = useState('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSendEmail = (e) => {
+const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setFormStatus('error');
