@@ -213,7 +213,7 @@ const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               <textarea
                 id="message"
                 name="message"
-                rows="4"
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg bg-[#1F1F1F] border border-[#3A9D23]/30 focus:ring-2 focus:ring-[#3A9D23] text-white"
