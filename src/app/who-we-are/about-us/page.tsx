@@ -2,102 +2,77 @@
 'use client';
 
 import Image from "next/legacy/image";
-// Removed: import Link from 'next/link'; // Link is not used in this component
-
 import { useRef, useState, useEffect } from 'react';
 
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faBalanceScale, // For Integrity & Transparency
-  faUsers,        // For Inclusivity & Diversity
-  faLightbulb,    // For Innovation & Analytical Rigor
-  faHandshake,    // For Collaboration & Partnership
-  faShieldHalved, // For Equity & Social Justice
-  faLeaf,         // For Sustainability & Resilience
-  faChartLine     // For Non-Partisanship & Independence
+  faBalanceScale,
+  faUsers,
+  faLightbulb,
+  faHandshake,
+  faShieldHalved,
+  faLeaf,
+  faChartLine
 } from '@fortawesome/free-solid-svg-icons';
-
 
 export default function AboutUsPage() {
   const mission = "To drive impactful change through rigorous research, strategic insights, and inclusive dialogue for a just, peaceful, and sustainable future.";
   const vision = "A premier hub for transformative research, shaping global discourse, and pioneering solutions for a peaceful, sustainable, and inclusive world.";
 
-  // Summarized content for Our Story (reduced to two paragraphs)
-  const ourStoryContent = `NALA Center is a youth-led hub pioneering curiosity-driven basic research and advancing epistemological inquiry across disciplines. We believe genuine innovation and transformative insight arise from unfettered intellectual curiosity, empowering emerging scholars with autonomy, resources, and mentorship to pursue deep investigations.
+  // Updated Our Story content from the Word document
+  const ourStoryContent = `Nala Center is an independent, nonpartisan international policy and research think tank dedicated to advancing evidence-based solutions to today's most pressing global challenges. Positioned at the intersection of research, policy, and practice, Nala Center serves as a platform for rigorous inquiry, critical thought, and innovative analysis.
 
-Beyond foundational research, NALA Center focuses on developing inclusive, actionable, and sustainable solutions. Through engaging diverse perspectives, fostering collaboration, and translating knowledge into real-world dialogue, we aim to empower decision-makers and influence global discourse on critical issues, equipping tomorrow’s leaders with visionary insights for an evolving world.`;
+With a strong focus on peacebuilding, governance, climate justice, and human rights, we support emerging African scholars and policy thinkers through mentorship, research support, and strategic convenings. Our work is driven by a commitment to inclusivity, intersectionality, and long-term impact.
 
+As a think tank, Nala Center generates high-quality, policy-relevant research while actively shaping public discourse and informing decision-making at national, regional, and global levels. We bridge theory and practice by fostering interdisciplinary collaboration, translating knowledge into actionable insights, and cultivating a new generation of thought leaders. Through research publications, dialogue platforms, and cross-sector partnerships, Nala Center contributes to shaping resilient, equitable, and sustainable futures.`;
+
+  // Updated objectives from the Word document
   const objectives = [
-    {
-      title: "Produce Rigorous, Impactful Research",
-      points: [
-        "Transparent protocols and peer-review for methodological excellence.",
-        "Prioritize open-access publications for broad reach and uptake.",
-        "Ongoing quality assurance through internal and external advisory committees."
-      ]
-    },
-    {
-      title: "Cultivate Emerging Youth Leadership & Innovation",
-      points: [
-        "Fellowship & Mentorship programmes pairing early-career scholars with senior researchers.",
-        "Annual innovation challenges (hackathons, policy sprints) to surface novel solutions.",
-        "Peer-learning networks and masterclasses for interdisciplinary exchange."
-      ]
-    },
-    {
-      title: "Translate Insight into Actionable Policy & Practice",
-      points: [
-        "Evidence-based policy briefs and white papers tailored for decision-makers.",
-        "Policy dialogues, workshops, and high-level briefings to champion recommendations.",
-        "Feedback loops with partners to track uptake and refine guidance."
-      ]
-    },
-    {
-      title: "Lead & Shape Global Discourse", // Corrected 'name' to 'title'
-      points: [
-        "Quarterly Thought Leadership series (op-eds, blogs, podcasts).",
-        "Social media campaigns and webinars to engage global youth audiences.",
-        "Participation in international fora to elevate youth-led perspectives."
-      ]
-    }
+    "To produce rigorous, policy-relevant research.",
+    "To translate evidence into actionable policy recommendations.",
+    "To build the capacity of emerging African scholars and practitioners.",
+    "To foster multi-sectoral partnerships and coalitions.",
+    "To convene dialogues that elevate youth voices in decision-making.",
+    "To disseminate insights widely through publications, events and digital platforms.",
+    "To shape public discourse on our focus areas."
   ];
 
   const coreValues = [
     {
       name: "Integrity & Transparency",
       description: "Maintaining rigorous, evidence-based research with open communication to build trust.",
-      icon: faBalanceScale // Example icon
+      icon: faBalanceScale
     },
     {
       name: "Inclusivity & Diversity",
       description: "Embracing and empowering diverse voices across cultures, disciplines, and communities.",
-      icon: faUsers // Example icon
+      icon: faUsers
     },
     {
       name: "Innovation & Analytical Rigor",
       description: "Applying interdisciplinary methods and creative problem-solving.",
-      icon: faLightbulb // Example icon
+      icon: faLightbulb
     },
     {
       name: "Collaboration & Partnership",
       description: "Building strategic alliances across academia, policy, and practice.",
-      icon: faHandshake // Example icon
+      icon: faHandshake
     },
     {
       name: "Equity & Social Justice",
       description: "Advocating for fairness, human rights, and ethical practices.",
-      icon: faShieldHalved // Example icon
+      icon: faShieldHalved
     },
     {
       name: "Sustainability & Resilience",
       description: "Promoting long-term environmental, economic, and social sustainability.",
-      icon: faLeaf // Example icon
+      icon: faLeaf
     },
     {
       name: "Non-Partisanship & Independence",
       description: "Ensuring objectivity free from political or special interest influences.",
-      icon: faChartLine // Example icon
+      icon: faChartLine
     },
   ];
 
@@ -109,11 +84,9 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
 
   // Set up observers for both elements
   useEffect(() => {
-    // Capture current ref values inside the effect for cleanup
     const currentImageRef = imageRef.current;
     const currentOurStoryRef = ourStoryRef.current;
 
-    // Image observer
     const imageObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !imageIsVisible) {
@@ -123,7 +96,6 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
       { threshold: 0.2 }
     );
     
-    // Story observer
     const storyObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !ourStoryIsVisible) {
@@ -139,14 +111,12 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
     return () => {
       if (currentImageRef) imageObserver.unobserve(currentImageRef);
       if (currentOurStoryRef) storyObserver.unobserve(currentOurStoryRef);
-
       imageObserver.disconnect();
       storyObserver.disconnect();
     };
-  }, [imageIsVisible, ourStoryIsVisible]); // Added imageIsVisible and ourStoryIsVisible to dependencies
+  }, [imageIsVisible, ourStoryIsVisible]);
 
-
-    // State and Ref for Core Values slider
+  // State and Ref for Core Values slider
   const coreValuesSliderRef = useRef<HTMLDivElement>(null);
   const [isCoreValuesLeftDisabled, setIsCoreValuesLeftDisabled] = useState(true);
   const [isCoreValuesRightDisabled, setIsCoreValuesRightDisabled] = useState(false);
@@ -163,7 +133,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
   const scrollCoreValuesLeft = () => {
     if (coreValuesSliderRef.current) {
       coreValuesSliderRef.current.scrollBy({
-        left: -(coreValuesSliderRef.current.offsetWidth / 2), // Scroll half a card width
+        left: -(coreValuesSliderRef.current.offsetWidth / 2),
         behavior: 'smooth',
       });
     }
@@ -172,7 +142,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
   const scrollCoreValuesRight = () => {
     if (coreValuesSliderRef.current) {
       coreValuesSliderRef.current.scrollBy({
-        left: coreValuesSliderRef.current.offsetWidth / 2, // Scroll half a card width
+        left: coreValuesSliderRef.current.offsetWidth / 2,
         behavior: 'smooth',
       });
     }
@@ -181,11 +151,11 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
   useEffect(() => {
     const sliderContainer = coreValuesSliderRef.current;
     if (sliderContainer) {
-      handleCoreValuesScroll(); // Set initial state
+      handleCoreValuesScroll();
       sliderContainer.addEventListener('scroll', handleCoreValuesScroll);
       return () => {
         sliderContainer.removeEventListener('scroll', handleCoreValuesScroll);
-    };
+      };
     }
   }, []);
 
@@ -212,6 +182,7 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           </div>
         </div>
       </section>
+
       {/* Our Story Section */}
       <div className="container mx-auto px-4">
         {/* Animated Image */}
@@ -246,13 +217,14 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
         >
           <div className="p-8 md:p-12">
             <div className="text-lg leading-relaxed">
-              {ourStoryContent.split('\n').map((paragraph, index) => (
+              {ourStoryContent.split('\n\n').map((paragraph, index) => (
                 <p key={index} className="mb-4 last:mb-0">{paragraph}</p>
               ))}
             </div>
           </div>
         </section>
       </div>
+
       {/* Mission & Vision Section */}
       <section className="container mx-auto py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Mission & Vision</h2>
@@ -260,38 +232,54 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
           {/* Mission Card */}
           <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Mission</h3>
-            <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
-              &ldquo;{mission}&rdquo;
-            </blockquote>
+            <p className="text-xl text-gray-700 text-center leading-relaxed">
+              {mission}
+            </p>
           </div>
           
           {/* Vision Card */}
           <div className="bg-[#f2eae4] p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold font-serif mb-4 text-center">Vision</h3>
-            <blockquote className="text-xl italic text-gray-700 text-center leading-relaxed">
-              &ldquo;{vision}&rdquo;
-            </blockquote>
+            <p className="text-xl text-gray-700 text-center leading-relaxed">
+              {vision}
+            </p>
           </div>
         </div>
       </section>
-      {/* Objectives Section */}
-      <section className="bg-[#f8f8f8] py-16 px-4">
-        <div className="container mx-auto">
+
+      {/* Objectives Section - New Design */}
+      <section className="bg-gradient-to-br from-[#f8f8f8] to-[#f2eae4] py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Our Objectives</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {objectives.map((objective, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#050505]">
-                <h3 className="text-xl font-semibold mb-3">{objective.title}</h3>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {objective.points.map((point, pIndex) => (
-                    <li key={pIndex}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          
+          <div className="relative">
+            {/* Vertical line connector for larger screens */}
+            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-[#050505] opacity-20"></div>
+            
+            <div className="space-y-6">
+              {objectives.map((objective, index) => (
+                <div 
+                  key={index}
+                  className="relative flex items-start group"
+                >
+                  {/* Number Badge */}
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#050505] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                    {index + 1}
+                  </div>
+                  
+                  {/* Objective Content */}
+                  <div className="flex-1 ml-6 bg-white p-6 rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-l-4 border-[#050505] group-hover:border-[#2F2F2F]">
+                    <p className="text-lg text-gray-800 leading-relaxed">
+                      {objective}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
       {/* Core Values Section */}
       <section className="bg-[#F8F8F8] py-16 px-4">
         <div className="container mx-auto">
@@ -305,13 +293,12 @@ Beyond foundational research, NALA Center focuses on developing inclusive, actio
             >
               {coreValues.map((value, index) => (
                 <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
-                  {/* Added hover effects and ensured consistent height */}
                   <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center h-[250px] justify-center
                               transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
-                    {value.icon && ( // Render icon only if it exists
-                      (<div className="text-[#050505] text-4xl mb-4">
+                    {value.icon && (
+                      <div className="text-[#050505] text-4xl mb-4">
                         <FontAwesomeIcon icon={value.icon} />
-                      </div>)
+                      </div>
                     )}
                     <h3 className="text-xl font-semibold mb-2">{value.name}</h3>
                     <p className="text-gray-700 text-base leading-relaxed">{value.description}</p>
