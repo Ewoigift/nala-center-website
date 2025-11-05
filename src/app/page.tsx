@@ -31,6 +31,7 @@ export default function Home() {
     '/images/hero-background.jpg',
     '/images/hero-background3.jpg', // Updated to hero-background3.jpg
     '/images/hero-background2.jpg', // Updated to hero-background2.jpg
+    '/images/hero-background4.jpg',
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 

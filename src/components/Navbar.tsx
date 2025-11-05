@@ -8,9 +8,9 @@ import { useState, useEffect, useRef } from 'react';
 
 // Data for Who We Are dropdown
 const whoWeAreLinks = [
-  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/about-us.png' },
+  { name: 'About Us', href: '/who-we-are/about-us', imgSrc: '/images/who-we-are/about-us.jpg' },
   { name: 'Leadership & Team', href: '/who-we-are/leadership-team', imgSrc: '/images/who-we-are/leadership-team.jpg' },
-  { name: 'Associate-fellows', href: '/who-we-are/associate-fellows', imgSrc: '/images/who-we-are/about-us.png' },
+  { name: 'Associate Fellows', href: '/who-we-are/associate-fellows', imgSrc: '/images/who-we-are/associate-fellows.jpg' },
   { name: 'Advisory Board', href: '/who-we-are/advisory-board', imgSrc: '/images/who-we-are/advisory-board.jpg' },
   {name:'Board of Directors', href:'/who-we-are/board-of-directors', imgSrc:'/images/who-we-are/board-directors.jpg'}
 ];
