@@ -20,34 +20,6 @@ export default function SustainableEnergyPage() {
       linkText: 'Download file (PDF)',
       linkHref: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf',
     },
-    {
-      type: 'research',
-      title: 'Nala Center Climate Research: COP29 Key Outcomes',
-      description: 'Key outcomes and look ahead for Africa.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      type: 'research',
-      title: 'Africa on the Road to COP28',
-      description: 'Reconciling climate & development.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      type: 'research',
-      title: 'The Africa Climate Summit',
-      description: 'Reconciling global climate goals and Africa\'s development agendas.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      type: 'research',
-      title: 'The Road to COP27',
-      description: 'Making Africa\'s Case in the Global Climate Debate.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
   ];
 
   const keyResources = [

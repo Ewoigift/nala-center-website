@@ -274,6 +274,28 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+{/* Insight Card 4 */}
+<div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <Image
+              src="/images/focus-areas/rethinking-youth-nature-finance.png"
+              alt="Insight 4 Thumbnail"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <span className="text-sm text-gray-500">Research | November 06, 2025</span>
+              <h3 className="font-semibold text-xl text-[#050505] my-2">Rethinking How Youth Shape the Future of Nature and Finance</h3>
+              <p className="text-gray-700 text-base mb-4 line-clamp-3">
+                This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.
+                </p>
+              <Link href="/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                Read more &rarr;
+              </Link>
+            </div>
+          </div>
+          
         </div>
       </section>
       {/* Upcoming Events & Workshops Section - Now a Carousel */}
