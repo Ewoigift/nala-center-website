@@ -38,6 +38,13 @@ imageSrc:'/images/team/Kennedy_Wangari.png',
 slug:'kennedy-karanja'
     },
 
+         {
+      name:'Salma Kadry',
+designation:' Climate, Peace, and Security',
+imageSrc:'/images/team/salma-kadry.png',
+slug:'salma-kadry'
+    },
+
   ];
 
   return (

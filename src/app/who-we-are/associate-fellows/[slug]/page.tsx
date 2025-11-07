@@ -63,13 +63,28 @@ socials: {
     },
 },
 {
- name:'Kennedy Karanja',
+name:'Kennedy Karanja',
 designation:'International Political Economy and Multilateral Diplomacy',
 imageSrc:'/images/team/Kennedy_Wangari.png',
 slug:'kennedy-karanja',
 bio:`Kennedy Wangari is an Associate Fellow at the Nala Center, specializing in the intersection of international political economy, public policy, and multilateral diplomacy, with a strong focus on African regional integration and policy innovation. Currently pursuing a Bachelor of Arts in International Studies at Strathmore University, Kennedy simultaneously works with the United Nations Environment Program (UNEP) in the Civil Society Unit of the Governance Affairs Office. 
 
 His extensive experience in international governance includes active participation and contribution to high-level forums like the UN Environment Assembly (2024) and the UN-Habitat Assembly (2023), where he assisted in drafting resolutions and organizing strategic policy events like the UN Science-Policy Business Forum. A proven leader, he served as the 15th Secretary General of the Strathmore University Student Council (2023-2024), demonstrating strong administrative and governance capabilities. Kennedy’s dedication to deconstructing complex global affairs and championing policies that enhance economic development and youth empowerment positions him as a forward-thinking policy analyst poised to make a significant impact on the policy landscape.`,
+socials: {
+      email: '#',
+      linkedin: '#',
+      x: '#',
+    },
+},
+
+{
+name:'Salma Kadry',
+designation:' Climate, Peace, and Security',
+imageSrc:'/images/team/salma-kadry.png',
+slug:'salma-kadry',
+bio:`Salma Kadry is a Climate, Peace, and Security Specialist at CGIAR, where she leads work at the nexus of climate change, food–land–water systems, and peace and security across the Middle East and North Africa (MENA) region. With nearly a decade of experience, Salma specializes in qualitative research, capacity development, and project management focusing on climate-resilient livelihoods, gender, and migration.
+
+Before joining CGIAR, she was the Inaugural Officer of the Climate, Peace and Development Program at Egypt’s Cairo International Center for Conflict Resolution, Peacekeeping and Peacebuilding (CCCPA), where she contributed to the COP27 Presidency initiative “Climate Responses for Sustaining Peace.” Recognized as a regional thought leader, Salma became the first Arab and CGIAR scientist to brief the United Nations Security Council on climate, peace, and security in 2023. She holds an MA in Global Studies (summa cum laude) from Ghent University, Belgium, and a BA in Political Science and Multimedia Journalism from the American University in Cairo.`,
 socials: {
       email: '#',
       linkedin: '#',
