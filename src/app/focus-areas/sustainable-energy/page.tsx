@@ -18,7 +18,7 @@ export default function SustainableEnergyPage() {
       author: 'Isaac Mureithi',
       description: 'This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.',
       linkText: 'Download file (PDF)',
-      linkHref: '/pdfs/rethinking-youth-nature-finance.pdf',
+      linkHref: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf',
     },
     {
       type: 'research',
@@ -207,7 +207,6 @@ export default function SustainableEnergyPage() {
                   <p className="text-gray-700 text-base mb-2">{item.description}</p>
                   <a 
                     href={item.linkHref} 
-                    download={item.linkHref !== '#'}
                     target={item.linkHref === '#' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
                     className="inline-block bg-[#7BB661] text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-[#6A9E53] transition-colors duration-300"
