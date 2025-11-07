@@ -4,7 +4,6 @@
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react'; 
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

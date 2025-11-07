@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from "next/legacy/image";
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -351,7 +350,7 @@ export default function ContactPage() {
             Ready to Collaborate?
           </h2>
           <p className="text-lg mb-8">
-            Whether you're interested in our research, looking to partner with us, or have questions about our work, we're here to help.
+            Whether you&apos;re interested in our research, looking to partner with us, or have questions about our work, we&apos;re here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
