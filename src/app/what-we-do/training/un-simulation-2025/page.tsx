@@ -1,14 +1,14 @@
 // src/app/what-we-do/training/un-simulation-2025/page.tsx
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Target, Award, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function UNSimulationPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const galleryRef = useRef<HTMLDivElement>(null);
+ 
 
   // Workshop photos - 10 gallery photos (hero image is separate)
   const workshopPhotos = [
@@ -134,13 +134,13 @@ export default function UNSimulationPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#050505]">About the Workshop</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
-              As part of our broader mission to build capacity, foster leadership, and advance policy literacy among Africa's youth, the Nala Center delivered a dynamic and hands-on United Nations Simulation Training during the SDG4Impact Conference & Green Gold Cup 2025, held on 8–9 November 2025 at Strathmore University.
+              As part of our broader mission to build capacity, foster leadership, and advance policy literacy among Africa&apos;s youth, the Nala Center delivered a dynamic and hands-on United Nations Simulation Training during the SDG4Impact Conference & Green Gold Cup 2025, held on 8–9 November 2025 at Strathmore University.
             </p>
             <p>
               This two-day program brought together passionate university students, young professionals, and emerging leaders committed to driving sustainable solutions within their communities. The simulation offered participants a rare opportunity to experience the inner workings of international diplomacy, model global negotiations, and understand the complex interplay between national interests, global agendas, and multilateral cooperation.
             </p>
             <p>
-              Facilitated by Nala Center's team of researchers and practitioners, the training guided participants through every stage of a UN session—from drafting resolutions and formulating policy positions to deliberating global issues through structured debate and consensus-building. The exercise immersed learners in real-world diplomatic practice, strengthening their analytical, negotiation, and communication skills while promoting an appreciation for collaborative problem-solving and global citizenship.
+              Facilitated by Nala Center&apos;s team of researchers and practitioners, the training guided participants through every stage of a UN session—from drafting resolutions and formulating policy positions to deliberating global issues through structured debate and consensus-building. The exercise immersed learners in real-world diplomatic practice, strengthening their analytical, negotiation, and communication skills while promoting an appreciation for collaborative problem-solving and global citizenship.
             </p>
           </div>
         </div>
@@ -170,7 +170,7 @@ export default function UNSimulationPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#050505]">Focus Areas & Topics</h2>
           <div className="bg-gradient-to-br from-[#6CAED9] to-[#5a9bc4] text-white p-8 rounded-2xl shadow-lg">
             <p className="text-lg mb-6">
-              Central to this year's simulation was the exploration of the Sustainable Development Goals (SDGs), particularly how nations and communities can align local actions with global ambitions for a more inclusive, peaceful, and climate-resilient future.
+              Central to this year&apos;s simulation was the exploration of the Sustainable Development Goals (SDGs), particularly how nations and communities can align local actions with global ambitions for a more inclusive, peaceful, and climate-resilient future.
             </p>
             <h3 className="text-2xl font-semibold mb-4">Participants deliberated on:</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -262,7 +262,7 @@ export default function UNSimulationPage() {
               The training took place within the framework of the SDG4Impact Conference, a flagship initiative co-organized by the Strathmore Environmental and Sustainability Club, in partnership with the Young World Federalists, Tendet Foundation, and a network of sustainability-focused organizations. The event served as a platform for dialogue, innovation, and youth-driven advocacy on advancing the 2030 Agenda for Sustainable Development.
             </p>
             <p>
-              Through engagements such as this, the Nala Center continues to reaffirm its role as a thought leader in experiential learning, capacity development, and policy innovation. Our approach bridges academic knowledge with practical skills, equipping Africa's next generation of changemakers with the tools, confidence, and global awareness needed to influence decision-making and shape sustainable futures.
+              Through engagements such as this, the Nala Center continues to reaffirm its role as a thought leader in experiential learning, capacity development, and policy innovation. Our approach bridges academic knowledge with practical skills, equipping Africa&apos;s next generation of changemakers with the tools, confidence, and global awareness needed to influence decision-making and shape sustainable futures.
             </p>
           </div>
         </div>
