@@ -1,10 +1,10 @@
-// TrainingPage.tsx
+// src/app/what-we-do/training/page.tsx
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
 import Image from "next/legacy/image";
 import Link from 'next/link';
-import { Handshake, Briefcase,Landmark, Rocket, GraduationCap,} from 'lucide-react';
+import { GraduationCap, Users, Calendar, MapPin } from 'lucide-react';
 
 const primaryColor = "#6CAED9";
 const textColor = "#2F2F2F";
@@ -12,39 +12,22 @@ const headingColor = "#050505";
 const cardBgColor = "#FFFFFF";
 const sectionBgColor = "#EBEBEB";
 
-// Data for the training programs with uploaded images
-const trainingPrograms = [
-  {
-    title: "Peacebuilding & Conflict Resolution",
-    summary: "Hands-on training in mediation, negotiation, and community dialogue to build skills for sustainable peace.",
-    icon: <Handshake className={`w-8 h-8 text-[${primaryColor}]`} />,
-image: "/images/focus-areas/peace-security.jpg"  },
-  {
-    title: "Democratic Governance & Civic Engagement",
-    summary: "Workshops on institutional strengthening, policy advocacy, and empowering citizens to participate in democratic processes.",
-    icon: <Landmark className={`w-8 h-8 text-[${primaryColor}]`} />,
-image: "/images/focus-areas/democracy-governance.jpg"  },
-  {
-    title: "Economic Development & Entrepreneurship",
-    summary: "Programs focused on business management, financial literacy, and creating sustainable livelihoods for youth and women.",
-    icon: <Briefcase className={`w-8 h-8 text-[${primaryColor}]`} />,
-image: "/images/focus-areas/economic-systems.jpg"  },
-];
-
-// Data for the new courses section, with a mix of uploaded images and placeholders
+// Data for courses
 const courses = [
   {
     title: "Data Analysis for Policy Making",
     summary: "A foundational course on collecting, analyzing, and visualizing data to inform evidence-based policy decisions.",
-image: "/images/what-we-do/policy-engagement.jpg" },
+    image: "/images/what-we-do/policy-engagement.jpg"
+  },
   {
     title: "Leadership in Post-Conflict Societies",
     summary: "An in-depth course exploring effective leadership strategies for rebuilding communities and institutions after conflict.",
-image: "/images/focus-areas/migration-human-rights.jpg"  },
+    image: "/images/focus-areas/migration-human-rights.jpg"
+  },
   {
     title: "Grant Writing & Fundraising",
     summary: "Master the art of writing compelling grant proposals and developing sustainable fundraising strategies for non-profits.",
-image: "/images/what-we-do/capacity-building.jpg"
+    image: "/images/what-we-do/capacity-building.jpg"
   },
   {
     title: "Monitoring & Evaluation for Development Projects",
@@ -71,7 +54,8 @@ export default function TrainingPage() {
       });
     }
   };
-   const scrollRight = () => {
+
+  const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: scrollContainerRef.current.offsetWidth / 3,
@@ -80,18 +64,14 @@ export default function TrainingPage() {
     }
   };
 
-  // Function to check scroll position and update button state for a non-looping slider
-  // This function is no longer strictly necessary for the looping behavior but is kept for visual feedback
   const checkScrollPosition = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      // We don't disable the buttons for a looping slider, but we can set the state to handle visual cues
       setIsLeftDisabled(scrollLeft <= 0);
       setIsRightDisabled(scrollLeft + clientWidth >= scrollWidth);
     }
   };
 
-  // Set up event listener for scroll changes
   useEffect(() => {
     const { current } = scrollContainerRef;
     if (current) {
@@ -116,38 +96,60 @@ export default function TrainingPage() {
         </p>
       </header>
 
-      {/* Training Programs Section */}
-      <section className={`p-6 md:p-10 rounded-xl bg-[${sectionBgColor}] mb-12`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Rocket className={`w-8 h-8 text-[${primaryColor}]`} />
-          <h2 className={`text-3xl font-bold text-[${headingColor}]`}>Our Workshops</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trainingPrograms.map((program, i) => (
-            <div key={`program-${i}`} className={`flex flex-col bg-[${cardBgColor}] rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg`}>
-              <Image
-                src={program.image}
-                alt={`Image for ${program.title}`}
-                width={600}
-                height={400}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
-              <div className="p-6 flex-grow flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    {program.icon}
-                    <h3 className={`font-semibold text-xl text-[${headingColor}]`}>{program.title}</h3>
-                  </div>
-                  <p className={`mt-2 text-base text-[${textColor}] line-clamp-3`}>
-                    {program.summary}
-                  </p>
-                </div>
-                <Link href="#" className={`text-[${primaryColor}] font-medium inline-flex items-center mt-4 hover:underline`}>
-                  Learn More
-                </Link>
+      {/* Featured Workshop Section */}
+      <section className={`mb-12`}>
+        <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+          {/* Background Image */}
+          <Image
+            src="/images/workshops/un-simulation-hero.jpg"
+            alt="United Nations Simulation Training"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+          
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+            <div className="max-w-4xl">
+              <div className="inline-block bg-[#6CAED9] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Featured Workshop
               </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                United Nations Simulation Training
+              </h2>
+              <p className="text-xl text-white/90 mb-2">
+                SDG4Impact Conference & Green Gold Cup 2025
+              </p>
+              
+              {/* Event Details */}
+              <div className="flex flex-wrap gap-4 mb-6 text-white/80">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>8–9 November 2025</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5" />
+                  <span>Strathmore University</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5" />
+                  <span>University Students & Young Professionals</span>
+                </div>
+              </div>
+
+              <p className="text-lg text-white/90 mb-6 line-clamp-3">
+                A dynamic, hands-on program that brought together passionate university students, young professionals, and emerging leaders to experience the inner workings of international diplomacy through structured UN simulations.
+              </p>
+
+              <Link 
+                href="/what-we-do/training/un-simulation-2025"
+                className="inline-block bg-white text-[#6CAED9] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg"
+              >
+                Learn More & View Gallery
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -187,28 +189,28 @@ export default function TrainingPage() {
           </div>
 
           {/* Slider navigation buttons */}
-        <div className="flex justify-center mt-8 space-x-8">
-                <button
-                  onClick={scrollLeft}
-                  disabled={isLeftDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll left"
-                >
-                  &larr;
-                </button>
-                <button
-                  onClick={scrollRight}
-                  disabled={isRightDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll right"
-                >
-                  &rarr;
-                </button>
-              </div>
+          <div className="flex justify-center mt-8 space-x-8">
+            <button
+              onClick={scrollLeft}
+              disabled={isLeftDisabled}
+              className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+              }`}
+              aria-label="Scroll left"
+            >
+              &larr;
+            </button>
+            <button
+              onClick={scrollRight}
+              disabled={isRightDisabled}
+              className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+              }`}
+              aria-label="Scroll right"
+            >
+              &rarr;
+            </button>
+          </div>
         </div>
       </section>
 
@@ -220,7 +222,7 @@ export default function TrainingPage() {
         <p className="text-lg max-w-2xl mx-auto mb-6">
           We can design bespoke workshops and training sessions tailored to your organization&apos;s specific needs. Get in touch to discuss your requirements.
         </p>
-        <Link href="#" className={`bg-white text-[${primaryColor}] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105`}>
+        <Link href="/contact" className={`bg-white text-[${primaryColor}] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105`}>
           Contact Us
         </Link>
       </section>
