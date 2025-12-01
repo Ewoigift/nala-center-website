@@ -31,6 +31,7 @@ const whatWeDoLinks = [
   { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/policy-engagement.jpg' },
   { name: 'Training', href: '/what-we-do/training', imgSrc: '/images/what-we-do/capacity-building.jpg' },
   { name: 'Reports', href: '/what-we-do/reports', imgSrc: '/images/what-we-do/multimedia-hub.jpg' },
+  { name: 'Writing Guidelines', href: '/what-we-do/writing-guidelines', imgSrc: '/images/what-we-do/style-guide-hero.jpg' },
 ];
 
 // Data for Get Involved dropdown

@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-'use client'; // This component might be used in a client-side layout
+'use client';
 
 import Link from 'next/link';
 import Image from "next/legacy/image";
@@ -19,33 +19,26 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#050505] text-[#EBEBEB] py-12 px-4 font-sans">
-      {/* Changed lg:grid-cols-4 to lg:grid-cols-3 to maintain 3 columns on large screens */}
-      {/* Removed justify-center as justify-items-center handles individual cell centering,
-          and the container's mx-auto centers the grid itself if it doesn't fill the width. */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
 
         {/* Column 1: Logo & Mission Statement */}
-        {/* Changed items-center to items-start and removed text-center for left alignment */}
         <div className="flex flex-col items-start text-left">
-          {/* The Link already makes the Image and Span a single unit */}
           <Link href="/" className="flex items-center space-x-2 mb-4">
             <Image
-              src="/images/Nala_No_Bg_White.png" // Using the white logo version
+              src="/images/Nala_No_Bg_White.png"
               alt="NALA Center Logo"
-              width={60} // Increased logo size
-              height={60} // Increased logo size
+              width={60}
+              height={60}
               priority
             />
             <span className="text-3xl font-bold font-serif text-[#FFFFFF]">NALA CENTER</span>
           </Link>
-          {/* Removed max-w-xs to allow the paragraph to take more space and balance column widths */}
           <p className="text-sm leading-relaxed">
             Driving meaningful and lasting change through transformative research, strategic insights, and inclusive dialogue for a sustainable future.
           </p>
         </div>
 
         {/* Column 2: Quick Links */}
-        {/* Removed text-center for left alignment */}
         <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Quick Links</h3>
           <ul className="space-y-2">
@@ -74,12 +67,10 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-            {/* Add more links as needed */}
           </ul>
         </div>
 
         {/* Column 3: Contact Information */}
-        {/* Removed text-center for left alignment */}
         <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Contact</h3>
           <p className="text-sm mb-2">
@@ -93,7 +84,6 @@ export default function Footer() {
           </p>
 
           {/* Social Media Icons */}
-          {/* Changed justify-center to justify-start for left alignment */}
           <div className="flex justify-start space-x-6 mt-4">
             <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#EBEBEB] hover:text-[#FFFFFF] text-2xl transition-colors duration-300" aria-label="Twitter">
               <FontAwesomeIcon icon={faXTwitter} />
@@ -114,9 +104,18 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Copyright & Privacy Policy */}
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400">
-        &copy; {currentYear} Nala Center. All rights reserved.
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <span>&copy; {currentYear} Nala Center. All rights reserved.</span>
+          <span className="hidden sm:inline">|</span>
+          <Link 
+            href="/privacy-policy" 
+            className="hover:text-[#FFFFFF] transition-colors duration-200 underline"
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );

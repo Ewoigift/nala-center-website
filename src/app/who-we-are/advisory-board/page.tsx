@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function AdvisoryBoardPage() {
   const boardMembers = [
     {
-      name: 'Andrew J. Franklin',
+      name: 'Andrew J. Franklin, Former US Marine',
       designation: 'Peace and Security',
       imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
       slug: 'andrew-franklin',

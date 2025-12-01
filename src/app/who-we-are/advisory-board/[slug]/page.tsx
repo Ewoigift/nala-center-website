@@ -13,7 +13,7 @@ import React, { use } from 'react';
 
 const allAdvisoryBoardMembers = [
   {
-     name: 'Andrew J. Franklin',
+     name: 'Andrew J. Franklin, Former US Marine',
       designation: 'Peace and Security',
       imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
       slug: 'andrew-franklin',
