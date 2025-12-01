@@ -45,6 +45,13 @@ imageSrc:'/images/team/salma-kadry.png',
 slug:'salma-kadry'
     },
 
+     {
+      name:'Getrude Wangui Maina',
+designation:'Policy, Diplomacy, and Sustainable Development',
+imageSrc:'/images/team/getrude-maina.jpg',
+slug:'getrude-maina'
+    },
+
   ];
 
   return (

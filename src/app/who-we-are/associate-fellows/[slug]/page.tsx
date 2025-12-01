@@ -92,6 +92,26 @@ socials: {
     },
 },
 
+{
+      name:'Getrude Wangui Maina',
+designation:'Policy, Diplomacy, and Sustainable Development',
+imageSrc:'/images/team/getrude-maina.jpg',
+slug:'getrude-maina',
+bio:`Getrude Wangui Maina is a proactive and adaptable professional with a strong foundation in operations, governance, and research. She holds a Bachelor of Science in Disaster Management and International Diplomacy from Masinde Muliro University of Science and Technology and as developed a diverse portfolio across emergency response, legal administration, and policy analysis
+
+With over two years of professional experience, Getrude has demonstrated expertise in data and information management, process improvement, and project coordination. Her experience as a Legal Secretary at PROW & Co. Advocates and previously as a Legal Administrative Assistant has refined her capabilities in managing sensitive documentation, stakeholder communication, and organizational efficiency — improving information systems and compliance processes across multiple projects.
+
+Her earlier work in disaster management and ongoing engagement in AI-driven legal aid volunteer initiatives underscore her commitment to impactful, community-centered solutions. Certified through the ALX Virtual Assistant Program and trained in Data Analytics, Getrude brings an analytical yet pragmatic approach to problem-solving, operational support, and governance.
+
+Passionate about the intersection of policy, diplomacy, and sustainable development, she aspires to contribute to initiatives that strengthen governance systems, enhance institutional effectiveness, and promote inclusive growth across Africa.`,
+socials: {
+      email: '#',
+      linkedin: '#',
+      x: '#',
+    },
+
+    },
+
 
 ];
 
