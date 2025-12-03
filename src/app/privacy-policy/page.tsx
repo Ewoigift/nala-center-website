@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
           <Mail className="w-12 h-12 mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-4">Have Questions About Your Privacy?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            We're here to help. If you have any concerns or questions about how we handle your data, please don't hesitate to reach out.
+            We&apos;re here to help. If you have any concerns or questions about how we handle your data, please don&apos;t hesitate to reach out.
           </p>
           <Link
             href="/contact"

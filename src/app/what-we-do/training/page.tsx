@@ -96,58 +96,118 @@ export default function TrainingPage() {
         </p>
       </header>
 
-      {/* Featured Workshop Section */}
+      {/* Featured Workshops Section */}
       <section className={`mb-12`}>
-        <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-          {/* Background Image */}
-          <Image
-            src="/images/workshops/un-simulation-hero.jpg"
-            alt="United Nations Simulation Training"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-          
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-            <div className="max-w-4xl">
-              <div className="inline-block bg-[#6CAED9] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Featured Workshop
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                United Nations Simulation Training
-              </h2>
-              <p className="text-xl text-white/90 mb-2">
-                SDG4Impact Conference & Green Gold Cup 2025
-              </p>
-              
-              {/* Event Details */}
-              <div className="flex flex-wrap gap-4 mb-6 text-white/80">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>8–9 November 2025</span>
+        <h2 className="text-3xl font-bold text-center mb-8 text-[#050505]">Our Workshops</h2>
+        
+        <div className="space-y-8">
+          {/* Workshop 1: UN Simulation Training */}
+          <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            {/* Background Image */}
+            <Image
+              src="/images/workshops/un-simulation-hero.jpg"
+              alt="United Nations Simulation Training"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+              <div className="max-w-4xl">
+                <div className="inline-block bg-[#6CAED9] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  Workshop Highlight
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
-                  <span>Strathmore University</span>
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  United Nations Simulation Training
+                </h3>
+                <p className="text-xl text-white/90 mb-2">
+                  SDG4Impact Conference & Green Gold Cup 2025
+                </p>
+                
+                {/* Event Details */}
+                <div className="flex flex-wrap gap-4 mb-6 text-white/80">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>8–9 November 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    <span>Strathmore University</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5" />
+                    <span>University Students & Young Professionals</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5" />
-                  <span>University Students & Young Professionals</span>
-                </div>
-              </div>
 
-              <p className="text-lg text-white/90 mb-6 line-clamp-3">
-                A dynamic, hands-on program that brought together passionate university students, young professionals, and emerging leaders to experience the inner workings of international diplomacy through structured UN simulations.
-              </p>
+                <p className="text-lg text-white/90 mb-6 line-clamp-3">
+                  A dynamic, hands-on program that brought together passionate university students, young professionals, and emerging leaders to experience the inner workings of international diplomacy through structured UN simulations.
+                </p>
 
-              <Link 
-                href="/what-we-do/training/un-simulation-2025"
-                className="inline-block bg-white text-[#6CAED9] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg"
-              >
-                Learn More & View Gallery
-              </Link>
+                <Link 
+                  href="/what-we-do/training/un-simulation-2025"
+                  className="inline-block bg-white text-[#6CAED9] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg"
+                >
+                  Learn More & View Gallery
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Workshop 2: Youth Environment Assembly 2025 */}
+          <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            {/* Background Image */}
+            <Image
+              src="/images/workshops/yea-2025-hero.jpg"
+              alt="Youth Environment Assembly 2025"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+              <div className="max-w-4xl">
+                <div className="inline-block bg-[#7BB661] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  Workshop Highlight
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  Youth Environment Assembly 2025
+                </h3>
+                <p className="text-xl text-white/90 mb-2">
+                  Global Youth Declaration on the Environment
+                </p>
+                
+                {/* Event Details */}
+                <div className="flex flex-wrap gap-4 mb-6 text-white/80">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>29–30 November 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    <span>UNEP Headquarters, Nairobi</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5" />
+                    <span>500+ Young Leaders Globally</span>
+                  </div>
+                </div>
+
+                <p className="text-lg text-white/90 mb-6 line-clamp-3">
+                  The largest youth-led environmental assembly ahead of UNEA-7, bringing together young leaders and representatives from multilateral environmental agreements to develop a sophisticated policy instrument addressing the triple planetary crisis.
+                </p>
+
+                <Link 
+                  href="/what-we-do/training/yea-2025"
+                  className="inline-block bg-white text-[#7BB661] px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg"
+                >
+                  Learn More & View Gallery
+                </Link>
+              </div>
             </div>
           </div>
         </div>
