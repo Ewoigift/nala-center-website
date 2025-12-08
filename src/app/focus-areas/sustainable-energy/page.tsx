@@ -18,11 +18,48 @@ export default function SustainableEnergyPage() {
       author: 'Isaac Mureithi',
       description: 'This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.',
       linkText: 'Download file (PDF)',
-      linkHref: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf',
+      linkHref: '/pdfs/rethinking-youth-nature-finance.pdf',
+    },
+    {
+      type: 'research',
+      title: 'Youth Environment Assembly 2025: Global Youth Declaration',
+      description: 'A sophisticated policy instrument addressing the triple planetary crisis through systemic reform of multilateral environmental governance.',
+      linkText: 'Download file (PDF)',
+      linkHref: '/what-we-do/training/yea-2025',
+      isInternal: true,
+    },
+    {
+      type: 'research',
+      title: 'Nala Center Climate Research: COP29 Key Outcomes',
+      description: 'Key outcomes and look ahead for Africa.',
+      linkText: 'Download file (PDF)',
+      linkHref: '#',
+    },
+    {
+      type: 'research',
+      title: 'Africa on the Road to COP28',
+      description: 'Reconciling climate & development.',
+      linkText: 'Download file (PDF)',
+      linkHref: '#',
+    },
+    {
+      type: 'research',
+      title: 'The Africa Climate Summit',
+      description: 'Reconciling global climate goals and Africa\'s development agendas.',
+      linkText: 'Download file (PDF)',
+      linkHref: '#',
     },
   ];
 
   const keyResources = [
+    {
+      type: 'resource',
+      title: 'Youth Environment Assembly 2025 at UNEP',
+      description: 'Over 500 young leaders convened to develop the Global Youth Declaration on the Environment, addressing the triple planetary crisis ahead of UNEA-7.',
+      linkText: 'Read more',
+      linkHref: '/what-we-do/training/yea-2025',
+      isInternal: true,
+    },
     {
       type: 'resource',
       title: 'Nala Center advocates four key points ahead of Africa Climate Summit',
@@ -34,13 +71,6 @@ export default function SustainableEnergyPage() {
       type: 'resource',
       title: 'Nala Center debates global issues ahead of COP27',
       description: 'An in-depth analysis of the critical discussions and Nala Center\'s stance prior to COP27.',
-      linkText: 'Read more',
-      linkHref: '#',
-    },
-    {
-      type: 'resource',
-      title: 'Climate change adaptation in Africa: a human rights perspective',
-      description: 'Exploring the intersection of climate adaptation strategies and human rights in African contexts.',
       linkText: 'Read more',
       linkHref: '#',
     },
@@ -177,14 +207,24 @@ export default function SustainableEnergyPage() {
                     <p className="text-sm text-gray-600 mb-1 italic">By {item.author}</p>
                   )}
                   <p className="text-gray-700 text-base mb-2">{item.description}</p>
-                  <a 
-                    href={item.linkHref} 
-                    target={item.linkHref === '#' ? '_self' : '_blank'}
-                    rel="noopener noreferrer"
-                    className="inline-block bg-[#7BB661] text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-[#6A9E53] transition-colors duration-300"
-                  >
-                    {item.linkText}
-                  </a>
+                  {item.isInternal ? (
+                    <Link 
+                      href={item.linkHref}
+                      className="inline-block bg-[#7BB661] text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-[#6A9E53] transition-colors duration-300"
+                    >
+                      {item.linkText}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={item.linkHref} 
+                      download={item.linkHref !== '#'}
+                      target={item.linkHref === '#' ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#7BB661] text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-[#6A9E53] transition-colors duration-300"
+                    >
+                      {item.linkText}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
@@ -198,9 +238,15 @@ export default function SustainableEnergyPage() {
                 <div key={index} className="pb-4 last:pb-0">
                   <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.title}</h3>
                   <p className="text-gray-700 text-base mb-2">{item.description}</p>
-                  <Link href={item.linkHref} className="inline-block text-[#7BB661] hover:underline text-sm font-semibold transition-colors duration-300">
-                    {item.linkText} &rarr;
-                  </Link>
+                  {item.isInternal ? (
+                    <Link href={item.linkHref} className="inline-block text-[#7BB661] hover:underline text-sm font-semibold transition-colors duration-300">
+                      {item.linkText} &rarr;
+                    </Link>
+                  ) : (
+                    <Link href={item.linkHref} className="inline-block text-[#7BB661] hover:underline text-sm font-semibold transition-colors duration-300">
+                      {item.linkText} &rarr;
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
