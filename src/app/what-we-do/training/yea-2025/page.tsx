@@ -22,7 +22,6 @@ export default function YEA2025Page() {
     '/images/workshops/yea-9.jpg',
     '/images/workshops/yea-10.jpg',
     '/images/workshops/yea-11.jpg'
-  
 
   ];
 
