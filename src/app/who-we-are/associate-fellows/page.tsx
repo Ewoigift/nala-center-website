@@ -52,6 +52,14 @@ imageSrc:'/images/team/getrude-maina.jpg',
 slug:'getrude-maina'
     },
 
+    {
+      name:'Jessica Johansen',
+designation:'sustainability, Environment and Development',
+imageSrc:'/images/team/jess-johansen.png',
+slug:'jessica-johansen'
+    },
+
+
   ];
 
   return (

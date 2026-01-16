@@ -110,8 +110,25 @@ socials: {
       x: '#',
     },
 
-    },
+},
 
+ {
+  name:'Jessica Johansen',
+designation:'sustainability, Environment and Development',
+imageSrc:'/images/team/jess-johansen.png',
+slug:'jessica-johansen',
+bio: `Jessica Johansen is a UK based associate fellow passionate about the capacity of environmental psychology to shift norms and strengthen social and economic policy and behaviour in multi-scale policy and governance towards just and transdisciplinary global climate action. As an emerging professional in the field, Jessica's values align with and advocate for Nala Centres commitment to social justice, regional peace and climate resilience.
+
+Jessica holds a BSc in Psychology and an MSc in Environment and Development from the University of Leeds, where she was awarded the Environment and Development prize for the highest achieving student. To support her commitment to just climate action Jessica has undergone multiple menteeship schemes and is currently working towards publishing her research paper on the potential of using participatory approaches to authentically bring rural voices into policy arenas. 
+
+Jessica currently works as research assistant on the Civic Voices for Just Rural Transition project, partnering with Clim-eat and The University of Leeds, and supported by the UK Foreign, Commonwealth and Development Office. 
+`,
+socials: {
+      email: '#',
+      linkedin: '#',
+      x: '#',
+    },
+},
 
 ];
 
