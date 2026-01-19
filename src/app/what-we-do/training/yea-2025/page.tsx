@@ -13,16 +13,13 @@ export default function YEA2025Page() {
   const workshopPhotos = [
     '/images/workshops/yea-1.jpg',
     '/images/workshops/yea-2.jpg',
-    '/images/workshops/yea-3.jpg',
     '/images/workshops/yea-4.jpg',
     '/images/workshops/yea-5.jpg',
     '/images/workshops/yea-6.jpg',
     '/images/workshops/yea-7.jpg',
     '/images/workshops/yea-8.jpg',
     '/images/workshops/yea-9.jpg',
-    '/images/workshops/yea-10.jpg',
     '/images/workshops/yea-11.jpg'
-
   ];
 
   const nextImage = () => {

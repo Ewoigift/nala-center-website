@@ -56,6 +56,13 @@ imageSrc:'/images/team/dahabo-dagane.png',
 slug:'dahabo-dagane'
   },
 
+      {
+    name:'Nadia Khalifa',
+designation:'Events and Partnerships Assistant',
+imageSrc:'/images/team/nadia-khalifa.jpg',
+slug:'nadia-khalifa'
+  },
+
     {
     name:'Keith Sangolo',
 designation:'Intern',

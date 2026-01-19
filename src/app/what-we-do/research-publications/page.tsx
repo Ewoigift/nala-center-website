@@ -18,7 +18,8 @@ const imagePaths = [
   '/images/focus-areas/economic-systems.jpg',
   '/images/articles/AfricasClimateCrossroads.jpg',
   '/images/articles/gerd-beyond-conflict.jpg',
-  '/images/articles/africas-democracy-life-support.png'
+  '/images/articles/africas-democracy-life-support.png',
+  '/images/articles/somaliland-israel-recognition.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -63,32 +64,40 @@ const researchPapers = [
 
 const articles = [
   {
+    title: "What Would Israeli Recognition of Somaliland Mean for the Horn of Africa's Geopolitics?",
+    author: "Rahma Oda",
+    date: "2026-01-15",
+    summary: "Israel's recognition of Somaliland marks a significant diplomatic breakthrough, but what does it mean for regional stability? This analysis explores the geopolitical implications, security risks, and the potential for wider secessionist movements across Africa.",
+    thumbnail: imagePaths[11 % imagePaths.length],
+    link: '/what-we-do/research-publications/israeli-recognition-somaliland'
+  },
+
+  {
+    title: "Africa's Democracy on Life Support",
+    author: "Bravin Onditi",
+    date: "2025-11-03",
+    summary: "Africa's democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.",
+    thumbnail: imagePaths[10 % imagePaths.length],
+    link: '/what-we-do/research-publications/africas-democracy-on-life-support'
+  },
+
+  {
+    title: "GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa",
+    author: "Rahma Oda",
+    date: "2025-10-13",
+    summary: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
+    thumbnail: imagePaths[9 % imagePaths.length],
+    link: '/what-we-do/research-publications/gerd-beyond-conflict'
+  },
+
+  {
     title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
     author: "Bravin Onditi",
     date: "2025-09-12",
     summary: "The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes.",
     thumbnail: imagePaths[8 % imagePaths.length],
     link: '/what-we-do/research-publications/africas-climate-crossroads'
-  }, 
-
-  {
-    title: "GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa",
-  author: "Rahma Oda",
-  date: "2025-10-13",
-    summary: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
-    thumbnail: imagePaths[9 % imagePaths.length],
-    link: '/what-we-do/research-publications/gerd-beyond-conflict'
-  }, 
-
-   {
-    title: "Africa's Democracy on Life Support",
-  author: "Bravin Onditi",
-  date: "2025-11-03",
-    summary: "Africa's democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.",
-    thumbnail: imagePaths[10 % imagePaths.length],
-    link: '/what-we-do/research-publications/africas-democracy-on-life-support'
-  }, 
-
+  }
 ];
 
 export default function ResearchAndPublicationsPage() {
@@ -160,7 +169,7 @@ export default function ResearchAndPublicationsPage() {
                 src={article.thumbnail}
                 alt={`Thumbnail for ${article.title}`}
                 width={500}
-              height={300}
+                height={300}
                 className="w-full h-40 object-cover rounded-t-lg"
               />
               <div className="p-6 flex-grow flex flex-col justify-between">

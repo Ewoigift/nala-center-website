@@ -16,21 +16,22 @@ import {
 
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const insightsScrollRef = useRef<HTMLDivElement>(null);
   const [isLeftDisabled, setIsLeftDisabled] = useState(true);
   const [isRightDisabled, setIsRightDisabled] = useState(false);
+  const [isInsightsLeftDisabled, setIsInsightsLeftDisabled] = useState(true);
+  const [isInsightsRightDisabled, setIsInsightsRightDisabled] = useState(false);
 
   // Newsletter state
   const [email, setEmail] = useState('');
   const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
-  // Removed triggerNavbarDropdown state and handleNavbarDropdownTriggered callback
-
   // For Hero Section Rotating Backgrounds
   const backgroundImages = [
     '/images/hero-background.jpg',
-    '/images/hero-background3.jpg', // Updated to hero-background3.jpg
-    '/images/hero-background2.jpg', // Updated to hero-background2.jpg
+    '/images/hero-background3.jpg',
+    '/images/hero-background2.jpg',
     '/images/hero-background4.jpg',
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
@@ -38,34 +39,52 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
-
+  // Events carousel scroll handlers
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, offsetWidth } = scrollContainerRef.current;
-
       setIsLeftDisabled(scrollLeft === 0);
-
       const atEnd = Math.round(scrollLeft + offsetWidth) >= scrollWidth;
       setIsRightDisabled(atEnd);
+    }
+  };
+
+  // Insights carousel scroll handlers
+  const handleInsightsScroll = () => {
+    if (insightsScrollRef.current) {
+      const { scrollLeft, scrollWidth, offsetWidth } = insightsScrollRef.current;
+      setIsInsightsLeftDisabled(scrollLeft === 0);
+      const atEnd = Math.round(scrollLeft + offsetWidth) >= scrollWidth;
+      setIsInsightsRightDisabled(atEnd);
     }
   };
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {
-      handleScroll(); // Set initial state
+      handleScroll();
       scrollContainer.addEventListener('scroll', handleScroll);
       return () => {
-        scrollContainer.removeEventListener('scroll', handleScroll); // Ensure correct cleanup
+        scrollContainer.removeEventListener('scroll', handleScroll);
       };
     }
   }, []);
 
+  useEffect(() => {
+    const insightsContainer = insightsScrollRef.current;
+    if (insightsContainer) {
+      handleInsightsScroll();
+      insightsContainer.addEventListener('scroll', handleInsightsScroll);
+      return () => {
+        insightsContainer.removeEventListener('scroll', handleInsightsScroll);
+      };
+    }
+  }, []);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -85,13 +104,29 @@ export default function Home() {
     }
   };
 
-  // Newsletter submission handler - now uses fetch to a backend API
+  const scrollInsightsLeft = () => {
+    if (insightsScrollRef.current) {
+      insightsScrollRef.current.scrollBy({
+        left: -(insightsScrollRef.current.offsetWidth / 3),
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollInsightsRight = () => {
+    if (insightsScrollRef.current) {
+      insightsScrollRef.current.scrollBy({
+        left: insightsScrollRef.current.offsetWidth / 3,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  // Newsletter submission handler
   const handleSubscribe = async () => {
-    // Basic client-side email validation (server will do a more thorough check)
     if (!email || !email.includes('@') || !email.includes('.')) {
       setSubmissionStatus('error');
       setMessage('Please enter a valid email address.');
-      // Clear message after some time
       setTimeout(() => {
         setSubmissionStatus('idle');
         setMessage('');
@@ -103,7 +138,6 @@ export default function Home() {
     setMessage('Subscribing...');
 
     try {
-      // Make a POST request to your Next.js API route
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
@@ -117,7 +151,7 @@ export default function Home() {
       if (response.ok) {
         setSubmissionStatus('success');
         setMessage(data.message || 'Successfully subscribed! Check your inbox.');
-        setEmail(''); // Clear email field on success
+        setEmail('');
       } else {
         setSubmissionStatus('error');
         setMessage(data.message || 'Subscription failed. Please try again.');
@@ -127,13 +161,55 @@ export default function Home() {
       setSubmissionStatus('error');
       setMessage('An unexpected error occurred. Please try again later.');
     } finally {
-      // Clear message after some time
       setTimeout(() => {
         setSubmissionStatus('idle');
         setMessage('');
       }, 5000);
     }
   };
+
+  const insightCards = [
+    {
+      date: 'January 15, 2026',
+      type: 'Article',
+      title: "What Would Israeli Recognition of Somaliland Mean for the Horn of Africa's Geopolitics?",
+      description: "Israel's recognition of Somaliland marks a significant diplomatic breakthrough, but what does it mean for regional stability? This analysis explores the geopolitical implications.",
+      image: '/images/articles/somaliland-israel-recognition.jpg',
+      link: '/what-we-do/research-publications/israeli-recognition-somaliland'
+    },
+    {
+      date: 'November 03, 2025',
+      type: 'Article',
+      title: "Africa's Democracy on Life Support",
+      description: "Africa's democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.",
+      image: '/images/articles/africas-democracy-life-support.png',
+      link: '/what-we-do/research-publications/africas-democracy-on-life-support'
+    },
+    {
+      date: 'October 13, 2025',
+      type: 'Article',
+      title: 'GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa',
+      description: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
+      image: '/images/articles/gerd-beyond-conflict.jpg',
+      link: '/what-we-do/research-publications/gerd-beyond-conflict'
+    },
+    {
+      date: 'September 12, 2025',
+      type: 'Article',
+      title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
+      description: 'The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability.',
+      image: '/images/articles/AfricasClimateCrossroads.jpg',
+      link: '/what-we-do/research-publications/africas-climate-crossroads'
+    },
+    {
+      date: 'November 06, 2025',
+      type: 'Research',
+      title: 'Rethinking How Youth Shape the Future of Nature and Finance',
+      description: 'This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.',
+      image: '/images/focus-areas/rethinking-youth-nature-finance.png',
+      link: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf'
+    }
+  ];
 
   const eventCards = [
     {
@@ -169,30 +245,26 @@ export default function Home() {
   ];
 
   return (
-    // Removed pt-[75px] from main tag. The Navbar's height will be handled by layout.tsx
     <main>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
-        {/* Rotating Backgrounds - positioned below the overlay */}
         {backgroundImages.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt={`NALA Center Hero Background ${index + 1}`}
             layout="fill"
-            objectFit="cover" // Ensures image covers the area
-            objectPosition="center" // Centers the image content
+            objectFit="cover"
+            objectPosition="center"
             quality={100}
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
-              index === currentBgIndex ? 'opacity-100' : 'opacity-0' // Full opacity for current, none for others
+              index === currentBgIndex ? 'opacity-100' : 'opacity-0'
             }`}
           />
         ))}
 
-        {/* Dark overlay - positioned above the rotating backgrounds but below the text */}
         <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
 
-        {/* Text content - positioned above the overlay */}
         <div className="relative z-20 text-[#FFFFFF] p-4 md:p-8 max-w-4xl mx-auto rounded-lg">
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-4 leading-tight">
             Driving Meaningful and Lasting Change
@@ -200,7 +272,6 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-6">
             Nala center is dedicated to transformative research, strategic insights, and inclusive dialogue for a sustainable future.
           </p>
-          {/* Changed back to Link and href to /who-we-are/about-us */}
           <Link
             href="/who-we-are/about-us"
             className="bg-[#050505] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 shadow-lg"
@@ -209,102 +280,76 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      {/* Latest Insights Section */}
+
+      {/* Latest Insights Section - Now a Carousel */}
       <section className="container mx-auto py-16 px-4 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Latest Insights</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Insight Card 1 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src='/images/articles/AfricasClimateCrossroads.jpg'
-              alt="Insight 1 Thumbnail"
-              width={500}
-              height={300}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <span className="text-sm text-gray-500">Article | September 12, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">Africa&apos;s Climate Crossroads: From Nairobi&apos;s Promises to Addis Ababa&apos;s Demands</h3>
-              <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. 
-              </p>
-              <Link href="/what-we-do/research-publications/africas-climate-crossroads" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                Read more &rarr;
-              </Link>
-            </div>
+        
+        <div className="relative">
+          {/* Scrollable container for insight cards */}
+          <div
+            ref={insightsScrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
+          >
+            {insightCards.map((insight, index) => (
+              <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+                  <Image
+                    src={insight.image}
+                    alt={`${insight.title} Thumbnail`}
+                    width={500}
+                    height={300}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                      <span className="text-sm text-gray-500">{insight.type} | {insight.date}</span>
+                      <h3 className="font-semibold text-xl text-[#050505] my-2 line-clamp-2">{insight.title}</h3>
+                      <p className="text-gray-700 text-base mb-4 line-clamp-3">
+                        {insight.description}
+                      </p>
+                    </div>
+                    <Link href={insight.link} className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                      Read more &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Insight Card 2 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src="/images/articles/gerd-beyond-conflict.jpg"
-              alt="Insight 2 Thumbnail"
-              width={500}
-              height={300}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <span className="text-sm text-gray-500">Article | October 13, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa</h3>
-              <p className="text-gray-700 text-base mb-4 line-clamp-3">
-               An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia&apos;s national grid.
-              </p>
-              <Link href="/what-we-do/research-publications/gerd-beyond-conflict" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                Read more &rarr;
-              </Link>
-            </div>
+          {/* Navigation Arrows */}
+          <div className="flex justify-center mt-8 space-x-8">
+            <button
+              onClick={scrollInsightsLeft}
+              disabled={isInsightsLeftDisabled}
+              className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                isInsightsLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+              }`}
+              aria-label="Scroll insights left"
+            >
+              &larr;
+            </button>
+            <button
+              onClick={scrollInsightsRight}
+              disabled={isInsightsRightDisabled}
+              className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                isInsightsRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+              }`}
+              aria-label="Scroll insights right"
+            >
+              &rarr;
+            </button>
           </div>
-
-          {/* Insight Card 3 */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src="/images/articles/africas-democracy-life-support.png"
-              alt="Insight 3 Thumbnail"
-              width={500}
-              height={300}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <span className="text-sm text-gray-500">Article | November 03, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">Africa&apos;s Democracy on Life Support</h3>
-              <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                Africa&apos;s democratic experiment is in deep crisis. Once hailed as the continent of promise, where multiparty politics and constitutional reform would herald a new dawn, much of Africa today finds itself in democratic regression.              </p>
-              <Link href="/what-we-do/research-publications/africas-democracy-on-life-support" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                Read more &rarr;
-              </Link>
-            </div>
-          </div>
-
-{/* Insight Card 4 */}
-<div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src="/images/focus-areas/rethinking-youth-nature-finance.png"
-              alt="Insight 4 Thumbnail"
-              width={500}
-              height={300}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <span className="text-sm text-gray-500">Research | November 06, 2025</span>
-              <h3 className="font-semibold text-xl text-[#050505] my-2">Rethinking How Youth Shape the Future of Nature and Finance</h3>
-              <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.
-                </p>
-              <Link href="/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                Read more &rarr;
-              </Link>
-            </div>
-          </div>
-          
         </div>
       </section>
-      {/* Upcoming Events & Workshops Section - Now a Carousel */}
+
+      {/* Upcoming Events & Workshops Section - Carousel */}
       <section className="bg-[#EBEBEB] py-16 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Upcoming Events & Workshops</h2>
 
           <div className="relative">
-            {/* Scrollable container for event cards */}
             <div
               ref={scrollContainerRef}
               className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
@@ -318,43 +363,42 @@ export default function Home() {
                       <p className="text-gray-700 text-base mb-4 line-clamp-2">
                         {event.description}
                       </p>
-                      </div>
-                      <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                        Register &rarr;
-                      </Link>
                     </div>
+                    <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                      Register &rarr;
+                    </Link>
                   </div>
-                ))}
-              </div>
-
-              {/* Navigation Arrows */}
-              <div className="flex justify-center mt-8 space-x-8">
-                <button
-                  onClick={scrollLeft}
-                  disabled={isLeftDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll left"
-                >
-                  &larr;
-                </button>
-                <button
-                  onClick={scrollRight}
-                  disabled={isRightDisabled}
-                  className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                    isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                  }`}
-                  aria-label="Scroll right"
-                >
-                  &rarr;
-                </button>
-              </div>
+                </div>
+              ))}
             </div>
 
-            {/* Removed "View All Events" button as requested */}
+            {/* Navigation Arrows */}
+            <div className="flex justify-center mt-8 space-x-8">
+              <button
+                onClick={scrollLeft}
+                disabled={isLeftDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll left"
+              >
+                &larr;
+              </button>
+              <button
+                onClick={scrollRight}
+                disabled={isRightDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll right"
+              >
+                &rarr;
+              </button>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
+
       {/* Subscribe / Stay Connected Section */}
       <section className="bg-white py-16 px-4">
         <div className="container mx-auto text-center">
@@ -367,14 +411,14 @@ export default function Home() {
               type="email"
               placeholder="Enter your email address"
               className="p-3 border border-gray-300 rounded-md w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-[#2F2F2F]"
-              value={email} // Controlled component
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
-              disabled={submissionStatus === 'loading'} // Disable during loading
+              disabled={submissionStatus === 'loading'}
             />
             <button
               className="bg-[#050505] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#2F2F2F] transition-colors duration-300 w-full md:w-auto"
               onClick={handleSubscribe}
-              disabled={submissionStatus === 'loading'} // Disable during loading
+              disabled={submissionStatus === 'loading'}
             >
               {submissionStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>
@@ -387,19 +431,15 @@ export default function Home() {
             </p>
           )}
           <div className="flex justify-center space-x-6">
-            {/* Twitter Icon */}
             <a href="https://x.com/NalaCenter" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#050505] text-3xl transition-colors duration-300" aria-label="Twitter">
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
-            {/* LinkedIn Icon */}
             <a href="https://linkedin.com/company/nala-center/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#0077B5] text-3xl transition-colors duration-300" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            {/* Instagram Icon */}
             <a href="https://instagram.com/nalacenter_/" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#E4405F] text-3xl transition-colors duration-300" aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            {/* WhatsApp Icon */}
             <a href="https://wa.me/+254718302179" target="_blank" rel="noopener noreferrer" className="text-[#1F1F1F] hover:text-[#25D366] text-3xl transition-colors duration-300" aria-label="WhatsApp">
               <FontAwesomeIcon icon={faWhatsapp} />
             </a>

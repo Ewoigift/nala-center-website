@@ -145,6 +145,23 @@ She is guided by the mantra: “Rise with purpose, lead with heart, and leave ev
       },
     },
 
+   {
+   name:'Nadia Khalifa',
+designation:'Events and Partnerships Assistant',
+imageSrc:'/images/team/nadia-khalifa.jpg',
+slug:'nadia-khalifa',
+bio:`Nadia Khalifa is a committed advocate for a just, peaceful, and sustainable future, with a focus that spans the African continent and the global stage. Her work is grounded in the belief that lasting progress emerges from the interconnected pursuit of equality, democratic governance, environmental stewardship, and the protection of human rights and human dignity. Nadia is currently a junior at the United States International University–Africa (USIU-A), where she is pursuing a major in Peace and Conflict Studies. Through her academic training, she examines the structural drivers of conflict, instability, and peacebuilding, with a particular interest in inclusive and sustainable governance. She complements this focus with a minor in Accounting, reflecting her understanding that transparency, accountability, and sound financial management are essential to resilient institutions and equitable development.
+
+At the Nala Center, Nadia serves as Assistant for Events and Partnerships, where she supports the planning and coordination of convenings and collaborations, ensuring that initiatives are impactful, inclusive, and aligned with the Center’s mission. Nadia contributes to the Nala Center through a bridge-builder’s mindset—translating research and policy ideas into well-structured, actionable engagements—alongside a strong commitment to inclusive platforms that elevate diverse voices, particularly emerging African scholars. Her combined background in peace studies and accounting enables her to approach partnerships and event coordination with analytical rigor, operational efficiency, and attention to long-term impact.
+
+As a full-time student and member of the Nala Center team, Nadia represents the dynamic intersection of research, policy, and practice. She is eager to support the Center’s work in advancing resilient and equitable futures by strengthening the platforms through which dialogue, collaboration, and change are made possible. `,
+socials: {
+      email: '#',
+      linkedin: '#',
+      x: '#',
+    },
+  },
+
     {
   name:'Keith Sangolo',
 designation:'Intern',
