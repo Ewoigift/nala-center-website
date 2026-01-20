@@ -41,8 +41,6 @@ In addition to her role at Nala Center, Stella is a Research Fellow at the Afric
 She is currently pursuing a Master of Arts in Armed Conflict and Peace Studies at the University of Nairobi, deepening her academic grounding in conflict transformation, mediation, and post-conflict recovery. Stella is known for her collaborative spirit, strategic thinking, and commitment to empowering communities through knowledge, advocacy, and inclusive leadership.`,
       socials: {
         linkedin: 'https://www.linkedin.com/in/stella-cherop-21ir1997?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-        x: '#',
-        instagram: '#',
       },
     },
     {
@@ -57,8 +55,6 @@ Her commitment is grounded in lived experience and a firm belief in leadership d
 Outside of her professional commitments, Marwa enjoys reading thrillers and fiction, swimming, and playing chess pursuits that reflect her analytical mind and balanced lifestyle. She lives by the mantra: “Do not stop when you are tired, stop when you are done,” a principle that fuels her drive and persistence in all areas of life.`,
       socials: {
         linkedin: 'https://www.linkedin.com/in/marwa-ali-khamis-65816a258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-        x: '#',
-        instagram: '#',
       },
     },
     {
@@ -74,7 +70,6 @@ Outside of her professional commitments, Marwa enjoys reading thrillers and fict
       socials: {
         linkedin: 'https://www.linkedin.com/in/immanuel-mwendwa-kiilu-ab6627260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
         x: 'https://x.com/InkImmanuel',
-        instagram: '#',
       },
     },
     {
@@ -88,9 +83,7 @@ In addition to her financial expertise, Zuleika brings a solid background in cus
 
 Zuleika is deeply committed to operational efficiency, team collaboration, and ethical financial stewardship. At Nala Center, she plays a vital role in ensuring smooth internal operations, enabling the organization to focus on its mission-driven programming. Her professional interests lie in nonprofit finance, organizational sustainability, and financial literacy for youth and women. She is passionate about using finance as a tool to build resilient institutions and empower communities.`,
       socials: {
-        linkedin: '#',
-        x: '#',
-        instagram: '#',
+        
       },
     },
     {
@@ -105,8 +98,7 @@ His work focuses on integrating climate resilience and sustainability into core 
 In addition to his operational responsibilities, Edwin is a strong advocate for youth engagement, environmental education, and policy reforms that address the intersection of development, climate, and human security. His belief in the power of local action backed by global thinking drives his commitment to building a more sustainable, just, and secure future.`,
       socials: {
         linkedin: 'https://www.linkedin.com/in/edwin-maina-46478b243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-        x: '#',
-        instagram: '#',
+       
       },
     },
     {
@@ -121,8 +113,7 @@ Currently, Antony also serves as a Research Fellow at the International Council 
 Antony's career is marked by a strong commitment to interdisciplinary collaboration and civic engagement. He has been involved in several volunteer research and fellowship programs across sectors, demonstrating a consistent ability to foster innovative, cross-sectoral partnerships that drive tangible, lasting change. At Nala Center, he is instrumental in cultivating meaningful alliances with local and international actors ensuring that the Center's mission is both amplified and supported through strategic cooperation.`,
       socials: {
         linkedin: 'https://www.linkedin.com/in/antony-kengere-nyabuto-b75478285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-        x: '#',
-        instagram: '#',
+      
       },
     },
 
@@ -139,9 +130,7 @@ slug:'dahabo-dagane',
 She is guided by the mantra: “Rise with purpose, lead with heart, and leave every space better than you found it.”
       `,
       socials: {
-        linkedin: '#',
-        x: '#',
-        instagram: '#',
+        
       },
     },
 
@@ -156,9 +145,8 @@ At the Nala Center, Nadia serves as Assistant for Events and Partnerships, where
 
 As a full-time student and member of the Nala Center team, Nadia represents the dynamic intersection of research, policy, and practice. She is eager to support the Center’s work in advancing resilient and equitable futures by strengthening the platforms through which dialogue, collaboration, and change are made possible. `,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      linkedin: 'https://www.linkedin.com/in/khalifa-nadia-b6a4a029a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+      instagram: 'https://www.instagram.com/ctrl.nk?igsh=MWEycTR0dXg5ZXRmNQ%3D%3D&utm_source=',
     },
   },
 
@@ -171,9 +159,7 @@ bio:`Keith Sangolo is an intern, currently completing his Bachelor of Arts in In
 
 Beyond his academic and professional work, Keith has honed his leadership and advocacy skills through active participation in the Kenya Model United Nations and Amnesty International. His primary research interests lie in Kenya’s foreign policy, particularly its foreign direct investment (FDI) strategy, the impact of electoral disputes on human rights, and the dynamics of African regional integration. He is passionate about contributing to data-driven solutions that strengthen international cooperation and sustainable development across the continent.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
     },
 },
 
@@ -186,9 +172,7 @@ bio:`Abdulmalik Ibrahim Salim is an intern and an International Studies student 
 
 He is passionate about diplomacy, democratic practices, and the essential role of youth in leading social and political change. His academic background is complemented by experience in projects focused on policy analysis, climate action, and civic education. At the Nala Center, Salim applies his skills to research and policy innovation, aiming to advance advocacy for a more equitable, resilient, and sustainable Africa.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
   },
 }
 

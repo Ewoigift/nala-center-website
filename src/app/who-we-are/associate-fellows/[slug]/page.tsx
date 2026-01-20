@@ -33,9 +33,9 @@ const allAssociateFellows = [
   slug:'denis-muniu',
    bio: `Mr. Denis Muniu is a Research Fellow at the Global Centre for Policy and Strategy, where he focuses on foreign policy, security, and defense. He previously served at the Ministry of Foreign and Diaspora Affairs, and at the Ministry of East African Community, Arid and Semi-Arid Lands (ASALs), and Regional Development. His research interests center on peace, security, and foreign policy. Denis holds a BA in International Relations and Diplomacy from the Technical University of Kenya and is currently pursuing a Master of Arts in International Relations at Kenyatta University.`,
     socials: {
-      email: '#',
+   
       linkedin: 'https://www.linkedin.com/in/denis-muniu-7721b318a/',
-      x: '#',
+     
     },
 },
 {
@@ -57,9 +57,7 @@ imageSrc:'/images/team/rayner-sakari.jpg',
 slug:'rayner-sakari',
 bio:`Rayner Sakari's work explores the critical intersections of peace, security, democracy, and governance. He holds a B.A. in International Relations and Diplomacy and has practical experience as a Program Officer with the International Centre for Peace, Human Rights and Development in Africa, where he supported initiatives to strengthen institutional frameworks and empower communities. His research focuses on how governance systems can promote stability and build resilience against evolving challenges. Committed to bridging theory and practice, Rayner develops actionable analysis to provide decision-makers with insights that inform practical, sustainable solutions.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+     
     },
 },
 {
@@ -71,9 +69,7 @@ bio:`Kennedy Wangari is an Associate Fellow at the Nala Center, specializing in 
 
 His extensive experience in international governance includes active participation and contribution to high-level forums like the UN Environment Assembly (2024) and the UN-Habitat Assembly (2023), where he assisted in drafting resolutions and organizing strategic policy events like the UN Science-Policy Business Forum. A proven leader, he served as the 15th Secretary General of the Strathmore University Student Council (2023-2024), demonstrating strong administrative and governance capabilities. Kennedy’s dedication to deconstructing complex global affairs and championing policies that enhance economic development and youth empowerment positions him as a forward-thinking policy analyst poised to make a significant impact on the policy landscape.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
     },
 },
 
@@ -86,9 +82,7 @@ bio:`Salma Kadry is a Climate, Peace, and Security Specialist at CGIAR, where sh
 
 Before joining CGIAR, she was the Inaugural Officer of the Climate, Peace and Development Program at Egypt’s Cairo International Center for Conflict Resolution, Peacekeeping and Peacebuilding (CCCPA), where she contributed to the COP27 Presidency initiative “Climate Responses for Sustaining Peace.” Recognized as a regional thought leader, Salma became the first Arab and CGIAR scientist to brief the United Nations Security Council on climate, peace, and security in 2023. She holds an MA in Global Studies (summa cum laude) from Ghent University, Belgium, and a BA in Political Science and Multimedia Journalism from the American University in Cairo.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
     },
 },
 
@@ -105,9 +99,7 @@ Her earlier work in disaster management and ongoing engagement in AI-driven lega
 
 Passionate about the intersection of policy, diplomacy, and sustainable development, she aspires to contribute to initiatives that strengthen governance systems, enhance institutional effectiveness, and promote inclusive growth across Africa.`,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
     },
 
 },
@@ -124,9 +116,7 @@ Jessica holds a BSc in Psychology and an MSc in Environment and Development from
 Jessica currently works as research assistant on the Civic Voices for Just Rural Transition project, partnering with Clim-eat and The University of Leeds, and supported by the UK Foreign, Commonwealth and Development Office. 
 `,
 socials: {
-      email: '#',
-      linkedin: '#',
-      x: '#',
+      
     },
 },
 
