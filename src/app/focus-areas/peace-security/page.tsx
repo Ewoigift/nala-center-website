@@ -12,69 +12,16 @@ export default function PeaceSecurityPage() {
 
   const overviewContent = `In this area, we analyze the root causes and evolving dynamics of conflict across Africa and beyond, with special attention to youthful drivers of change. Our work spans early warning systems, community-led peacebuilding initiatives, and evaluations of disarmament and reintegration programs. We partner with local actors to design inclusive dialogues that bring together government, civil society, and marginalized groups, ensuring that policy responses bolster resilience and prevent relapse into violence.`;
 
-  const reports = [
-    {
-      year: '2024',
-      title: 'Index Report: Conflict Dynamics in the Sahel',
-      linkText: 'Read more',
-      linkHref: '#',
-    },
-    {
-      year: '2024',
-      title: 'Forum Report: Financing Peacebuilding Initiatives',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2018',
-      title: 'Forum Report: Public Service in Conflict Zones',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2017',
-      title: 'Forum Report: Youth Engagement in Peace Processes',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2013',
-      title: 'Facts & Figures: Post-Conflict Reconstruction',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-  ];
+  const reports: any[] = [];
 
   const researchBriefsAndPapers = [
     {
-      title: 'Reviewing Nala Center\'s 2024 Peace Index',
-      description: 'An in-depth look at the latest findings on peace and conflict trends.',
+      title: 'Paralysis in Peacekeeping: The African Union\'s Mediation Challenges in Sudan',
+      description: 'This policy brief highlights the urgent need for a coordinated African response to Sudan\'s escalating war, which has exposed the African Union\'s institutional constraints and declining credibility as a peace broker.',
       linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: '2024: Africa\'s Critical Elections and Stability',
-      description: 'Analyzing the impact of upcoming elections on regional peace.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Preventing Coups: Lessons from African Democracies',
-      description: 'Strategies and frameworks to bolster democratic resilience.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Western Africa\'s Recent Security Challenges',
-      description: 'A comprehensive analysis of recent security developments and their implications.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Strength in Numbers: Data Revolution for Peace',
-      description: 'Leveraging data and technology for early warning and conflict prevention.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
+      linkHref: '/uploads/peace-security/Nala Center Policy Brief 001.pdf',
+      author: 'Getrude Maina',
+      date: 'January 2026',
     },
   ];
 
@@ -112,27 +59,34 @@ export default function PeaceSecurityPage() {
       <section className="bg-[#f8f8f8] py-16 px-0">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Left Column: Reports */}
-          <div className="bg-white px-8 py-12 shadow-md">
-            <h2 className="text-2xl font-bold font-serif mb-6 text-[#050505]">Reports</h2>
-            <div className="space-y-6">
-              {reports.map((item, index) => (
-                <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
-                  <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.year}: {item.title}</h3>
-                  <Link href={item.linkHref} className="inline-block text-sm font-semibold hover:underline transition-colors duration-300" style={{ color: themeColor }}>
-                    {item.linkText} &rarr;
-                  </Link>
-                </div>
-              ))}
+          {reports.length > 0 && (
+            <div className="bg-white px-8 py-12 shadow-md">
+              <h2 className="text-2xl font-bold font-serif mb-6 text-[#050505]">Reports</h2>
+              <div className="space-y-6">
+                {reports.map((item, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
+                    <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.year}: {item.title}</h3>
+                    <Link href={item.linkHref} className="inline-block text-sm font-semibold hover:underline transition-colors duration-300" style={{ color: themeColor }}>
+                      {item.linkText} &rarr;
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Right Column: Research Briefs and Papers */}
-          <div className="bg-[#e0e7f2] px-8 py-12 shadow-md">
+          <div className={`bg-[#e0e7f2] px-8 py-12 shadow-md ${reports.length === 0 ? 'lg:col-span-2' : ''}`}>
             <h2 className="text-2xl font-bold font-serif mb-6 text-[#050505]">Research briefs and papers</h2>
             <div className="space-y-6">
               {researchBriefsAndPapers.map((item, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
                   <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.title}</h3>
+                  {item.author && item.date && (
+                    <p className="text-sm text-gray-600 mb-2">
+                      By {item.author} | {item.date}
+                    </p>
+                  )}
                   <p className="text-gray-700 text-base mb-2">{item.description}</p>
                   <Link href={item.linkHref} className="inline-block bg-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-gray-100 transition-colors duration-300" style={{ color: themeColor }}>
                     {item.linkText}

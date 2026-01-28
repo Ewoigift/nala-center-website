@@ -6,54 +6,16 @@ import Image from "next/legacy/image";
 import Link from 'next/link';
 import { Pen, FileText } from 'lucide-react';
 
-// List of provided image paths to be used alternately
-const imagePaths = [
-  '/images/demo2_image.jpeg',
-  '/images/demo1_image.jpeg',
-  '/images/what-we-do/research-publication.jpg',
-  '/images/get-involved/demo_image.jpg',
-  '/images/what-we-do/multimedia-hub.jpg',
-  '/images/focus-areas/democracy-governance.jpg',
-  '/images/focus-areas/peace-security.jpg',
-  '/images/focus-areas/economic-systems.jpg'
-];
-
-// Data for policy papers based on the provided focus areas.
+// Data for policy papers
 const policyPapers = [
   {
-    title: "Advancing Peace and Security in the Great Lakes Region",
-    summary: "This policy paper analyzes the key drivers of conflict and insecurity in the Great Lakes region and proposes a multi-faceted approach to promote sustainable peace and stability through diplomacy and community-led initiatives.",
-    image: imagePaths[0 % imagePaths.length]
-  },
-  {
-    title: "Strengthening Democratic Institutions and Civic Innovation",
-    summary: "An exploration of new policy frameworks to enhance government transparency, civic participation, and the use of technology to foster a more resilient and inclusive democratic process.",
-    image: imagePaths[1 % imagePaths.length]
-  },
-  {
-    title: "Towards Equitable Economic Systems and Inclusive Development",
-    summary: "This document outlines policy recommendations for creating equitable economic opportunities, reducing poverty, and fostering inclusive growth that benefits all segments of society, with a focus on youth and women.",
-    image: imagePaths[2 % imagePaths.length]
-  },
-  {
-    title: "Policy for Sustainable Energy and Climate Resilience",
-    summary: "A comprehensive policy brief on accelerating the transition to renewable energy sources and building climate-resilient infrastructure to mitigate the effects of climate change in vulnerable communities.",
-    image: imagePaths[3 % imagePaths.length]
-  },
-  {
-    title: "Managing Migration and Protecting Human Rights",
-    summary: "This paper examines regional migration trends and advocates for humanitarian policies that protect the rights of migrants, refugees, and internally displaced persons, while also promoting safe and orderly mobility.",
-    image: imagePaths[4 % imagePaths.length]
-  },
-  {
-    title: "Innovative Approaches to Youth Employment in East Africa",
-    summary: "Exploring a mix of educational reforms, vocational training, and public-private partnerships to tackle high youth unemployment rates and foster a new generation of entrepreneurs.",
-    image: imagePaths[5 % imagePaths.length]
-  },
-  {
-    title: "Gender-Inclusive Policies for Post-Conflict Reconstruction",
-    summary: "A policy brief highlighting the necessity of integrating gender-inclusive policies into post-conflict reconstruction efforts to ensure women's participation and address their specific needs for lasting peace.",
-    image: imagePaths[6 % imagePaths.length]
+    title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
+    summary: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, which has exposed the African Union's institutional constraints and declining credibility as a peace broker. The paper assesses key challenges including coordination issues between the AU and UN, inadequate civilian protection mechanisms, and the vested interests of external actors undermining inclusive peace efforts.",
+    image: '/images/policy-briefs/sudan-policy-brief.jpg',
+    author: 'Getrude Maina',
+    date: 'January 2026',
+    category: 'Peace & Security',
+    pdfLink: '/uploads/peace-security/Nala Center Policy Brief 001.pdf'
   },
 ];
 
@@ -76,7 +38,7 @@ export default function PolicyPapersPage() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {policyPapers.map((paper, i) => (
-            <div key={i} className="flex flex-col bg-white rounded-lg overflow-hidden transition-all duration-300 hover:scale-[1.01]">
+            <div key={i} className="flex flex-col bg-white rounded-lg overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-md">
               <Image
                 src={paper.image}
                 alt={`Image for ${paper.title}`}
@@ -86,21 +48,42 @@ export default function PolicyPapersPage() {
               />
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
+                  <div className="mb-2">
+                    <span className="inline-block bg-[#4BA3A0] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      {paper.category}
+                    </span>
+                  </div>
                   <h3 className="font-semibold text-xl text-[#050505] mb-2">
                     {paper.title}
                   </h3>
-                  <p className="mt-2 text-base text-[#2F2F2F] line-clamp-3">
+                  <p className="text-sm text-gray-600 mb-3">
+                    By {paper.author} | {paper.date}
+                  </p>
+                  <p className="mt-2 text-base text-[#2F2F2F] line-clamp-4">
                     {paper.summary}
                   </p>
                 </div>
-                <Link href="#" className="text-[#017325] font-medium inline-flex items-center mt-4 hover:underline">
+                <Link 
+                  href={paper.pdfLink} 
+                  className="text-[#017325] font-medium inline-flex items-center mt-4 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FileText className="w-4 h-4 mr-2" />
-                  Read Policy Paper
+                  Read Policy Paper (PDF)
                 </Link>
               </div>
             </div>
           ))}
         </div>
+        
+        {policyPapers.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-lg text-gray-600">
+              New policy papers will be published soon. Check back for updates.
+            </p>
+          </div>
+        )}
       </section>
     </div>
   );

@@ -170,6 +170,14 @@ export default function Home() {
 
   const insightCards = [
     {
+      date: 'January 2026',
+      type: 'Policy Brief',
+      title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
+      description: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, examining the AU's institutional constraints, coordination challenges with the UN, and the role of external actors in undermining peace efforts.",
+      image: '/images/policy-briefs/sudan-policy-brief.jpg',
+      link: '/what-we-do/research-publications/policy-papers'
+    },
+    {
       date: 'January 15, 2026',
       type: 'Article',
       title: "What Would Israeli Recognition of Somaliland Mean for the Horn of Africa's Geopolitics?",
@@ -189,73 +197,41 @@ export default function Home() {
       date: 'October 13, 2025',
       type: 'Article',
       title: 'GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa',
-      description: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
+      description: 'Exploring how the Grand Ethiopian Renaissance Dam can transform from a source of tension to a catalyst for regional cooperation and shared prosperity.',
       image: '/images/articles/gerd-beyond-conflict.jpg',
       link: '/what-we-do/research-publications/gerd-beyond-conflict'
-    },
-    {
-      date: 'September 12, 2025',
-      type: 'Article',
-      title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
-      description: 'The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability.',
-      image: '/images/articles/AfricasClimateCrossroads.jpg',
-      link: '/what-we-do/research-publications/africas-climate-crossroads'
-    },
-    {
-      date: 'November 06, 2025',
-      type: 'Research',
-      title: 'Rethinking How Youth Shape the Future of Nature and Finance',
-      description: 'This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.',
-      image: '/images/focus-areas/rethinking-youth-nature-finance.png',
-      link: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf'
     }
   ];
 
   const eventCards = [
     {
-      date: 'July 15, 2025 | Online Webinar',
-      title: 'Webinar: Future of Governance in Africa',
-      description: 'Join experts to discuss democratic innovations and civic participation across the continent.',
+      date: 'February 15, 2026',
+      title: 'Youth Leadership Forum',
+      description: 'Join us for an engaging discussion on empowering youth leaders across Africa to drive policy change and innovation.',
     },
     {
-      date: 'August 5-7, 2025 | Nairobi, Kenya',
-      title: 'Workshop: Data-Driven Policy Making',
-      description: 'A hands-on workshop for policymakers and researchers on leveraging data for effective decision-making.',
+      date: 'March 10, 2026',
+      title: 'Policy Workshop on Climate Adaptation',
+      description: 'A hands-on workshop exploring practical strategies for building climate-resilient communities in East Africa.',
     },
     {
-      date: 'September 22, 2025 | Virtual Summit',
-      title: 'Annual Climate Resilience Summit',
-      description: 'Leading experts from across the globe gather to discuss innovative solutions for climate adaptation.',
-    },
-    {
-      date: 'October 10, 2025 | Online Seminar',
-      title: 'Seminar: Youth in Peacebuilding',
-      description: 'Exploring the crucial role of young people in conflict resolution and sustainable peace efforts.',
-    },
-    {
-      date: 'November 1-2, 2025 | Kampala, Uganda',
-      title: 'Training: Ethical AI in Development',
-      description: 'Practical training on integrating ethical AI practices into development projects for social good.',
-    },
-    {
-      date: 'December 5, 2025 | Addis Ababa, Ethiopia',
-      title: 'Conference: Sustainable Urbanization',
-      description: 'Discussing challenges and opportunities for sustainable urban growth in African cities.',
+      date: 'April 5, 2026',
+      title: 'Regional Security Summit',
+      description: 'Bringing together experts and policymakers to discuss emerging security challenges and collaborative solutions.',
     },
   ];
 
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
-        {backgroundImages.map((image, index) => (
+    <main className="bg-white text-[#050505]">
+      {/* Hero Background Section with Rotating Images */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {backgroundImages.map((bg, index) => (
           <Image
             key={index}
-            src={image}
-            alt={`NALA Center Hero Background ${index + 1}`}
+            src={bg}
+            alt={`Hero Background ${index + 1}`}
             layout="fill"
             objectFit="cover"
-            objectPosition="center"
             quality={100}
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
               index === currentBgIndex ? 'opacity-100' : 'opacity-0'
