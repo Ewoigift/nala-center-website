@@ -15,7 +15,7 @@ const policyPapers = [
     author: 'Getrude Maina',
     date: 'January 2026',
     category: 'Peace & Security',
-    pdfLink: '/uploads/peace-security/Nala Center Policy Brief 001.pdf'
+    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf'
   },
 ];
 

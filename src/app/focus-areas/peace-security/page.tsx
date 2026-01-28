@@ -19,7 +19,7 @@ export default function PeaceSecurityPage() {
       title: 'Paralysis in Peacekeeping: The African Union\'s Mediation Challenges in Sudan',
       description: 'This policy brief highlights the urgent need for a coordinated African response to Sudan\'s escalating war, which has exposed the African Union\'s institutional constraints and declining credibility as a peace broker.',
       linkText: 'Download file (PDF)',
-      linkHref: '/uploads/peace-security/Nala Center Policy Brief 001.pdf',
+      linkHref: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf',
       author: 'Getrude Maina',
       date: 'January 2026',
     },
