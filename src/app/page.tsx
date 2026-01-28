@@ -175,7 +175,7 @@ export default function Home() {
       title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
       description: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, examining the AU's institutional constraints, coordination challenges with the UN, and the role of external actors in undermining peace efforts.",
       image: '/images/policy-briefs/sudan-policy-brief.jpg',
-      link: '/what-we-do/research-publications/policy-papers'
+      link: '/what-we-do/policy-engagement'
     },
     {
       date: 'January 15, 2026',
