@@ -19,7 +19,8 @@ const imagePaths = [
   '/images/articles/AfricasClimateCrossroads.jpg',
   '/images/articles/gerd-beyond-conflict.jpg',
   '/images/articles/africas-democracy-life-support.png',
-  '/images/articles/somaliland-israel-recognition.jpg'
+  '/images/articles/somaliland-israel-recognition.jpg',
+  '/images/articles/south-sudan-total-war.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -63,6 +64,14 @@ const researchPapers = [
 ];
 
 const articles = [
+  {
+      title: "Why South Sudan is Returning to Total War",
+  author: "Bravin Onditi",
+  date: "2026-02-03",
+summary:"After seven years of delicate peace and trapped transition, South Sudan's security landscape is undergoing a violent and perhaps irreversible collapse. As military convoys move toward the Nuer heartlands, the international community might be witnessing the final collapse of the 2018 peace agreement",
+  thumbnail: imagePaths[12 % imagePaths.length],
+  link: '/what-we-do/research-publications/south-sudan-returning-to-war'
+  },
   {
     title: "What Would Israeli Recognition of Somaliland Mean for the Horn of Africa's Geopolitics?",
     author: "Rahma Oda",

@@ -169,6 +169,14 @@ export default function Home() {
   };
 
   const insightCards = [
+       {
+      date: 'February 03, 2026',
+      type: 'Article',
+      title: "Why South Sudan is Returning to Total War",
+      description: "After seven years of delicate peace and trapped transition, South Sudan's security landscape is undergoing a violent and perhaps irreversible collapse. As military convoys move toward the Nuer heartlands, the international community might be witnessing the final collapse of the 2018 peace agreement.",
+      image: '/images/articles/south-sudan-total-war.jpg',
+      link: '/what-we-do/research-publications/south-sudan-returning-to-war'
+    },
     {
       date: 'January 2026',
       type: 'Policy Brief',
