@@ -27,7 +27,7 @@ export default function LeadershipTeamPage() {
         {
       name: 'Diana Nduku Muthusi',
       designation: 'Head of Programs',
-      imageSrc: '/images/team/Diana-nduku.jpg',
+      imageSrc: '/images/team/diana-nduku.jpg',
       slug: 'diana-nduku',
     },
     {

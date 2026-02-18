@@ -60,7 +60,7 @@ Outside of her professional commitments, Marwa enjoys reading thrillers and fict
     {
       name: 'Diana Nduku Muthusi',
       designation: 'Head of Programs',
-      imageSrc: '/images/team/Diana-nduku.jpg',
+      imageSrc: '/images/team/diana-nduku.jpg',
       slug: 'diana-nduku',
       bio:`Nduku Diana Muthusi is a Research and Development Specialist and the Head of Programs at Nala Center. She oversees a diverse portfolio of initiatives aimed at bridging the gap between scholarly inquiry and sustainable, community-centered development. With an interdisciplinary background in Cultural Anthropology, Sociology, and Political Science, Diana brings a rigorous, multi-lens approach to addressing complex social and structural challenges within African contexts.
       
