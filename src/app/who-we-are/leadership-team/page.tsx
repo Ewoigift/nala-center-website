@@ -24,6 +24,12 @@ export default function LeadershipTeamPage() {
       imageSrc: '/images/team/marwa-ali-khamis.jpg',
       slug: 'marwa-ali-khamis',
     },
+        {
+      name: 'Diana Nduku Muthusi',
+      designation: 'Head of Programs',
+      imageSrc: '/images/team/Diana-nduku.jpg',
+      slug: 'diana-nduku',
+    },
     {
       name: 'Immanuel Kiilu',
       designation: 'Head of Research/Policy',
@@ -35,12 +41,6 @@ export default function LeadershipTeamPage() {
       designation: 'Head of Finance',
       imageSrc: '/images/team/zuleika-hassan.png',
       slug: 'zuleika-hassan',
-    },
-    {
-      name: 'Edwin Mwangi',
-      designation: 'Head of Operations',
-      imageSrc: '/images/team/edwin-maina.png',
-      slug: 'edwin-mwangi',
     },
     {
       name: 'Antony Nyabuto',

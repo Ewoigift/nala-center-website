@@ -58,6 +58,21 @@ Outside of her professional commitments, Marwa enjoys reading thrillers and fict
       },
     },
     {
+      name: 'Diana Nduku Muthusi',
+      designation: 'Head of Programs',
+      imageSrc: '/images/team/Diana-nduku.jpg',
+      slug: 'diana-nduku',
+      bio:`Nduku Diana Muthusi is a Research and Development Specialist and the Head of Programs at Nala Center. She oversees a diverse portfolio of initiatives aimed at bridging the gap between scholarly inquiry and sustainable, community-centered development. With an interdisciplinary background in Cultural Anthropology, Sociology, and Political Science, Diana brings a rigorous, multi-lens approach to addressing complex social and structural challenges within African contexts.
+      
+      Throughout her career, Diana has spearheaded research efforts in climate adaptation mapping, archival medical research, and public library ecosystems. Her expertise lies in the strategic coordination of multidisciplinary projects, stakeholder engagement, and the translation of qualitative data into actionable policy insights. She is recognized for her ability to navigate complex research environments while maintaining the highest standards of data integrity and institutional confidentiality.
+      
+      Diana is currently a VLIR-UOS Scholar at KU Leuven (Belgium), where she is undertaking her Master’s degree in Cultural Anthropology and Development Studies. She holds a Bachelor of Arts in Sociology and Political Science from The Catholic University of Eastern Africa. A passionate advocate for social justice and equitable development, Diana is dedicated to strengthening institutional capacity and fostering programs that generate practical, long-term impact.`,
+      socials: {
+        
+      },
+
+    },
+    {
       name: 'Immanuel Kiilu',
       designation: 'Head of Research/Policy',
       imageSrc: '/images/team/immanuel-kiilu.jpg',
@@ -84,21 +99,6 @@ In addition to her financial expertise, Zuleika brings a solid background in cus
 Zuleika is deeply committed to operational efficiency, team collaboration, and ethical financial stewardship. At Nala Center, she plays a vital role in ensuring smooth internal operations, enabling the organization to focus on its mission-driven programming. Her professional interests lie in nonprofit finance, organizational sustainability, and financial literacy for youth and women. She is passionate about using finance as a tool to build resilient institutions and empower communities.`,
       socials: {
         
-      },
-    },
-    {
-      name: 'Edwin Mwangi',
-      designation: 'Head of Operations',
-      imageSrc: '/images/team/edwin-maina.png',
-      slug: 'edwin-mwangi',
-      bio: `Edwin Mwangi is the Head of Operations at Nala Center, where he leads the planning, coordination, and execution of the Center's programs. With a background in International Relations and Diplomacy, Edwin has a unique systems-thinking approach to organizational management bridging global policy insights with local implementation strategies. He is deeply passionate about international cooperation, environmental sustainability, and the security implications of climate change.
-
-His work focuses on integrating climate resilience and sustainability into core operational practices, advancing green financing models, and promoting community-centered environmental solutions across Africa. Edwin has played a key role in designing and executing programs that address the complex relationship between climate change and peacebuilding working to ensure that marginalized communities are not only protected from climate risks but are also empowered to lead the change. His leadership at Nala emphasizes efficiency, transparency, and impact, ensuring that every initiative contributes meaningfully to the Center's mission.
-
-In addition to his operational responsibilities, Edwin is a strong advocate for youth engagement, environmental education, and policy reforms that address the intersection of development, climate, and human security. His belief in the power of local action backed by global thinking drives his commitment to building a more sustainable, just, and secure future.`,
-      socials: {
-        linkedin: 'https://www.linkedin.com/in/edwin-maina-46478b243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-       
       },
     },
     {
