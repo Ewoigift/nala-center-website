@@ -329,59 +329,7 @@ export default function Home() {
       </section>
 
       {/* Upcoming Events & Workshops Section - Carousel */}
-      <section className="bg-[#EBEBEB] py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Upcoming Events & Workshops</h2>
-
-          <div className="relative">
-            <div
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
-            >
-              {eventCards.map((event, index) => (
-                <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
-                  <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#EBEBEB] hover:border-[#050505] transition-all duration-300 min-h-[230px] flex flex-col justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-2">{event.date}</p>
-                      <h3 className="font-semibold text-xl text-[#050505] mb-3">{event.title}</h3>
-                      <p className="text-gray-700 text-base mb-4 line-clamp-2">
-                        {event.description}
-                      </p>
-                    </div>
-                    <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                      Register &rarr;
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <div className="flex justify-center mt-8 space-x-8">
-              <button
-                onClick={scrollLeft}
-                disabled={isLeftDisabled}
-                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                  isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                }`}
-                aria-label="Scroll left"
-              >
-                &larr;
-              </button>
-              <button
-                onClick={scrollRight}
-                disabled={isRightDisabled}
-                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
-                  isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
-                }`}
-                aria-label="Scroll right"
-              >
-                &rarr;
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Subscribe / Stay Connected Section */}
       <section className="bg-white py-16 px-4">
