@@ -169,7 +169,15 @@ export default function Home() {
   };
 
   const insightCards = [
-       {
+    {
+      date: 'April 15, 2026',
+      type: 'Article',
+      title: "What the Numbers Say About Sudan's Unravelling",
+      description: "As the war enters its fourth year, Sudan now carries a grim distinction: the world's largest humanitarian and displacement crisis. This analysis draws on landmark data to reveal what happens when the international community watches and waits.",
+      image: '/images/articles/sudan-unravelling.jpg',
+      link: '/what-we-do/research-publications/sudan-numbers-unravelling'
+    },
+    {
       date: 'February 03, 2026',
       type: 'Article',
       title: "Why South Sudan is Returning to Total War",
@@ -178,20 +186,20 @@ export default function Home() {
       link: '/what-we-do/research-publications/south-sudan-returning-to-war'
     },
     {
-      date: 'January 2026',
-      type: 'Policy Brief',
-      title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
-      description: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, examining the AU's institutional constraints, coordination challenges with the UN, and the role of external actors in undermining peace efforts.",
-      image: '/images/policy-briefs/sudan-policy-brief.jpg',
-      link: '/what-we-do/policy-engagement'
-    },
-    {
       date: 'January 15, 2026',
       type: 'Article',
       title: "What Would Israeli Recognition of Somaliland Mean for the Horn of Africa's Geopolitics?",
       description: "Israel's recognition of Somaliland marks a significant diplomatic breakthrough, but what does it mean for regional stability? This analysis explores the geopolitical implications.",
       image: '/images/articles/somaliland-israel-recognition.jpg',
       link: '/what-we-do/research-publications/israeli-recognition-somaliland'
+    },
+    {
+      date: 'November 06, 2025',
+      type: 'Research',
+      title: 'Rethinking How Youth Shape the Future of Nature and Finance',
+      description: 'This brief interrogates the financialisation of nature through Nature-based Solutions (NbS), examining how ecological restoration initiatives intersect with market logics that commodify ecosystems.',
+      image: '/images/focus-areas/rethinking-youth-nature-finance.png',
+      link: '/uploads/sustainable-energy/rethinking-youth-nature-finance.pdf'
     },
     {
       date: 'November 03, 2025',
@@ -205,41 +213,34 @@ export default function Home() {
       date: 'October 13, 2025',
       type: 'Article',
       title: 'GERD Beyond Conflict: Unlocking Regional Value & Cooperation in the Horn of Africa',
-      description: 'Exploring how the Grand Ethiopian Renaissance Dam can transform from a source of tension to a catalyst for regional cooperation and shared prosperity.',
+      description: "An important turning point in the history of infrastructure in the Horn of Africa was reached in September 2025 when the turbines of the Grand Ethiopian Renaissance Dam (GERD) were synchronized to Ethiopia's national grid.",
       image: '/images/articles/gerd-beyond-conflict.jpg',
       link: '/what-we-do/research-publications/gerd-beyond-conflict'
+    },
+    {
+      date: 'September 12, 2025',
+      type: 'Article',
+      title: "Africa's Climate Crossroads: From Nairobi's Promises to Addis Ababa's Demands",
+      description: 'The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability.',
+      image: '/images/articles/AfricasClimateCrossroads.jpg',
+      link: '/what-we-do/research-publications/africas-climate-crossroads'
     }
   ];
 
-  const eventCards = [
-    {
-      date: 'February 15, 2026',
-      title: 'Youth Leadership Forum',
-      description: 'Join us for an engaging discussion on empowering youth leaders across Africa to drive policy change and innovation.',
-    },
-    {
-      date: 'March 10, 2026',
-      title: 'Policy Workshop on Climate Adaptation',
-      description: 'A hands-on workshop exploring practical strategies for building climate-resilient communities in East Africa.',
-    },
-    {
-      date: 'April 5, 2026',
-      title: 'Regional Security Summit',
-      description: 'Bringing together experts and policymakers to discuss emerging security challenges and collaborative solutions.',
-    },
-  ];
+
 
   return (
-    <main className="bg-white text-[#050505]">
-      {/* Hero Background Section with Rotating Images */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {backgroundImages.map((bg, index) => (
+    <main>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
+        {backgroundImages.map((image, index) => (
           <Image
             key={index}
-            src={bg}
-            alt={`Hero Background ${index + 1}`}
+            src={image}
+            alt={`NALA Center Hero Background ${index + 1}`}
             layout="fill"
             objectFit="cover"
+            objectPosition="center"
             quality={100}
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
               index === currentBgIndex ? 'opacity-100' : 'opacity-0'
@@ -265,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Insights Section - Now a Carousel */}
+      {/* Latest Insights Section - Carousel */}
       <section className="container mx-auto py-16 px-4 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Latest Insights</h2>
         
@@ -328,8 +329,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Upcoming Events & Workshops Section - Carousel */}
-      
+     
 
       {/* Subscribe / Stay Connected Section */}
       <section className="bg-white py-16 px-4">
