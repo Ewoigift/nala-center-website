@@ -269,7 +269,7 @@ export default function ArticlePage() {
 
         {/* Article Header */}
         <header className="mb-8 p-6 bg-white rounded-xl shadow-md">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#050505] mb-2">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-[#050505] mb-2">
             {articleData.title}
           </h1>
           <div className="text-gray-600 text-sm md:text-base">
@@ -284,7 +284,7 @@ export default function ArticlePage() {
               switch (block.type) {
                 case 'paragraph':
                   return (
-                    <p key={index} className="text-lg leading-relaxed mb-6">
+                    <p key={index} className="text-lg leading-relaxed mb-6 text-justify">
                       {block.text}
                     </p>
                   );
