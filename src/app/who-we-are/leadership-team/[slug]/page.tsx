@@ -15,7 +15,7 @@ import React, { use } from 'react';
 const allTeamMembers = [
     {
       name: 'Bravin Onditi',
-      designation: 'Founder and Executive Director',
+      designation: 'Founder',
       imageSrc: '/images/team/bravin-onditi.png',
       slug: 'bravin-onditi',
       bio: `Bravin Onditi is the Founder and Chairman of Nala Center and currently serves as its Executive Director. A passionate advocate for social justice, regional peace, and climate resilience, Bravin leads the Center's vision to advance evidence-based policy, dialogue, and action across Africa.

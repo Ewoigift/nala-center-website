@@ -8,7 +8,7 @@ export default function LeadershipTeamPage() {
   const teamMembers = [
     {
       name: 'Bravin Onditi',
-      designation: 'Founder and Executive Director',
+      designation: 'Founder',
       imageSrc: '/images/team/bravin-onditi.png',
       slug: 'bravin-onditi',
     },

@@ -145,7 +145,6 @@ export default function ContactPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
             <p className="text-gray-600">
-              P.O. Box 25632-00100<br />
               Nairobi, Kenya
             </p>
           </div>

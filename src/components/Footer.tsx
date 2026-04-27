@@ -74,9 +74,6 @@ export default function Footer() {
         <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Contact</h3>
           <p className="text-sm mb-2">
-            P.O. Box 25632-00100 Nairobi-Kenya. 
-          </p>
-          <p className="text-sm mb-2">
             Email: <a href="mailto:nalacenter254@gmail.com" className="hover:text-[#FFFFFF] transition-colors duration-200">nalacenter254@gmail.com</a>
           </p>
           <p className="text-sm mb-4">
