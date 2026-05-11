@@ -21,7 +21,8 @@ const imagePaths = [
   '/images/articles/africas-democracy-life-support.png',
   '/images/articles/somaliland-israel-recognition.jpg',
   '/images/articles/south-sudan-total-war.jpg',
-  '/images/articles/sudan-unravelling.jpg'
+  '/images/articles/sudan-unravelling.jpg',
+  '/images/articles/kenya-france-sovereign-progress.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -65,6 +66,15 @@ const researchPapers = [
 ];
 
 const articles = [
+  {
+    title: "The Price of Presence: Can Kenya Turn French Partnerships into Sovereign Progress?",
+    author: "Getrude Maina",
+    date: "2026-05-11",
+    summary: "As the Africa Forward Summit opens in Nairobi, Kenya stands at a crossroads between becoming a permanent market for French high-tech goods or a sovereign co-producer of its own future. Beneath the high-level handshakes lies a stark structural reality that demands a deliberate industrial strategy.",
+    thumbnail: '/images/articles/kenya-france-sovereign-progress.jpg',
+    link: '/what-we-do/research-publications/kenya-france-sovereign-progress'
+  },
+
   {
     title: "What the Numbers Say About Sudan's Unravelling",
     author: "Bravin Onditi",

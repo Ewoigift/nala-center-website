@@ -169,6 +169,14 @@ export default function Home() {
 
   const insightCards = [
     {
+      date: 'May 11, 2026',
+      type: 'Article',
+      title: "The Price of Presence: Can Kenya Turn French Partnerships into Sovereign Progress?",
+      description: "As the Africa Forward Summit opens in Nairobi, Kenya stands at a crossroads between becoming a permanent market for French high-tech goods or a sovereign co-producer of its own future. Beneath the high-level handshakes lies a stark structural reality that demands a deliberate industrial strategy.",
+      image: '/images/articles/kenya-france-sovereign-progress.jpg',
+      link: '/what-we-do/research-publications/kenya-france-sovereign-progress'
+    },
+    {
       date: 'April 15, 2026',
       type: 'Article',
       title: "What the Numbers Say About Sudan's Unravelling",
