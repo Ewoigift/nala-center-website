@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'contact@nalacenter.org', // You'll change this after domain verification
-      to: ['nalacenter254@gmail.com'], // Your Nala Center email
+      to: ['info@nalacenter.org'], // Your Nala Center email
       replyTo: email, // User's email for easy reply
       subject: subject || `New Contact Form Message from ${name}`,
       html: `
@@ -131,7 +131,7 @@ export async function POST(request: Request) {
     console.error('Error sending email:', error);
     
     return NextResponse.json(
-      { message: 'Failed to send message. Please try again or contact us directly at nalacenter254@gmail.com' },
+      { message: 'Failed to send message. Please try again or contact us directly at info@nalacenter.org' },
       { status: 500 }
     );
   }

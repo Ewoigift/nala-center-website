@@ -117,10 +117,10 @@ export default function ContactPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
             <a 
-              href="mailto:nalacenter254@gmail.com" 
+              href="mailto:info@nalacenter.org" 
               className="text-gray-600 hover:text-[#050505] transition-colors duration-200"
             >
-              nalacenter254@gmail.com
+              info@nalacenter.org
             </a>
           </div>
 
@@ -353,7 +353,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:nalacenter254@gmail.com"
+              href="mailto:info@nalacenter.org"
               className="bg-white text-[#050505] py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
             >
               Email Us

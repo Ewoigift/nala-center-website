@@ -23,7 +23,7 @@ const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     }
     const subject = 'Membership Inquiry for Nala Center';
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\nOrganization: ${formData.organization}\n\n${formData.message}`;
-    const mailtoLink = `mailto:nalacenter254@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:info@nalacenter.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setFormStatus('submitting');
     setTimeout(() => {
       window.location.href = mailtoLink;

@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold mb-4 text-[#FFFFFF]">Contact</h3>
           <p className="text-sm mb-2">
-            Email: <a href="mailto:nalacenter254@gmail.com" className="hover:text-[#FFFFFF] transition-colors duration-200">nalacenter254@gmail.com</a>
+            Email: <a href="mailto:info@nalacenter.org" className="hover:text-[#FFFFFF] transition-colors duration-200">info@nalacenter.org</a>
           </p>
           <p className="text-sm mb-4">
             Phone: <a href="tel:+254718302179" className="hover:text-[#FFFFFF] transition-colors duration-200">+254 718 302 179</a>
