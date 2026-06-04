@@ -169,6 +169,14 @@ export default function Home() {
 
   const insightCards = [
     {
+    date: "2026-05-11",
+    type: 'Article',
+    title: "Who Gets to Be a Pan-Africanist?",
+    description: "There is a word that has been spoken by freedom fighters in prison cells, by intellectuals in Paris, by trade unionists in Manchester,and by heads of state in Addis Ababa — and most recently, and most controversially, by a French president standing beside a Kenyan counterpart in Nairobi.",
+    image: '/images/articles/who-gets-to-be-a-pan-africanist.jpg',
+    link: '/what-we-do/research-publications/who-gets-to-be-a-pan-africanist'
+    },
+    {
       date: 'May 11, 2026',
       type: 'Article',
       title: "The Price of Presence: Can Kenya Turn French Partnerships into Sovereign Progress?",

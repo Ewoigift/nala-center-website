@@ -22,7 +22,8 @@ const imagePaths = [
   '/images/articles/somaliland-israel-recognition.jpg',
   '/images/articles/south-sudan-total-war.jpg',
   '/images/articles/sudan-unravelling.jpg',
-  '/images/articles/kenya-france-sovereign-progress.jpg'
+  '/images/articles/kenya-france-sovereign-progress.jpg',
+  '/images/articles/who-gets-to-be-a-pan-africanist.jpg'
 ];
 
 // Dummy data for publications and articles based on Nala Center's potential focus areas.
@@ -66,6 +67,15 @@ const researchPapers = [
 ];
 
 const articles = [
+  {
+    title: "Who Gets to Be a Pan-Africanist?",
+    author: "Bravin Onditi",
+    date: "2026-05-11",
+    summary: "There is a word that has been spoken by freedom fighters in prison cells, by intellectuals in Paris, by trade unionists in Manchester,and by heads of state in Addis Ababa — and most recently, and most controversially, by a French president standing beside a Kenyan counterpart in Nairobi.",
+    thumbnail: imagePaths[15 % imagePaths.length],
+    link: '/what-we-do/research-publications/who-gets-to-be-a-pan-africanist'
+  },
+
   {
     title: "The Price of Presence: Can Kenya Turn French Partnerships into Sovereign Progress?",
     author: "Getrude Maina",
@@ -127,7 +137,8 @@ const articles = [
     summary: "The Second Africa Climate Summit (ACS2) builds on the Nairobi Declaration, pushing into the far more complex terrain of implementation and accountability. The central analytical question for policymakers is whether ACS2 can transform the political momentum of Nairobi into tangible, bankable, and equitable outcomes.",
     thumbnail: imagePaths[8 % imagePaths.length],
     link: '/what-we-do/research-publications/africas-climate-crossroads'
-  }
+  },
+
 ];
 
 export default function ResearchAndPublicationsPage() {
