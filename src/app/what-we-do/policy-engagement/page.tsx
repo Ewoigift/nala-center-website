@@ -15,7 +15,7 @@ const policyPapers = [
     author: 'Getrude Maina',
     date: 'January 2026',
     category: 'Peace & Security',
-    pdfLink: '/uploads/peace-security/Nala Center Policy Brief 001.pdf'
+    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf'
   },
   {
     title: "Harnessing Kenya-France Relations in a Shifting Global Order",
@@ -24,7 +24,7 @@ const policyPapers = [
     author: 'Getrude Maina',
     date: 'June 2026',
     category: 'Democracy & Governance',
-    pdfLink: '/uploads/democracy-governance/Nala Center Policy Brief 002.pdf' 
+    pdfLink: '/uploads/democracy-governance/Nala-Center-Policy-Brief-002.pdf' 
   },
 ];
 
