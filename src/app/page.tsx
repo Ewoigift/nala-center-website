@@ -169,6 +169,14 @@ export default function Home() {
 
   const insightCards = [
     {
+      date: "June 2026",
+    type: 'Policy',
+    title: "Harnessing Kenya-France Relations in a Shifting Global Order",
+    description: "Following the 2026 Africa Forward Summit, this brief examines Kenya's strategic partnership with France across maritime security, economic transformation, and regional governance. It explores how Kenya can navigate asymmetrical trade, leverage equity-based partnerships, and avoid bilateral silos to convert global diplomatic visibility into sustainable regional stability and domestic industrial gains.",
+    image: '/images/policy-briefs/democracy-governance-policy-brief.jpg',
+    link: '/uploads/democracy-governance/Nala-Center-Policy-Brief-002.pdf'
+    },
+    {
     date: "2026-05-11",
     type: 'Article',
     title: "Who Gets to Be a Pan-Africanist?",
