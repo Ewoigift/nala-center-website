@@ -15,7 +15,16 @@ const policyPapers = [
     author: 'Getrude Maina',
     date: 'January 2026',
     category: 'Peace & Security',
-    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf'
+    pdfLink: '/uploads/peace-security/Nala Center Policy Brief 001.pdf'
+  },
+  {
+    title: "Harnessing Kenya-France Relations in a Shifting Global Order",
+    summary: "Following the 2026 Africa Forward Summit, this brief examines Kenya's strategic partnership with France across maritime security, economic transformation, and regional governance. It explores how Kenya can navigate asymmetrical trade, leverage equity-based partnerships, and avoid bilateral silos to convert global diplomatic visibility into sustainable regional stability and domestic industrial gains.",
+    image: '/images/policy-briefs/democracy-governance-policy-brief.jpg',
+    author: 'Getrude Maina',
+    date: 'June 2026',
+    category: 'Democracy & Governance',
+    pdfLink: '/uploads/democracy-governance/Nala Center Policy Brief 002.pdf' 
   },
 ];
 
@@ -49,7 +58,9 @@ export default function PolicyPapersPage() {
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="mb-2">
-                    <span className="inline-block bg-[#4BA3A0] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className={`inline-block text-white text-xs font-semibold px-3 py-1 rounded-full ${
+                      paper.category === 'Peace & Security' ? 'bg-[#4BA3A0]' : 'bg-[#6CAED9]'
+                    }`}>
                       {paper.category}
                     </span>
                   </div>

@@ -117,22 +117,7 @@ Antony's career is marked by a strong commitment to interdisciplinary collaborat
       },
     },
 
-     {
-       name:'Dahabo Dagane',
-designation:'Communications Assistant',
-imageSrc:'/images/team/dahabo-dagane.png',
-slug:'dahabo-dagane',
-      bio:` Dahabo Dagane is a Communications Assistant at the Nala Center, where she supports strategic communication, public engagement, and the dissemination of the Center’s research and policy outputs. In her role, she contributes to crafting narratives that advance the Center’s mission of promoting governance, inclusion, and regional cooperation across Africa.
-
-      She is currently pursuing a degree in International Relations and Diplomacy at the University of Nairobi, where she continues to deepen her understanding of global affairs, communication, and development. Her professional interests include strategic communication, youth empowerment, governance, and the role of media in shaping public policy and social transformation.
-
-      Dahabo is passionate about using communication as a bridge between research and impact, ensuring that ideas translate into meaningful action. Outside her professional work, she is actively involved in community and volunteer initiatives that promote empowerment and civic engagement.
-She is guided by the mantra: “Rise with purpose, lead with heart, and leave every space better than you found it.”
-      `,
-      socials: {
-        
-      },
-    },
+  
 
    {
    name:'Nadia Khalifa',

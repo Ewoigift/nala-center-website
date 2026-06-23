@@ -49,13 +49,6 @@ export default function LeadershipTeamPage() {
       slug: 'antony-nyabuto',
     },
 
-       {
-    name:'Dahabo Dagane',
-designation:'Communications Assistant',
-imageSrc:'/images/team/dahabo-dagane.png',
-slug:'dahabo-dagane'
-  },
-
       {
     name:'Nadia Khalifa',
 designation:'Events and Partnerships Assistant',
