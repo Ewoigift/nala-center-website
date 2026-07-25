@@ -169,6 +169,15 @@ export default function Home() {
 
   const insightCards = [
     {
+      date: "2026-07-24",
+      type: "Article",
+    title: "The Missing Tier: Devolution and Kenya's Artificial Intelligence Governance",
+    description: "Discussion of artificial intelligence regulation tends to organise itself around two figures: the developer who builds a system and the deployer who puts it in front of a user. Both matter. In a devolved state, however, a third question sits beneath them and determines whether any rule will function in practice.",
+    image: '/images/articles/devolution-kenya-ai-governance.jpg',
+    link: '/what-we-do/research-publications/devolution-kenya-ai-governance'
+
+    },
+    {
       date: "June 2026",
     type: 'Policy',
     title: "Harnessing Kenya-France Relations in a Shifting Global Order",

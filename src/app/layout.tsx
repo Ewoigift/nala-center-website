@@ -1,25 +1,21 @@
 // src/app/layout.tsx
-'use client';
+// NOTE: No 'use client' here — this must stay a server component
+// so that Next.js can pick up the metadata export.
+import type { Metadata } from 'next';
+import './globals.css';
+import ClientLayout from './ClientLayout'; // ← new file (see below)
 
-import { usePathname } from 'next/navigation';
-import './globals.css'; // ADD THIS LINE
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+export { metadata } from './metadata';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const showFooter = pathname !== '/';
-
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        {showFooter && <Footer />}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

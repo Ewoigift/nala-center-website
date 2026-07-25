@@ -68,6 +68,14 @@ const researchPapers = [
 
 const articles = [
   {
+    title: "The Missing Tier: Devolution and Kenya's Artificial Intelligence Governance",
+  author: "Bravin Onditi", // ← TODO: confirm author name
+  date: "2026-07-24",
+  summary: "Discussion of artificial intelligence regulation tends to organise itself around two figures: the developer who builds a system and the deployer who puts it in front of a user. Both matter. In a devolved state, however, a third question sits beneath them and determines whether any rule will function in practice.",
+    thumbnail: '/images/articles/devolution-kenya-ai-governance.jpg',
+    link: '/what-we-do/research-publications/devolution-kenya-ai-governance'
+  },
+  {
     title: "Who Gets to Be a Pan-Africanist?",
     author: "Bravin Onditi",
     date: "2026-05-11",
