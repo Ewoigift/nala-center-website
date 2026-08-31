@@ -13,12 +13,6 @@ export default function AssociateFellowsPage() {
       slug: 'isaac-mureithi',
     },
     {
-      name:'Denis Muniu',
-designation:'Foreign Policy, Security, and Defence Expert',
-imageSrc: '/images/team/denis-muniu.png',
-slug:'denis-muniu',
-    },
-    {
       name:'Rahma Oda',
       designation:'Health Policy and Systems Expert',
 imageSrc:'/images/team/Rahma-Oda.png',
@@ -31,12 +25,6 @@ imageSrc:'/images/team/rayner-sakari.jpg',
 slug:'rayner-sakari'
     },
   
-     {
-      name:'Kennedy Karanja',
-designation:'International Political Economy and Multilateral Diplomacy',
-imageSrc:'/images/team/Kennedy_Wangari.png',
-slug:'kennedy-karanja'
-    },
 
          {
       name:'Salma Kadry',

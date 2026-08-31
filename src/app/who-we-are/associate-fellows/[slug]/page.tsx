@@ -27,18 +27,6 @@ const allAssociateFellows = [
     },
   },
 {
-  name:'Denis Muniu',
-  designation:'Foreign Policy, Security, and Defence Expert',
-  imageSrc:'/images/team/denis-muniu.png',
-  slug:'denis-muniu',
-   bio: `Mr. Denis Muniu is a Research Fellow at the Global Centre for Policy and Strategy, where he focuses on foreign policy, security, and defense. He previously served at the Ministry of Foreign and Diaspora Affairs, and at the Ministry of East African Community, Arid and Semi-Arid Lands (ASALs), and Regional Development. His research interests center on peace, security, and foreign policy. Denis holds a BA in International Relations and Diplomacy from the Technical University of Kenya and is currently pursuing a Master of Arts in International Relations at Kenyatta University.`,
-    socials: {
-   
-      linkedin: 'https://www.linkedin.com/in/denis-muniu-7721b318a/',
-     
-    },
-},
-{
 name:'Rahma Oda',
 designation:'Health Policy and Systems Expert',
 imageSrc:'/images/team/Rahma-Oda.png',
@@ -58,18 +46,6 @@ slug:'rayner-sakari',
 bio:`Rayner Sakari's work explores the critical intersections of peace, security, democracy, and governance. He holds a B.A. in International Relations and Diplomacy and has practical experience as a Program Officer with the International Centre for Peace, Human Rights and Development in Africa, where he supported initiatives to strengthen institutional frameworks and empower communities. His research focuses on how governance systems can promote stability and build resilience against evolving challenges. Committed to bridging theory and practice, Rayner develops actionable analysis to provide decision-makers with insights that inform practical, sustainable solutions.`,
 socials: {
      
-    },
-},
-{
-name:'Kennedy Karanja',
-designation:'International Political Economy and Multilateral Diplomacy',
-imageSrc:'/images/team/Kennedy_Wangari.png',
-slug:'kennedy-karanja',
-bio:`Kennedy Wangari is an Associate Fellow at the Nala Center, specializing in the intersection of international political economy, public policy, and multilateral diplomacy, with a strong focus on African regional integration and policy innovation. Currently pursuing a Bachelor of Arts in International Studies at Strathmore University, Kennedy simultaneously works with the United Nations Environment Program (UNEP) in the Civil Society Unit of the Governance Affairs Office. 
-
-His extensive experience in international governance includes active participation and contribution to high-level forums like the UN Environment Assembly (2024) and the UN-Habitat Assembly (2023), where he assisted in drafting resolutions and organizing strategic policy events like the UN Science-Policy Business Forum. A proven leader, he served as the 15th Secretary General of the Strathmore University Student Council (2023-2024), demonstrating strong administrative and governance capabilities. Kennedy’s dedication to deconstructing complex global affairs and championing policies that enhance economic development and youth empowerment positions him as a forward-thinking policy analyst poised to make a significant impact on the policy landscape.`,
-socials: {
-      
     },
 },
 
