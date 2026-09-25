@@ -169,29 +169,36 @@ export default function Home() {
 
   const insightCards = [
     {
+      date: "August 2026",
+      type: "Policy",
+      title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
+      description: "Informed by a youth dialogue held at the Konrad Adenauer Stiftung Kenya office, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti.",
+      image: '/images/policy-briefs/kenya-peace-security-diplomacy.jpg',
+      link: '/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf'
+    },
+    {
       date: "2026-07-24",
       type: "Article",
-    title: "The Missing Tier: Devolution and Kenya's Artificial Intelligence Governance",
-    description: "Discussion of artificial intelligence regulation tends to organise itself around two figures: the developer who builds a system and the deployer who puts it in front of a user. Both matter. In a devolved state, however, a third question sits beneath them and determines whether any rule will function in practice.",
-    image: '/images/articles/devolution-kenya-ai-governance.jpg',
-    link: '/what-we-do/research-publications/devolution-kenya-ai-governance'
-
+      title: "The Missing Tier: Devolution and Kenya's Artificial Intelligence Governance",
+      description: "Discussion of artificial intelligence regulation tends to organise itself around two figures: the developer who builds a system and the deployer who puts it in front of a user. Both matter. In a devolved state, however, a third question sits beneath them and determines whether any rule will function in practice.",
+      image: '/images/articles/devolution-kenya-ai-governance.jpg',
+      link: '/what-we-do/research-publications/devolution-kenya-ai-governance'
     },
     {
       date: "June 2026",
-    type: 'Policy',
-    title: "Harnessing Kenya-France Relations in a Shifting Global Order",
-    description: "Following the 2026 Africa Forward Summit, this brief examines Kenya's strategic partnership with France across maritime security, economic transformation, and regional governance. It explores how Kenya can navigate asymmetrical trade, leverage equity-based partnerships, and avoid bilateral silos to convert global diplomatic visibility into sustainable regional stability and domestic industrial gains.",
-    image: '/images/policy-briefs/democracy-governance-policy-brief.jpg',
-    link: '/uploads/democracy-governance/Nala-Center-Policy-Brief-002.pdf'
+      type: 'Policy',
+      title: "Harnessing Kenya-France Relations in a Shifting Global Order",
+      description: "Following the 2026 Africa Forward Summit, this brief examines Kenya's strategic partnership with France across maritime security, economic transformation, and regional governance. It explores how Kenya can navigate asymmetrical trade, leverage equity-based partnerships, and avoid bilateral silos to convert global diplomatic visibility into sustainable regional stability and domestic industrial gains.",
+      image: '/images/policy-briefs/democracy-governance-policy-brief.jpg',
+      link: '/uploads/democracy-governance/Nala-Center-Policy-Brief-002.pdf'
     },
     {
-    date: "2026-05-11",
-    type: 'Article',
-    title: "Who Gets to Be a Pan-Africanist?",
-    description: "There is a word that has been spoken by freedom fighters in prison cells, by intellectuals in Paris, by trade unionists in Manchester,and by heads of state in Addis Ababa — and most recently, and most controversially, by a French president standing beside a Kenyan counterpart in Nairobi.",
-    image: '/images/articles/who-gets-to-be-a-pan-africanist.jpg',
-    link: '/what-we-do/research-publications/who-gets-to-be-a-pan-africanist'
+      date: "2026-05-11",
+      type: 'Article',
+      title: "Who Gets to Be a Pan-Africanist?",
+      description: "There is a word that has been spoken by freedom fighters in prison cells, by intellectuals in Paris, by trade unionists in Manchester,and by heads of state in Addis Ababa — and most recently, and most controversially, by a French president standing beside a Kenyan counterpart in Nairobi.",
+      image: '/images/articles/who-gets-to-be-a-pan-africanist.jpg',
+      link: '/what-we-do/research-publications/who-gets-to-be-a-pan-africanist'
     },
     {
       date: 'May 11, 2026',
@@ -259,8 +266,6 @@ export default function Home() {
     }
   ];
 
-
-
   return (
     <main>
       {/* Hero Section */}
@@ -316,7 +321,7 @@ export default function Home() {
                     alt={`${insight.title} Thumbnail`}
                     width={500}
                     height={300}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover object-top"
                   />
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>
@@ -360,8 +365,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-     
 
       {/* Subscribe / Stay Connected Section */}
       <section className="bg-white py-16 px-4">
