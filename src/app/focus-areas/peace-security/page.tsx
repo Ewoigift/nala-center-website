@@ -28,7 +28,7 @@ export default function PeaceSecurityPage() {
     {
       badge: 'Youth & Diplomacy Brief',
       title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
-      description: "Informed by a youth dialogue held at the Konrad Adenauer Stiftung Kenya office, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
+      description: "Informed by a national youth dialogue, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
       linkText: 'Download Dialogue Brief (PDF)', 
       linkHref: '/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf',
       author: 'Youth in Governance and Global Affairs, Nala Center & MuemAction Post',

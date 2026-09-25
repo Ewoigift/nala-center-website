@@ -14,12 +14,12 @@ const cardBgColor = "#FFFFFF";
 const reports = [
   {
     title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
-    summary: "Informed by a youth dialogue held at the Konrad Adenauer Stiftung Kenya office, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
+    summary: "Informed by a national youth dialogue, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
     date: "August 2026",
     category: "Peace & Security",
     image: "/images/policy-briefs/kenya-peace-security-diplomacy.jpg",
     pdfLink: "/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf",
-    author: "Youth in Governance and Global Affairs, Nala Center & MuemAction Post"
+    author: "Nala Center"
   }
 ];
 

@@ -6,16 +6,16 @@ import Image from "next/legacy/image";
 import Link from 'next/link';
 import { Pen, FileText } from 'lucide-react';
 
-// Data for policy papers
+// Data for policy papers ordered from latest to oldest
 const policyPapers = [
   {
-    title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
-    summary: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, which has exposed the African Union's institutional constraints and declining credibility as a peace broker. The paper assesses key challenges including coordination issues between the AU and UN, inadequate civilian protection mechanisms, and the vested interests of external actors undermining inclusive peace efforts.",
-    image: '/images/policy-briefs/sudan-policy-brief.jpg',
-    author: 'Getrude Maina',
-    date: 'January 2026',
+    title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
+    summary: "Informed by a national youth dialogue, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
+    image: '/images/policy-briefs/kenya-peace-security-diplomacy.jpg',
+    author: 'Nala Center',
+    date: 'August 2026',
     category: 'Peace & Security',
-    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf'
+    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf'
   },
   {
     title: "Harnessing Kenya-France Relations in a Shifting Global Order",
@@ -27,13 +27,13 @@ const policyPapers = [
     pdfLink: '/uploads/democracy-governance/Nala-Center-Policy-Brief-002.pdf' 
   },
   {
-    title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
-    summary: "Informed by a youth dialogue held at the Konrad Adenauer Stiftung Kenya office, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
-    image: '/images/policy-briefs/kenya-peace-security-diplomacy.jpg',
-    author: 'Youth in Governance and Global Affairs, Nala Center & MuemAction Post',
-    date: 'August 2026',
+    title: "Paralysis in Peacekeeping: The African Union's Mediation Challenges in Sudan",
+    summary: "This policy brief highlights the urgent need for a coordinated African response to Sudan's escalating war, which has exposed the African Union's institutional constraints and declining credibility as a peace broker. The paper assesses key challenges including coordination issues between the AU and UN, inadequate civilian protection mechanisms, and the vested interests of external actors undermining inclusive peace efforts.",
+    image: '/images/policy-briefs/sudan-policy-brief.jpg',
+    author: 'Getrude Maina',
+    date: 'January 2026',
     category: 'Peace & Security',
-    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf'
+    pdfLink: '/uploads/peace-security/Nala-Center-Policy-Brief-001.pdf'
   },
 ];
 
