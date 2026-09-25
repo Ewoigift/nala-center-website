@@ -10,7 +10,7 @@ import { Pen, FileText } from 'lucide-react';
 const policyPapers = [
   {
     title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
-    summary: "Informed by a national youth dialogue, this brief assesses Kenya's peace and security diplomacy against the commitments of Sessional Paper No. 1 of 2025, examining its record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
+    summary: "This policy brief is informed by the proceedings of a youth dialogue on Kenya’s peace and security diplomacy, convened on 14 August 2026. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
     image: '/images/policy-briefs/kenya-peace-security-diplomacy.jpg',
     author: 'Nala Center',
     date: 'August 2026',
