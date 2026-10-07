@@ -28,6 +28,7 @@ const focusAreasLinks = [
 // Data for What We Do dropdown
 const whatWeDoLinks = [
   { name: 'Research & Publications', href: '/what-we-do/research-publications', imgSrc: '/images/what-we-do/research-publication.jpg' },
+  { name: 'Nala Weekly', href: '/what-we-do/nala-weekly', imgSrc: '/images/policy-briefs/nala-weekly-banner.jpg' },
   { name: 'Policy Engagement', href: '/what-we-do/policy-engagement', imgSrc: '/images/what-we-do/policy-engagement.jpg' },
   { name: 'Training', href: '/what-we-do/training', imgSrc: '/images/what-we-do/capacity-building.jpg' },
   { name: 'Reports', href: '/what-we-do/reports', imgSrc: '/images/what-we-do/multimedia-hub.jpg' },
