@@ -39,7 +39,7 @@ export default function NalaWeeklyPage() {
         <div className="absolute inset-0 bg-black opacity-20 z-0"></div>
         <div className="relative z-10 container mx-auto px-4 pb-10 text-white">
           <h1 className="text-3xl md:text-5xl font-bold font-serif mb-2 leading-tight">Nala Weekly</h1>
-          <p className="text-lg md:text-xl max-w-2xl">A weekly product of the Nala Center, tracking the flashpoints shaping Africa's peace and security landscape.</p>
+          <p className="text-lg md:text-xl max-w-2xl"></p>
         </div>
       </section>
 
