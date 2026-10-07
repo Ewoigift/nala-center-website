@@ -185,7 +185,7 @@ export default function Home() {
       title: "Issue No. 02: Mekelle Falls, the Ethiopia-Eritrea Rift, and the Battle for Bab el-Mandeb",
       description: "This week's Nala Weekly tracks five flashpoints as the region's conflicts increasingly converge. In Ethiopia, federal forces have retaken Mekelle and Addis Ababa has broken off relations with Eritrea, raising the risk of an interstate war. In Sudan, army chief Abdel Fattah al-Burhan has ruled out talks as the RSF opens a new front in Blue Nile on the Ethiopian border. In South Sudan, the main opposition is boycotting the pre-election dialogue, leaving the 22 December poll short of legitimacy. Somalia is caught between rival regional blocs as Ethiopia weighs pulling troops out and the AU mission's funding is in doubt. At the Red Sea and Bab el-Mandeb, Saudi-backed Yemeni forces are fighting the Houthis for control of the strait.",
       image: '/images/policy-briefs/nala-weekly-banner.jpg',
-      link: '/what-we-do/research-publications/nala-weekly',
+      link: '/uploads/nala-weekly/Nala-Weekly-Issue-02.pdf',
       masthead: { issueLabel: 'Issue No. 02' }
     },
     {
@@ -194,7 +194,7 @@ export default function Home() {
       title: "Issue No. 01: South Sudan's Elections, Ethiopia's Relapse, Houthi Advances, and Sudan's Shift to Kordofan",
       description: "This week's Nala Weekly tracks four fast-moving flashpoints reshaping the security environment in the Horn of Africa and the Red Sea region.",
       image: '/images/policy-briefs/nala-weekly-banner.jpg',
-      link: '/what-we-do/research-publications/nala-weekly',
+      link: '/uploads/nala-weekly/Nala-Weekly-Issue-01.pdf',
       masthead: { issueLabel: 'Issue No. 01' }
     },
     {
