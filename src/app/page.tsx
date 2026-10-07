@@ -30,6 +30,7 @@ export default function Home() {
   // For Hero Section Rotating Backgrounds
   const backgroundImages = [
     '/images/hero-background.jpg',
+    '/images/hero-background3.jpg',
     '/images/hero-background2.jpg',
     '/images/hero-background4.jpg',
   ];
@@ -167,7 +168,26 @@ export default function Home() {
     }
   };
 
-  const insightCards = [
+  type InsightCard = {
+    date: string;
+    type: string;
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    masthead?: { issueLabel: string };
+  };
+
+  const insightCards: InsightCard[] = [
+    {
+      date: 'September 29, 2026',
+      type: 'Nala Weekly',
+      title: "Issue No. 01: South Sudan's Elections, Ethiopia's Relapse, Houthi Advances, and Sudan's Shift to Kordofan",
+      description: "This week's Nala Weekly tracks four fast-moving flashpoints reshaping the security environment in the Horn of Africa and the Red Sea region.",
+      image: '/images/policy-briefs/nala-weekly-banner.jpg',
+      link: '/what-we-do/research-publications/nala-weekly',
+      masthead: { issueLabel: 'Issue No. 01' }
+    },
     {
       date: "August 2026",
       type: "Policy",
@@ -266,18 +286,35 @@ export default function Home() {
     }
   ];
 
+  const eventCards = [
+    {
+      date: 'February 15, 2026',
+      title: 'Youth Leadership Forum',
+      description: 'Join us for an engaging discussion on empowering youth leaders across Africa to drive policy change and innovation.',
+    },
+    {
+      date: 'March 10, 2026',
+      title: 'Policy Workshop on Climate Adaptation',
+      description: 'A hands-on workshop exploring practical strategies for building climate-resilient communities in East Africa.',
+    },
+    {
+      date: 'April 5, 2026',
+      title: 'Regional Security Summit',
+      description: 'Bringing together experts and policymakers to discuss emerging security challenges and collaborative solutions.',
+    },
+  ];
+
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center text-center bg-white overflow-hidden">
-        {backgroundImages.map((image, index) => (
+    <main className="bg-white text-[#050505]">
+      {/* Hero Background Section with Rotating Images */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {backgroundImages.map((bg, index) => (
           <Image
             key={index}
-            src={image}
-            alt={`NALA Center Hero Background ${index + 1}`}
+            src={bg}
+            alt={`Hero Background ${index + 1}`}
             layout="fill"
             objectFit="cover"
-            objectPosition="center"
             quality={100}
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
               index === currentBgIndex ? 'opacity-100' : 'opacity-0'
@@ -303,7 +340,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Insights Section - Carousel */}
+      {/* Latest Insights Section - Now a Carousel */}
       <section className="container mx-auto py-16 px-4 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Latest Insights</h2>
         
@@ -316,13 +353,33 @@ export default function Home() {
             {insightCards.map((insight, index) => (
               <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
-                  <Image
-                    src={insight.image}
-                    alt={`${insight.title} Thumbnail`}
-                    width={500}
-                    height={300}
-                    className="w-full h-48 object-cover object-top"
-                  />
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={insight.image}
+                      alt={`${insight.title} Thumbnail`}
+                      width={500}
+                      height={300}
+                      className="w-full h-48 object-cover"
+                    />
+                    {insight.masthead && (
+                      <div className="absolute inset-0 bg-black/25 flex flex-col justify-between p-4">
+                        <div className="relative h-8 w-32">
+                          <Image
+                            src="/images/Nala_No_Bg_White.png"
+                            alt="Nala Center Logo"
+                            layout="fill"
+                            objectFit="contain"
+                            objectPosition="left"
+                            className="drop-shadow"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-white text-2xl font-bold font-serif leading-none drop-shadow">Nala Weekly</p>
+                          <p className="text-white/80 text-xs mt-1 tracking-wide">{insight.masthead.issueLabel}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>
                       <span className="text-sm text-gray-500">{insight.type} | {insight.date}</span>
@@ -362,6 +419,61 @@ export default function Home() {
             >
               &rarr;
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Events & Workshops Section - Carousel */}
+      <section className="bg-[#EBEBEB] py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Upcoming Events & Workshops</h2>
+
+          <div className="relative">
+            <div
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
+            >
+              {eventCards.map((event, index) => (
+                <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
+                  <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#EBEBEB] hover:border-[#050505] transition-all duration-300 min-h-[230px] flex flex-col justify-between">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-2">{event.date}</p>
+                      <h3 className="font-semibold text-xl text-[#050505] mb-3">{event.title}</h3>
+                      <p className="text-gray-700 text-base mb-4 line-clamp-2">
+                        {event.description}
+                      </p>
+                    </div>
+                    <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
+                      Register &rarr;
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex justify-center mt-8 space-x-8">
+              <button
+                onClick={scrollLeft}
+                disabled={isLeftDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isLeftDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll left"
+              >
+                &larr;
+              </button>
+              <button
+                onClick={scrollRight}
+                disabled={isRightDisabled}
+                className={`p-3 bg-[#050505] text-white rounded-full shadow-md transition-colors duration-300 focus:outline-none ${
+                  isRightDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2F2F2F]'
+                }`}
+                aria-label="Scroll right"
+              >
+                &rarr;
+              </button>
+            </div>
           </div>
         </div>
       </section>
