@@ -406,7 +406,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-3">Nala Weekly</h2>
             <p className="text-gray-700 max-w-2xl mx-auto mb-3">
 A weekly product of the Nala Center, tracking the flashpoints shaping the Horn of Africa and the Red Sea, and where they are likely to go next.            </p>
-            <Link href="/what-we-do/research-publications/nala-weekly" className="font-medium text-[#16325C] hover:underline">
+            <Link href="/what-we-do/nala-weekly" className="font-medium text-[#16325C] hover:underline">
               View all issues &rarr;
             </Link>
           </div>
