@@ -4,6 +4,7 @@
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react'; 
+import { nalaWeeklyIssues } from '../data/nalaWeekly';
 
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -179,24 +180,6 @@ export default function Home() {
 
   const insightCards: InsightCard[] = [
     {
-      date: 'October 6, 2026',
-      type: 'Nala Weekly',
-      title: "Issue No. 02: Mekelle Falls, the Ethiopia-Eritrea Rift, and the Battle for Bab el-Mandeb",
-      description: "This week's Nala Weekly tracks five flashpoints as the region's conflicts increasingly converge. In Ethiopia, federal forces have retaken Mekelle and Addis Ababa has broken off relations with Eritrea, raising the risk of an interstate war. In Sudan, army chief Abdel Fattah al-Burhan has ruled out talks as the RSF opens a new front in Blue Nile on the Ethiopian border. In South Sudan, the main opposition is boycotting the pre-election dialogue, leaving the 22 December poll short of legitimacy. Somalia is caught between rival regional blocs as Ethiopia weighs pulling troops out and the AU mission's funding is in doubt. At the Red Sea and Bab el-Mandeb, Saudi-backed Yemeni forces are fighting the Houthis for control of the strait.",
-      image: '/images/policy-briefs/nala-weekly-banner.jpg',
-      link: '/uploads/nala-weekly/Nala-Weekly-Issue-02.pdf',
-      masthead: { issueLabel: 'Issue No. 02' }
-    },
-    {
-      date: 'September 29, 2026',
-      type: 'Nala Weekly',
-      title: "Issue No. 01: South Sudan's Elections, Ethiopia's Relapse, Houthi Advances, and Sudan's Shift to Kordofan",
-      description: "This week's Nala Weekly tracks four fast-moving flashpoints reshaping the security environment in the Horn of Africa and the Red Sea region.",
-      image: '/images/policy-briefs/nala-weekly-banner.jpg',
-      link: '/uploads/nala-weekly/Nala-Weekly-Issue-01.pdf',
-      masthead: { issueLabel: 'Issue No. 01' }
-    },
-    {
       date: "August 2026",
       type: "Policy",
       title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
@@ -294,23 +277,8 @@ export default function Home() {
     }
   ];
 
-  const eventCards = [
-    {
-      date: 'February 15, 2026',
-      title: 'Youth Leadership Forum',
-      description: 'Join us for an engaging discussion on empowering youth leaders across Africa to drive policy change and innovation.',
-    },
-    {
-      date: 'March 10, 2026',
-      title: 'Policy Workshop on Climate Adaptation',
-      description: 'A hands-on workshop exploring practical strategies for building climate-resilient communities in East Africa.',
-    },
-    {
-      date: 'April 5, 2026',
-      title: 'Regional Security Summit',
-      description: 'Bringing together experts and policymakers to discuss emerging security challenges and collaborative solutions.',
-    },
-  ];
+  // Newest Nala Weekly issues: add new issues to the top of src/data/nalaWeekly.ts
+  const weeklyIssues = nalaWeeklyIssues.slice(0, 6); // newest first; the archive page lists them all
 
   return (
     <main className="bg-white text-[#050505]">
@@ -431,36 +399,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Upcoming Events & Workshops Section - Carousel */}
+      {/* Nala Weekly Section - one cover-style card per issue, from src/data/nalaWeekly.ts */}
       <section className="bg-[#EBEBEB] py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#050505] text-center mb-12">Upcoming Events & Workshops</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-3">Nala Weekly</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto mb-3">
+A weekly product of the Nala Center, tracking the flashpoints shaping the Horn of Africa and the Red Sea, and where they are likely to go next.            </p>
+            <Link href="/what-we-do/research-publications/nala-weekly" className="font-medium text-[#16325C] hover:underline">
+              View all issues &rarr;
+            </Link>
+          </div>
 
           <div className="relative">
             <div
               ref={scrollContainerRef}
               className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 hide-scrollbar"
             >
-              {eventCards.map((event, index) => (
-                <div key={index} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
-                  <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#EBEBEB] hover:border-[#050505] transition-all duration-300 min-h-[230px] flex flex-col justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-2">{event.date}</p>
-                      <h3 className="font-semibold text-xl text-[#050505] mb-3">{event.title}</h3>
-                      <p className="text-gray-700 text-base mb-4 line-clamp-2">
-                        {event.description}
-                      </p>
+              {weeklyIssues.map((issue) => (
+                <div key={issue.issueNumber} className="flex-none w-11/12 md:w-1/2 lg:w-1/3 snap-start pr-4">
+                  <div className="relative h-full min-h-[340px] overflow-hidden rounded-xl bg-[#0F2747] text-white p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    {/* Decorative waves, echoing the Nala Weekly cover */}
+                    <svg
+                      className="absolute bottom-0 left-0 w-full h-28 pointer-events-none"
+                      viewBox="0 0 400 120"
+                      preserveAspectRatio="none"
+                      aria-hidden="true"
+                    >
+                      <path d="M0,70 C80,30 160,110 240,70 C300,40 350,50 400,30 L400,120 L0,120 Z" fill="#16325C" opacity="0.9" />
+                      <path d="M0,95 C90,60 170,120 260,90 C320,70 360,80 400,65 L400,120 L0,120 Z" fill="#1E4A7F" opacity="0.7" />
+                    </svg>
+
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="relative h-6 w-24">
+                          <Image
+                            src="/images/Nala_No_Bg_White.png"
+                            alt="Nala Center Logo"
+                            layout="fill"
+                            objectFit="contain"
+                            objectPosition="left"
+                          />
+                        </div>
+                        <span className="text-xs tracking-wide text-white/70">{issue.date}</span>
+                      </div>
+
+                      <p className="text-xs uppercase tracking-[0.2em] text-white/60">Nala Weekly</p>
+                      <p className="font-serif font-bold text-6xl leading-none mt-1 mb-4">No. {issue.issueNumber}</p>
+
+                      <p className="text-white/80 text-sm leading-relaxed line-clamp-5 mb-6">{issue.description}</p>
+
+                      <Link
+                        href={issue.pdfLink}
+                        className="mt-auto inline-flex items-center font-medium text-white hover:underline underline-offset-4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Read issue &rarr;
+                      </Link>
                     </div>
-                    <Link href="#" className="text-[#2F2F2F] hover:text-[#1F1F1F] hover:underline font-medium">
-                      Register &rarr;
-                    </Link>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-center mt-8 space-x-8">
+            <div className={`flex justify-center mt-8 space-x-8 ${weeklyIssues.length <= 3 ? 'lg:hidden' : ''}`}>
               <button
                 onClick={scrollLeft}
                 disabled={isLeftDisabled}
