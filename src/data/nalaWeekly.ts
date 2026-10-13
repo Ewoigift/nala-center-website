@@ -13,6 +13,13 @@ export type NalaWeeklyIssue = {
 
 export const nalaWeeklyIssues: NalaWeeklyIssue[] = [
   {
+    issueNumber: '03',
+    date: '13 October 2026',
+    description:
+      "This week's Nala Weekly tracks six flashpoints as the region's conflicts become contests between states. On the Ethiopia–Eritrea border, federal and allied forces have pushed to within about 30 km of Eritrea as both capitals took their cases to the UN Security Council. In Sudan, strikes near the Ethiopian and Egyptian borders killed scores of civilians. In Somalia, a dispute over President Hassan Sheikh Mohamud's mandate has pitted security forces against the opposition in Mogadishu. In the Red Sea and Bab el-Mandeb, a Houthi missile struck Riyadh's main airport. In South Sudan, President Kiir secured South African backing for the 22 December polls while the main opposition continues to boycott, and in the DR Congo, former president Joseph Kabila has taken charge of the rebellion in Goma.",
+    pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-03.pdf',
+  },
+  {
     issueNumber: '02',
     date: '6 October 2026',
     description:
