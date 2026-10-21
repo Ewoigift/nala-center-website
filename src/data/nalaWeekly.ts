@@ -13,6 +13,13 @@ export type NalaWeeklyIssue = {
 
 export const nalaWeeklyIssues: NalaWeeklyIssue[] = [
   {
+    issueNumber: '04',
+    date: '20 October 2026',
+    description:
+    "This week, drones and disputed mandates shaped the region. A drone strike on a market in the contested Abyei Area killed at least 153 people, and Ethiopian forces stepped back from the Eritrean border. Egypt weighed sending forces to support Saudi Arabia against the Houthis, Somalia set election dates without the opposition’s agreement, and in DR Congo the AFC/M23 relaunched itself as the FRN. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
+    pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-04.pdf',
+  },
+  {
     issueNumber: '03',
     date: '13 October 2026',
     description:
