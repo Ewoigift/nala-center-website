@@ -161,7 +161,7 @@ export default function ResearchAndPublicationsPage() {
         </p>
       </header>
 
-      {/* Section for Research Papers */}
+      {/* Section for Research Papers
       <section className="p-6 md:p-10 rounded-xl mb-12 bg-[#EBEBEB]">
         <div className="flex items-center gap-3 mb-6">
           <BookOpen className="w-8 h-8 text-[#3A9D23]" />
@@ -200,7 +200,7 @@ export default function ResearchAndPublicationsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Section for Articles and Publications */}
       <section className="p-6 md:p-10 rounded-xl bg-[#EBEBEB]">
