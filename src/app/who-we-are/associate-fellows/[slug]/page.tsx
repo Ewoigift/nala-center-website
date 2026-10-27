@@ -1,4 +1,4 @@
-// src/app/who-we-are/associate-fellows/[slug]/page.tsx
+// src/app/who-we-are/advisory-board/[slug]/page.tsx
 'use client';
 
 import Image from "next/legacy/image";
@@ -6,119 +6,28 @@ import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
+  faInstagram,
   faXTwitter,
-  faBluesky,
 } from '@fortawesome/free-brands-svg-icons';
 import React, { use } from 'react';
+import { advisoryBoardMembers } from '../../../../data/advisoryBoard';
 
-// Data for all Associate Fellows
-const allAssociateFellows = [
-  {
-    name: 'Isaac Mureithi',
-    designation: 'Climate Policy Expert',
-    imageSrc: '/images/team/isaac-mureithi.jpg',
-    slug: 'isaac-mureithi',
-    bio: `Isaac is an Oppenheimer Impact Scholar at the University of Exeter and a Research Fellow at the African Wildlife Foundation, driving research on conservation governance and pastoralism’s sedentarisation in Eastern Africa. As an emerging leader in sustainable development, he leverages his background in BSc Actuarial Science and MSc Conservation & Biodiversity to design resilient solutions by modelling complex socio-ecological systems. His hands-on experience in asset management, climate policy and disaster risk financing is amplified by his roles within the LDYC, CYMG, GYBN & KDMECC, championing inclusive, youth-led policy development.`,
-    socials: {
-      email: 'mailto:imnduta1@gmail.com',
-      linkedin: 'https://linkedin.com/in/isaacmureithi-ismurn',
-      x: 'https://x.com/mureithiin',
-      bluesky: 'https://bsky.app/profile/ismurn.bsky.social',
-    },
-  },
-{
-name:'Rahma Oda',
-designation:'Health Policy and Systems Expert',
-imageSrc:'/images/team/Rahma-Oda.png',
-slug:'rahma-oda',
-bio:'Rahma Oda is a health researcher with interest in narrative medicine. She has experience working in governance, peacebuilding, climate change, education, and emergency response programming across Africa. Much of her work has focused on women and vulnerable populations in the coastal and northern regions of Kenya. Rahma is also a content writer at The New Global Order, where her writings help counter misinformation about the African landscape. Currently, she is conducting research on women’s stories and their experiences in accessing the right to healthcare, leveraging her background in English Literatue(B.A. from Pwani University).',
-socials: {
-      email: '#',
-      linkedin: 'https://www.linkedin.com/in/rahma-oda-04583b233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
-      x: 'https://x.com/RahmaOda?t=dImGk3Su5rraGHL8QVEVgQ&s=09',
-    },
-},
-{
-name:'Rayner Sakari',
-designation:'Peace, Security and Governance Expert',
-imageSrc:'/images/team/rayner-sakari.jpg',
-slug:'rayner-sakari',
-bio:`Rayner Sakari's work explores the critical intersections of peace, security, democracy, and governance. He holds a B.A. in International Relations and Diplomacy and has practical experience as a Program Officer with the International Centre for Peace, Human Rights and Development in Africa, where he supported initiatives to strengthen institutional frameworks and empower communities. His research focuses on how governance systems can promote stability and build resilience against evolving challenges. Committed to bridging theory and practice, Rayner develops actionable analysis to provide decision-makers with insights that inform practical, sustainable solutions.`,
-socials: {
-     
-    },
-},
-
-{
-name:'Salma Kadry',
-designation:' Climate, Peace, and Security',
-imageSrc:'/images/team/salma-kadry.png',
-slug:'salma-kadry',
-bio:`Salma Kadry is a Climate, Peace, and Security Specialist at CGIAR, where she leads work at the nexus of climate change, food–land–water systems, and peace and security across the Middle East and North Africa (MENA) region. With nearly a decade of experience, Salma specializes in qualitative research, capacity development, and project management focusing on climate-resilient livelihoods, gender, and migration.
-
-Before joining CGIAR, she was the Inaugural Officer of the Climate, Peace and Development Program at Egypt’s Cairo International Center for Conflict Resolution, Peacekeeping and Peacebuilding (CCCPA), where she contributed to the COP27 Presidency initiative “Climate Responses for Sustaining Peace.” Recognized as a regional thought leader, Salma became the first Arab and CGIAR scientist to brief the United Nations Security Council on climate, peace, and security in 2023. She holds an MA in Global Studies (summa cum laude) from Ghent University, Belgium, and a BA in Political Science and Multimedia Journalism from the American University in Cairo.`,
-socials: {
-      
-    },
-},
-
-{
-      name:'Getrude Wangui Maina',
-designation:'Policy, Diplomacy, and Sustainable Development',
-imageSrc:'/images/team/getrude-maina.jpg',
-slug:'getrude-maina',
-bio:`Getrude Wangui Maina is a proactive and adaptable professional with a strong foundation in operations, governance, and research. She holds a Bachelor of Science in Disaster Management and International Diplomacy from Masinde Muliro University of Science and Technology and as developed a diverse portfolio across emergency response, legal administration, and policy analysis
-
-With over two years of professional experience, Getrude has demonstrated expertise in data and information management, process improvement, and project coordination. Her experience as a Legal Secretary at PROW & Co. Advocates and previously as a Legal Administrative Assistant has refined her capabilities in managing sensitive documentation, stakeholder communication, and organizational efficiency — improving information systems and compliance processes across multiple projects.
-
-Her earlier work in disaster management and ongoing engagement in AI-driven legal aid volunteer initiatives underscore her commitment to impactful, community-centered solutions. Certified through the ALX Virtual Assistant Program and trained in Data Analytics, Getrude brings an analytical yet pragmatic approach to problem-solving, operational support, and governance.
-
-Passionate about the intersection of policy, diplomacy, and sustainable development, she aspires to contribute to initiatives that strengthen governance systems, enhance institutional effectiveness, and promote inclusive growth across Africa.`,
-socials: {
-      
-    },
-
-},
-
- {
-  name:'Jessica Johansen',
-designation:'sustainability, Environment and Development',
-imageSrc:'/images/team/jess-johansen.png',
-slug:'jessica-johansen',
-bio: `Jessica Johansen is a UK based associate fellow passionate about the capacity of environmental psychology to shift norms and strengthen social and economic policy and behaviour in multi-scale policy and governance towards just and transdisciplinary global climate action. As an emerging professional in the field, Jessica's values align with and advocate for Nala Centres commitment to social justice, regional peace and climate resilience.
-
-Jessica holds a BSc in Psychology and an MSc in Environment and Development from the University of Leeds, where she was awarded the Environment and Development prize for the highest achieving student. To support her commitment to just climate action Jessica has undergone multiple menteeship schemes and is currently working towards publishing her research paper on the potential of using participatory approaches to authentically bring rural voices into policy arenas. 
-
-Jessica currently works as research assistant on the Civic Voices for Just Rural Transition project, partnering with Clim-eat and The University of Leeds, and supported by the UK Foreign, Commonwealth and Development Office. 
-`,
-socials: {
-      
-    },
-},
-
-];
-
-
-interface AssociateFellowPageProps {
+interface AdvisoryBoardPageProps {
   params: Promise<{
     slug: string;
   }>;
 }
 
-
-export default function AssociateFellowPage({ params }: AssociateFellowPageProps) {
+export default function AdvisoryBoardPage({ params }: AdvisoryBoardPageProps) {
   const router = useRouter();
-  // Unwrap the params Promise using React.use()
   const { slug } = use(params);
+  const member = advisoryBoardMembers.find((m) => m.slug === slug);
 
-  // Find the fellow based on the slug
-  const fellow = allAssociateFellows.find((f) => f.slug === slug);
-
-  if (!fellow) {
+  if (!member) {
     return (
       <main className="bg-white text-[#050505] pt-[75px] py-16 px-4 text-center">
-        <h1 className="text-3xl font-bold font-serif mb-4">Fellow Not Found</h1>
-        <p>The associate fellow you are looking for does not exist.</p>
+        <h1 className="text-3xl font-bold font-serif mb-4">Member Not Found</h1>
+        <p>The advisory board member you are looking for does not exist.</p>
         <button onClick={() => router.back()} className="mt-8 bg-[#050505] text-white py-2 px-6 rounded-md hover:bg-[#2F2F2F] transition-colors">
           Go Back
         </button>
@@ -132,37 +41,38 @@ export default function AssociateFellowPage({ params }: AssociateFellowPageProps
         <div className="flex-shrink-0 w-full flex justify-center">
           <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#050505] shadow-md -mt-24 mb-4">
             <Image
-              src={fellow.imageSrc}
-              alt={fellow.name}
+              src={member.imageSrc}
+              alt={member.name}
               layout="fill"
               objectFit="cover"
+              objectPosition="top"
             />
           </div>
         </div>
         <div className="text-center w-full">
-          <h1 className="text-4xl font-bold font-serif mb-2 text-[#050505]">{fellow.name}</h1>
-          <p className="text-xl text-[#050505] font-medium mb-4">{fellow.designation}</p>
-          {fellow.socials && (
+          <h1 className="text-4xl font-bold font-serif mb-2 text-[#050505]">{member.name}</h1>
+          <p className="text-xl text-[#050505] font-medium mb-4">{member.designation}</p>
+          {member.socials && (
             <div className="flex justify-center space-x-6 mt-4 mb-8">
-              {fellow.socials.linkedin && (
-                <a href={fellow.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#0077B5] transition-colors duration-300 text-3xl" aria-label="LinkedIn">
+              {member.socials.linkedin && (
+                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#0077B5] transition-colors duration-300 text-3xl" aria-label="LinkedIn">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               )}
-              {fellow.socials.x && (
-                <a href={fellow.socials.x} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#000000] transition-colors duration-300 text-3xl" aria-label="X (Twitter)">
-                  <FontAwesomeIcon icon={faXTwitter} />
+              {member.socials.instagram && (
+                <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#C13584] transition-colors duration-300 text-3xl" aria-label="Instagram">
+                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
               )}
-              {fellow.socials.bluesky && (
-                <a href={fellow.socials.bluesky} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#005cff] transition-colors duration-300 text-3xl" aria-label="BlueSky">
-<FontAwesomeIcon icon={faBluesky} />                
-</a>
+              {member.socials.x && (
+                <a href={member.socials.x} target="_blank" rel="noopener noreferrer" className="text-[#050505] hover:text-[#000000] transition-colors duration-300 text-3xl" aria-label="X (Twitter)">
+                  <FontAwesomeIcon icon={faXTwitter} />
+                </a>
               )}
             </div>
           )}
           <div className="text-left">
-            {fellow.bio.split('\n').map((paragraph, index) => (
+            {member.bio.split('\n').map((paragraph, index) => (
               paragraph.trim() !== '' && (
                 <p key={index} className="text-gray-700 text-lg leading-relaxed mb-4 last:mb-0">
                   {paragraph.trim()}
@@ -171,7 +81,7 @@ export default function AssociateFellowPage({ params }: AssociateFellowPageProps
             ))}
           </div>
           <button onClick={() => router.back()} className="mt-8 bg-[#050505] text-white py-2 px-6 rounded-md hover:bg-[#2F2F2F] transition-colors">
-            Go Back to Fellows
+            Go Back to Advisory Board
           </button>
         </div>
       </div>

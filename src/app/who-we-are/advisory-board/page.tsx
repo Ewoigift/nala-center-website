@@ -3,18 +3,9 @@
 
 import Image from "next/legacy/image";
 import Link from 'next/link';
+import { advisoryBoardMembers } from '../../../data/advisoryBoard';
 
 export default function AdvisoryBoardPage() {
-  const boardMembers = [
-    {
-      name: 'Andrew J. Franklin, Former US Marine',
-      designation: 'Peace and Security',
-      imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
-      slug: 'andrew-franklin',
-    },
-  
-  ];
-
   return (
     <main className="bg-white text-[#050505]">
       <section className="bg-gray-100 py-16 px-4 text-center">
@@ -30,13 +21,13 @@ export default function AdvisoryBoardPage() {
       <section className="container mx-auto py-16 px-4">
         <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">Meet Our Advisors</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-          {boardMembers.map((member) => (
+          {advisoryBoardMembers.map((member) => (
             <Link
               key={member.slug}
               href={`/who-we-are/advisory-board/${member.slug}`}
               className="group block rounded-lg shadow-md overflow-hidden bg-white transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
             >
-              <div className="relative w-full h-80 overflow-hidden">
+              <div className="relative w-full aspect-[3/4] overflow-hidden">
                 <Image
                   src={member.imageSrc}
                   alt={member.name}

@@ -10,24 +10,7 @@ import {
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import React, { use } from 'react';
-
-const allAdvisoryBoardMembers = [
-  {
-     name: 'Andrew J. Franklin, Former US Marine',
-      designation: 'Peace and Security',
-      imageSrc: '/images/who-we-are/Andrew-Franklin.png', 
-      slug: 'andrew-franklin',
-    bio: `Andrew J. Franklin is a seasoned security and risk management professional with over four decades of extensive experience in Sub-Saharan Africa. His career spans logistics, political, legal, economic, military, and paramilitary issues, with specialized expertise in counterinsurgency and crisis management.
-
-A former U.S. Marine Corps Commissioned Officer, Andrew served actively and in reserve for 22 years, retiring at the rank of Major. He holds a Juris Doctor (J.D.) in International Law and Legal Studies from New York Law School and has built a strong track record as a Managing Director in the security and investigations industry.Beyond his operational and advisory roles, Andrew is widely recognized as a writer, security consultant, political analyst, and media commentator on foreign and security policy. His ability to navigate complex security landscapes and provide nuanced analysis continues to shape dialogue on governance, stability, and security in Africa.`,
-    socials: {
-      linkedin: '#',
-      x: '#',
-      instagram: '#',
-
-    },
-  },
-];
+import { advisoryBoardMembers } from '../../../../data/advisoryBoard';
 
 interface AdvisoryBoardPageProps {
   params: Promise<{
@@ -38,7 +21,7 @@ interface AdvisoryBoardPageProps {
 export default function AdvisoryBoardPage({ params }: AdvisoryBoardPageProps) {
   const router = useRouter();
   const { slug } = use(params);
-  const member = allAdvisoryBoardMembers.find((m) => m.slug === slug);
+  const member = advisoryBoardMembers.find((m) => m.slug === slug);
 
   if (!member) {
     return (
@@ -62,6 +45,7 @@ export default function AdvisoryBoardPage({ params }: AdvisoryBoardPageProps) {
               alt={member.name}
               layout="fill"
               objectFit="cover"
+              objectPosition="top"
             />
           </div>
         </div>

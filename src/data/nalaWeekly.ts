@@ -12,6 +12,13 @@ export type NalaWeeklyIssue = {
 };
 
 export const nalaWeeklyIssues: NalaWeeklyIssue[] = [
+   {
+    issueNumber: '05',
+    date: '27 October 2026',
+    description:
+    "This week, ambushes, drones and disease tested governments across the region. A federal army column suffered heavy losses near Leego, days into Somalia’s new offensive in South West State, and clashes in Moyale between Ethiopia’s Oromia and Somali regions drove thousands into Kenya. RSF drones cut power across eastern Sudan, Egypt’s parliament authorised support for Saudi Arabia against the Houthis, and DR Congo’s Ebola outbreak passed 9,900 confirmed cases. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
+    pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-05.pdf',
+  },
   {
     issueNumber: '04',
     date: '20 October 2026',

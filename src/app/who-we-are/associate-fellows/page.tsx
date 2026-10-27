@@ -3,53 +3,9 @@
 
 import Image from "next/legacy/image";
 import Link from 'next/link';
+import { associateFellows } from '../../../data/associateFellows';
 
 export default function AssociateFellowsPage() {
-  const associateFellows = [
-    {
-      name: 'Isaac Mureithi',
-      designation: 'Climate Policy Expert',
-      imageSrc: '/images/team/isaac-mureithi.jpg',
-      slug: 'isaac-mureithi',
-    },
-    {
-      name:'Rahma Oda',
-      designation:'Health Policy and Systems Expert',
-imageSrc:'/images/team/Rahma-Oda.png',
-      slug:'rahma-oda',
-    },
-    {
-      name:'Rayner Sakari',
-designation:'Peace, Security and Governance',
-imageSrc:'/images/team/rayner-sakari.jpg',
-slug:'rayner-sakari'
-    },
-  
-
-         {
-      name:'Salma Kadry',
-designation:' Climate, Peace, and Security',
-imageSrc:'/images/team/salma-kadry.png',
-slug:'salma-kadry'
-    },
-
-     {
-      name:'Getrude Wangui Maina',
-designation:'Policy, Diplomacy, and Sustainable Development',
-imageSrc:'/images/team/getrude-maina.jpg',
-slug:'getrude-maina'
-    },
-
-    {
-      name:'Jessica Johansen',
-designation:'sustainability, Environment and Development',
-imageSrc:'/images/team/jess-johansen.png',
-slug:'jessica-johansen'
-    },
-
-
-  ];
-
   return (
     <main className="bg-white text-[#050505]">
       {/* Hero Section */}
@@ -72,13 +28,13 @@ slug:'jessica-johansen'
               href={`/who-we-are/associate-fellows/${fellow.slug}`}
               className="group block rounded-lg shadow-md overflow-hidden bg-white transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
             >
-              <div className="relative w-full h-72 overflow-hidden">
+              <div className="relative w-full aspect-[3/4] overflow-hidden">
                 <Image
                   src={fellow.imageSrc}
                   alt={fellow.name}
                   layout="fill"
                   objectFit="cover"
-                  objectPosition="center"
+                  objectPosition="top"
                   className="transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
