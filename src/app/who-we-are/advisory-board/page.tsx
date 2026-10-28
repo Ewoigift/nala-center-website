@@ -39,7 +39,6 @@ export default function AdvisoryBoardPage() {
               </div>
               <div className="p-4 text-center">
                 <h3 className="text-xl font-semibold mb-1 text-[#050505]">{member.name}</h3>
-                <p className="text-gray-600 font-medium">{member.designation}</p>
               </div>
             </Link>
           ))}

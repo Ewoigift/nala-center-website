@@ -5,7 +5,6 @@
 
 export type AdvisoryBoardMember = {
   name: string;
-  designation: string;
   imageSrc: string; // e.g. '/images/who-we-are/jane-doe.png'
   slug: string; // used in the URL: /who-we-are/advisory-board/<slug>
   bio: string; // paragraphs separated by a blank line
@@ -19,7 +18,6 @@ export type AdvisoryBoardMember = {
 export const advisoryBoardMembers: AdvisoryBoardMember[] = [
   {
     name: 'Andrew J. Franklin, Former US Marine',
-    designation: 'Peace and Security',
     imageSrc: '/images/who-we-are/Andrew-Franklin.png',
     slug: 'andrew-franklin',
     bio: `Andrew J. Franklin is a seasoned security and risk management professional with over four decades of extensive experience in Sub-Saharan Africa. His career spans logistics, political, legal, economic, military, and paramilitary issues, with specialized expertise in counterinsurgency and crisis management.
@@ -35,7 +33,6 @@ Beyond his operational and advisory roles, Andrew is widely recognized as a writ
   },
   {
     name: 'Dr. Emily Okuto',
-    designation: 'Peace and Security',
     imageSrc: '/images/who-we-are/emily-okuto.jpg',
     slug: 'emily-okuto',
     bio: `Dr. Emily Okuto is a researcher and educator whose work focuses on peace, conflict and security in Africa. She serves as a Senior Researcher in the Peace and Security Research Department at the International Peace Support Training Centre (IPSTC), Kenya, contributing to applied research, curriculum development and policy engagement. Her interests include peace operations, gender, women’s leadership and emerging security challenges.
@@ -47,7 +44,6 @@ Beyond her research and teaching roles, Emily contributes to scholarly publishin
   },
   {
     name: 'Prof. Moses Obimbo Madadi',
-    designation: 'Women’s Health and Medical Research',
     imageSrc: '/images/who-we-are/moses-obimbo.jpg',
     slug: 'moses-obimbo',
     bio: `Prof. Moses Obimbo Madadi is a Kenyan clinician-scientist and women’s health advocate. He is Professor and Chair of the Department of Human Anatomy and Medical Physiology at the University of Nairobi, practises as an obstetrician and gynaecologist at Kenyatta National Hospital, and serves as Honorary Secretary of the Kenya Obstetrical and Gynaecological Society and Editor-in-Chief of the Journal of Obstetrics and Gynaecology for Eastern and Central Africa. He holds a PhD in Human Anatomy from the University of Nairobi and completed postdoctoral training at the University of California, San Francisco. In 2021 he became one of fourteen African scientists awarded the Gates Foundation-funded Calestous Juma Science Leadership Fellowship, which supports his research on the vaginal microbiome and pregnancy outcomes.

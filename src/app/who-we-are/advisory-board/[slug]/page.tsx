@@ -50,8 +50,7 @@ export default function AdvisoryBoardPage({ params }: AdvisoryBoardPageProps) {
           </div>
         </div>
         <div className="text-center w-full">
-          <h1 className="text-4xl font-bold font-serif mb-2 text-[#050505]">{member.name}</h1>
-          <p className="text-xl text-[#050505] font-medium mb-4">{member.designation}</p>
+          <h1 className="text-4xl font-bold font-serif mb-4 text-[#050505]">{member.name}</h1>
           {member.socials && (
             <div className="flex justify-center space-x-6 mt-4 mb-8">
               {member.socials.linkedin && (
