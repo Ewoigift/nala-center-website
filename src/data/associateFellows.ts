@@ -102,7 +102,7 @@ Jessica currently works as research assistant on the Civic Voices for Just Rural
   },
   {
     name: 'Mohammed ElDesouky',
-    designation: 'Social Policy Specialist',
+    designation: 'Development Economics, Social Protection and Policy Evaluation Expert',
     imageSrc: '/images/team/mohammed-eldesouky.jpg',
     slug: 'mohammed-eldesouky',
     bio: `Mohammed ElDesouky is an applied economist with over nine years of international experience across Europe, the Middle East, Africa, and Asia. He has worked with institutions including the World Bank, UNICEF, and ILO, supporting research, policy analysis, evaluation, and advisory work. Since joining the World Bank in 2021, he has worked across multiple development practices and regions and currently serves as a Social Policy Specialist within the MENA, Afghanistan, and Pakistan unit. His interests include evidence-informed policymaking, organizational learning, knowledge management, artificial intelligence for public-good applications, poverty and inequality, impact evaluation, sustainable development, and social protection for climate and economic shock resilience.`,
