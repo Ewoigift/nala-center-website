@@ -314,4 +314,16 @@ Moussa was also selected as a Runner Up of the 2024 Leigh Douglas Memorial Prize
     bio: `Noah Keya Otinga is a finance scholar and Lecturer at Strathmore Business School, Kenya, with a PhD in Business and Management (Finance). His research examines financial inclusion, fintech, remittances, and capital market development, and he has published refereed articles in Cogent Economics and Finance and the Journal of Financial Economic Policy. He has taught finance-related courses since 2017, supervised over 100 undergraduate research projects, and presented at international research conferences. Noah serves on the board of Mzima Springs SACCO and chairs its Credit Committee. He also leads surgical outreach camps in western Kenya with Operation International.`,
     socials: {},
   },
+  {
+    name: 'Zito Daniel João',
+    designation: 'Humanitarian and Community Development Professional',
+    imageSrc: '/images/team/zito-joao.jpg',
+    slug: 'zito-joao',
+    bio: `Zito Daniel João is a humanitarian professional from Cabo Delgado, Mozambique, with three years of experience in emergency response. He holds a bachelor's degree in Community Development, obtained in Maputo, and is a finalist student in English Language Teaching.
+
+He currently works as a Freelance Research Assistant at 60 Decibels, specialising in data collection and community engagement. He started his career as a Public Health Promotion Assistant at Oxfam Novib and has also worked as a Gender and Protection Officer at SEPPA Foundation and as a Field Officer at SOS Children's Villages Mozambique. He is skilled in CVA, MEAL, protection and KoboToolbox, and is fluent in Portuguese with advanced knowledge of English.
+
+His purpose is to grow professionally and reach leadership positions where he can help the most vulnerable communities improve their lives with dignity.`,
+    socials: {},
+  },
 ];
