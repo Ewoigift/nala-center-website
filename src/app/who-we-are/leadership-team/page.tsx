@@ -3,74 +3,9 @@
 
 import Image from "next/legacy/image";
 import Link from 'next/link';
+import { teamMembers } from '../../../data/leadershipTeam';
 
 export default function LeadershipTeamPage() {
-  const teamMembers = [
-    {
-      name: 'Bravin Onditi',
-      designation: 'Founder',
-      imageSrc: '/images/team/bravin-onditi.png',
-      slug: 'bravin-onditi',
-    },
-    {
-      name: 'Stella Cherop',
-      designation: 'Deputy Executive Director',
-      imageSrc: '/images/team/stella-cherop.png',
-      slug: 'stella-cherop',
-    },
-    {
-      name: 'Marwa Ali Khamis',
-      designation: 'Legal Advisor',
-      imageSrc: '/images/team/marwa-ali-khamis.jpg',
-      slug: 'marwa-ali-khamis',
-    },
-        {
-      name: 'Diana Nduku Muthusi',
-      designation: 'Head of Programs',
-      imageSrc: '/images/team/diana-nduku.jpg',
-      slug: 'diana-nduku',
-    },
-    {
-      name: 'Immanuel Kiilu',
-      designation: 'Head of Research/Policy',
-      imageSrc: '/images/team/immanuel-kiilu.jpg',
-      slug: 'immanuel-kiilu',
-    },
-    {
-      name: 'Zuleika Hassan',
-      designation: 'Head of Finance',
-      imageSrc: '/images/team/zuleika-hassan.png',
-      slug: 'zuleika-hassan',
-    },
-    {
-      name: 'Antony Nyabuto',
-      designation: 'Head of Events and Partnerships',
-      imageSrc: '/images/team/antony-nyabuto.jpg',
-      slug: 'antony-nyabuto',
-    },
-
-      {
-    name:'Nadia Khalifa',
-designation:'Events and Partnerships Assistant',
-imageSrc:'/images/team/nadia-khalifa.jpg',
-slug:'nadia-khalifa'
-  },
-
-    {
-    name:'Keith Sangolo',
-designation:'Intern',
-imageSrc:'/images/team/keith-sangolo.png',
-slug:'keith-sangolo'
-  },
-
-  {
-    name:'Abdulmalik Ibrahim Salim',
-designation:'Intern',
-imageSrc:'/images/who-we-are/ibrahim-salim.png',
-slug:'ibrahi-salim'
-  },
-  ];
-
   return (
     <main className="bg-white text-[#050505]">
       {/* Hero Section */}
@@ -93,7 +28,7 @@ slug:'ibrahi-salim'
               href={`/who-we-are/leadership-team/${member.slug}`}
               className="group block rounded-lg shadow-md overflow-hidden bg-white transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"
             >
-              <div className="relative w-full h-80 overflow-hidden">
+              <div className="relative w-full aspect-[3/4] overflow-hidden">
                 <Image
                   src={member.imageSrc}
                   alt={member.name}
