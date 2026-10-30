@@ -153,7 +153,7 @@ Jessica currently works as research assistant on the Civic Voices for Just Rural
     designation: 'Political Economy and Development Policy Researcher',
     imageSrc: '/images/team/kareem-abdulrasaq.jpg',
     slug: 'kareem-abdulrasaq',
-    bio: `Kareem Abdulrasaq is a Nigerian policy researcher and PhD candidate in Political Economy and Development Studies at Nasarawa State University. With eight years of experience in development research, his work spans poverty, social protection, conflict, governance, public finance and AI governance. He has contributed to peer-reviewed publications and policy research on development challenges in Nigeria. Kareem is an Agora Policy Writing Fellow, a Peace Promotion Fellow with Equal Access International, and an alumnus of the African Presidential Leadership Programme. He holds a master's degree in History from the University of Ilorin.`,
+    bio: `Kareem Abdulrasaq is a Nigerian policy researcher and PhD candidate in Political Economy and Development Studies at Nasarawa State University. With eight years of experience in development research, his work spans poverty, social protection, conflict, governance, public finance and AI governance. He has contributed to peer-reviewed publications and policy research on development challenges in Nigeria. Kareem is an Agora Policy Writing Fellow, a Peace Promotion Fellow with Equal Access International, and an alumnus of the African Presidential Leadership Programme.`,
     socials: {},
   },
   {
