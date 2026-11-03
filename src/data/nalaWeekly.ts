@@ -12,18 +12,25 @@ export type NalaWeeklyIssue = {
 };
 
 export const nalaWeeklyIssues: NalaWeeklyIssue[] = [
-   {
+  {
+    issueNumber: '06',
+    date: '3 November 2026',
+    description:
+      "This week, departures and new arms reshaped the region's security. Uganda began withdrawing its troops from Somalia as the UN's political mission closed, and Israel's first ambassador to Somaliland presented his credentials in Hargeisa. Ethiopia unveiled Russian Su-35 fighter jets at the Russia–Africa Summit in Moscow, and Sudan accused Addis Ababa of hosting drones that knocked out a dozen power stations. Washington sanctioned Rwanda's defence ministry over its support for the M23 and moved to remove Rwanda from the AGOA trade programme. We also track arrivals in Kenya from the Moyale clashes, Ebola, Tanzania and South Sudan's troubled path to elections. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
+    pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-06.pdf',
+  },
+  {
     issueNumber: '05',
     date: '27 October 2026',
     description:
-    "This week, ambushes, drones and disease tested governments across the region. A federal army column suffered heavy losses near Leego, days into Somalia’s new offensive in South West State, and clashes in Moyale between Ethiopia’s Oromia and Somali regions drove thousands into Kenya. RSF drones cut power across eastern Sudan, Egypt’s parliament authorised support for Saudi Arabia against the Houthis, and DR Congo’s Ebola outbreak passed 9,900 confirmed cases. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
+      "This week, ambushes, drones and disease tested governments across the region. A federal army column suffered heavy losses near Leego, days into Somalia's new offensive in South West State, and clashes in Moyale between Ethiopia's Oromia and Somali regions drove thousands into Kenya. RSF drones cut power across eastern Sudan, Egypt's parliament authorised support for Saudi Arabia against the Houthis, and DR Congo's Ebola outbreak passed 9,900 confirmed cases. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
     pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-05.pdf',
   },
   {
     issueNumber: '04',
     date: '20 October 2026',
     description:
-    "This week, drones and disputed mandates shaped the region. A drone strike on a market in the contested Abyei Area killed at least 153 people, and Ethiopian forces stepped back from the Eritrean border. Egypt weighed sending forces to support Saudi Arabia against the Houthis, Somalia set election dates without the opposition’s agreement, and in DR Congo the AFC/M23 relaunched itself as the FRN. Each section sets out likely scenarios, a recommendation and what to watch in the coming weeks.",
+      "This week's Nala Weekly tracks five flashpoints as drones and disputed mandates shaped the region. In Sudan, a drone strike on a market in the contested Abyei Area killed at least 153 people, according to local authorities, as the drone war spread beyond the front lines. On the Ethiopia–Eritrea border, Ethiopian forces stepped back from the frontier as fighting moved into central Tigray. In the Red Sea, Egypt weighed sending forces to defend Saudi Arabia as the Houthi–Saudi war escalated. In Somalia, the electoral commission set 2027 election dates without agreement from the opposition, and in DR Congo the new FRN claimed the AFC/M23's seat at the Doha talks.",
     pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-04.pdf',
   },
   {

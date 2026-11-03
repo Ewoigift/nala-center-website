@@ -173,14 +173,6 @@ Jessica currently works as research assistant on the Civic Voices for Just Rural
     socials: {},
   },
   {
-    name: 'Benjamin Onyatta',
-    designation: 'Human Rights, Governance and Peace Policy Analyst',
-    imageSrc: '/images/team/benjamin-onyatta.jpg',
-    slug: 'benjamin-onyatta',
-    bio: `Benjamin Onyatta is a policy analyst and researcher based in Nairobi, Kenya, with a growing interest in human rights, democracy and governance, equity and inclusive development, and peace and security. He currently supports the largest criminal justice programme in Africa at the United Nations Office on Drugs and Crime (UNODC). He has also worked with Save the Children, the World Agriculture Forum, and Ipas, building experience across programme development & support, research, and policy analysis. Driven by a desire to contribute to positive change, Benjamin uses policy analysis and evidence-based influence to advance more accountable, inclusive, and peaceful societies.`,
-    socials: {},
-  },
-  {
     name: 'Tsion Hagos',
     designation: 'International Humanitarian Law and Human Rights Expert',
     imageSrc: '/images/team/tsion-hagos.jpg',
