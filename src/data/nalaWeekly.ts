@@ -13,6 +13,13 @@ export type NalaWeeklyIssue = {
 
 export const nalaWeeklyIssues: NalaWeeklyIssue[] = [
   {
+    issueNumber: '07',
+    date: '10 November 2026',
+    description:
+      "Somalia’s Supreme Court rules that the president’s term has expired, a day after he dismissed its chief justice. Kenya comes under pressure on two borders, federal forces take Sheraro in Tigray, and Sudan’s army detains an ally wanted by the ICC. An attack near Beni scatters Ebola patients, and South Sudan is six weeks from an election with no voter register. Also on our radar: Tanzania, the Red Sea, Kenya’s economy and health.",
+    pdfLink: '/uploads/nala-weekly/Nala-Weekly-Issue-07.pdf',
+  },
+  {
     issueNumber: '06',
     date: '3 November 2026',
     description:
