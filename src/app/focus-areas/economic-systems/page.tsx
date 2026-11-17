@@ -2,74 +2,25 @@
 'use client';
 
 import Image from "next/legacy/image";
-import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function EconomicSystemsPage() {
   const heroImageSrc = '/images/focus-areas/economic-systems.jpg'; // Image will now be used
   const pageTitle = 'Economic Systems, Equity & Inclusive Development';
   const heroDescription = 'Examining how economic policies can drive equitable growth and reduce disparities.';
   const themeColor = '#E1B07E'; // Specific color for Economic Systems, Equity & Inclusive Development
-  const secondaryColor = '#F2E9DF'; // A lighter complementary color for sections
 
   const overviewContent = `This focus area examines how economic policies can drive equitable growth and reduce disparities. From tax justice and social protection schemes to value chain analyses in agriculture and industry, we assess which interventions most effectively uplift marginalized communities. Through mixed methods research and stakeholder convenings, we chart pathways for SMEs, cooperatives, and public private partnerships to foster inclusive markets—ensuring that economic expansion benefits all segments of society.`;
 
-  const reports = [
+  // Add new economic briefs to the TOP of this array; each one becomes a row.
+  const economicBriefs = [
     {
-      year: '2024',
-      title: 'Index Report: Economic Inclusion in Africa',
-      linkText: 'Read more',
-      linkHref: '#',
-    },
-    {
-      year: '2023',
-      title: 'Forum Report: Tax Justice and Development',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2022',
-      title: 'Value Chain Analysis: Agriculture Sector',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2021',
-      title: 'Social Protection Schemes Impact Assessment',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      year: '2020',
-      title: 'Facts & Figures: Youth Employment in Emerging Markets',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-  ];
-
-  const researchBriefsAndPapers = [
-    {
-      title: 'Nala Center Brief: Pathways for Inclusive Markets',
-      description: 'Strategies for fostering equitable economic expansion through SMEs and cooperatives.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Policy Paper: Public-Private Partnerships for Development',
-      description: 'Analyzing effective models for collaborative economic growth.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Research Spotlight: Reducing Income Disparities',
-      description: 'Innovative approaches to tackle economic inequality in African contexts.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
-    },
-    {
-      title: 'Briefing Note: Impact of Digital Economy on Inclusion',
-      description: 'Assessing how digital transformation can promote or hinder economic equity.',
-      linkText: 'Download file (PDF)',
-      linkHref: '#',
+      label: 'Economic Brief · November 2026',
+      title: 'Kenya’s Growth Has a Governance Problem',
+      description: `Kenya’s economy grew by 5.2% in the first half of 2026, yet most new jobs are informal and the budget deficit reached 6.8% of GDP against a target of 4.7%. In this economic brief, Nala Center reviews the World Bank’s November 2026 Kenya Economic Update, which identifies corruption as the main constraint on faster growth and better jobs. The brief sets out the evidence in plain language, explains what it means for public finances, businesses, and young people, and proposes practical next steps that build on reforms already under way.`,
+      buttonText: 'Read the brief',
+      coverSrc: '/images/economic-briefs/kenya-growth-governance-cover.jpg',
+      pdfHref: '/uploads/economic-systems/Nala-Center-Economic-Brief-Kenya-November2026.pdf',
     },
   ];
 
@@ -104,40 +55,53 @@ export default function EconomicSystemsPage() {
         </div>
       </section>
 
-      {/* Reports and Research Briefs Section */}
-      <section className="bg-[#f8f8f8] py-16 px-0">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0">
-          {/* Left Column: Reports */}
-          <div className="bg-white px-8 py-12 shadow-md">
-            <h2 className="text-2xl font-bold font-serif mb-6 text-[#050505]">Reports</h2>
-            <div className="space-y-6">
-              {reports.map((item, index) => (
-                <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
-                  <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.year}: {item.title}</h3>
-                  <Link href={item.linkHref} className="inline-block text-sm font-semibold hover:underline transition-colors duration-300" style={{ color: themeColor }}>
-                    {item.linkText} &rarr;
-                  </Link>
-                </div>
-              ))}
+      {/* Economic Briefs - one row per brief */}
+      <section className="container mx-auto max-w-6xl px-4 pb-16">
+        {economicBriefs.map((brief) => (
+          <div
+            key={brief.pdfHref}
+            className="grid md:grid-cols-12 gap-8 md:gap-12 border-t border-b border-gray-200 py-10"
+          >
+            {/* Cover */}
+            <div className="md:col-span-4">
+              <div className="aspect-square flex items-center justify-center" style={{ backgroundColor: themeColor }}>
+                <a
+                  href={brief.pdfHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${brief.title} (PDF)`}
+                  className="relative block h-[82%] aspect-[210/297] shadow-2xl transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <Image
+                    src={brief.coverSrc}
+                    alt={`Cover of the Nala Center economic brief: ${brief.title}`}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Right Column: Research Briefs and Papers */}
-          <div className="px-8 py-12 shadow-md" style={{ backgroundColor: secondaryColor }}>
-            <h2 className="text-2xl font-bold font-serif mb-6 text-[#050505]">Research briefs and papers</h2>
-            <div className="space-y-6">
-              {researchBriefsAndPapers.map((item, index) => (
-                <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
-                  <h3 className="text-xl font-semibold mb-1 text-[#050505]">{item.title}</h3>
-                  <p className="text-gray-700 text-base mb-2">{item.description}</p>
-                  <Link href={item.linkHref} className="inline-block bg-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-gray-100 transition-colors duration-300" style={{ color: themeColor }}>
-                    {item.linkText}
-                  </Link>
-                </div>
-              ))}
+            {/* Text */}
+            <div className="md:col-span-8 flex flex-col justify-center">
+              <p className="text-sm uppercase tracking-wide text-[#52667A] mb-3">{brief.label}</p>
+              <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-5 text-[#0B2545]">{brief.title}</h2>
+              <p className="text-lg md:text-xl text-[#52667A] leading-relaxed mb-8">{brief.description}</p>
+
+              <div>
+                <a
+                  href={brief.pdfHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 rounded-full border border-gray-300 px-6 py-3 text-base font-medium text-[#0B2545] hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200"
+                >
+                  {brief.buttonText}
+                  <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </section>
     </main>
   );
