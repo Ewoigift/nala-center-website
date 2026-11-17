@@ -1,9 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { BookOpen, Download, CalendarDays, Tag } from 'lucide-react';
+import {
+  focusAreas,
+  getAllPublications,
+  getFocusArea,
+  formatPublicationDate,
+} from '../../../data/focusAreas';
 
 const primaryColor = "#6CAED9";
 const textColor = "#2F2F2F";
@@ -11,19 +17,17 @@ const headingColor = "#050505";
 const sectionBgColor = "#F9F9F9";
 const cardBgColor = "#FFFFFF";
 
-const reports = [
-  {
-    title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
-    summary: "This policy brief is informed by the proceedings of a youth dialogue on Kenya’s peace and security diplomacy, convened on 14 August 2026. It finds that Kenya's challenge is not a shortage of diplomatic assets but a shortage of institutional machinery to convert them into durable outcomes, and recommends a permanent mediation support unit, transparent intervention criteria, and a national action plan on youth, peace and security.",
-    date: "August 2026",
-    category: "Peace & Security",
-    image: "/images/policy-briefs/kenya-peace-security-diplomacy.jpg",
-    pdfLink: "/uploads/peace-security/Nala-Center-Policy-Brief-003.pdf",
-    author: "Nala Center"
-  }
-];
-
 export default function ReportsPage() {
+  const [active, setActive] = useState<string>('all');
+  const allPublications = getAllPublications();
+  const filterOptions = focusAreas.filter((f) =>
+    allPublications.some((p) => p.focusArea === f.slug)
+  );
+  const visible =
+    active === 'all'
+      ? allPublications
+      : allPublications.filter((p) => p.focusArea === active);
+
   return (
     <div className="min-h-screen font-sans bg-white p-6 sm:p-10">
       <header className="mb-12 text-center">
@@ -35,12 +39,29 @@ export default function ReportsPage() {
         </p>
       </header>
 
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {[{ slug: 'all', title: 'All' }, ...filterOptions].map((f) => (
+          <button
+            key={f.slug}
+            onClick={() => setActive(f.slug)}
+            className="px-4 py-2 rounded-full text-sm font-medium border transition-colors"
+            style={
+              active === f.slug
+                ? { backgroundColor: primaryColor, borderColor: primaryColor, color: '#fff' }
+                : { borderColor: '#D1D5DB', color: textColor }
+            }
+          >
+            {f.title}
+          </button>
+        ))}
+      </div>
+
       <section className={`p-6 md:p-10 rounded-xl bg-[${sectionBgColor}] mb-12`}>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {reports.map((report, i) => (
-            <div key={`report-${i}`} className={`flex flex-col bg-[${cardBgColor}] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl`}>
+          {visible.map((report) => (
+            <div key={report.id} className={`flex flex-col bg-[${cardBgColor}] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl`}>
               <Image
-                src={report.image}
+                src={report.coverSrc}
                 alt={`Image for ${report.title}`}
                 width={600}
                 height={400}
@@ -59,24 +80,24 @@ export default function ReportsPage() {
                 <div className="mt-4 text-sm text-gray-500 flex flex-col space-y-2">
                   <div className="flex items-center gap-2">
                     <CalendarDays className="w-4 h-4 text-gray-400" />
-                    <span>{report.date}</span>
+                    <span>{formatPublicationDate(report.publishedAt)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Tag className="w-4 h-4 text-gray-400" />
-                    <span>{report.category}</span>
+                    <span>{getFocusArea(report.focusArea)?.title}</span>
                   </div>
                 </div>
                 <div className="flex justify-between items-center mt-6">
                   <Link 
-                    href={report.pdfLink} 
+                    href={report.pdfHref} 
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-[${primaryColor}] font-medium inline-flex items-center hover:underline transition-all duration-300`}
                   >
-                    <BookOpen className="w-4 h-4 mr-2" /> Read Brief
+                    <BookOpen className="w-4 h-4 mr-2" /> Read {report.type}
                   </Link>
                   <Link 
-                    href={report.pdfLink} 
+                    href={report.pdfHref} 
                     target="_blank"
                     rel="noopener noreferrer"
                     download
